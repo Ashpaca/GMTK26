@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bnix5b3v3idxv"]
 
+[ext_resource type="Script" uid="uid://bgowda740dy3i" path="res://res/player/player.gd" id="1_6ekb1"]
 [ext_resource type="PackedScene" uid="uid://ddduac7cfigxa" path="res://assets/models/character-employee.glb" id="1_fff8e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_58gb0"]
@@ -7,9 +8,16 @@ radius = 0.2553711
 height = 0.8
 
 [node name="Player" type="CharacterBody3D" unique_id=358695189]
+script = ExtResource("1_6ekb1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=338504041]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 shape = SubResource("CapsuleShape3D_58gb0")
 
-[node name="character-employee2" parent="." unique_id=1805472682 instance=ExtResource("1_fff8e")]
+[node name="Visuals" parent="." unique_id=1805472682 instance=ExtResource("1_fff8e")]
+
+[node name="Skeleton3D" parent="Visuals/character-employee" parent_id_path=PackedInt32Array(1805472682, 10062679) index="0" unique_id=1648832866]
+bones/4/rotation = Quaternion(0, 0, -0.3826835, 0.92387956)
+bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
+
+[editable path="Visuals"]
