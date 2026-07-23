@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d3pnpygx7ncsd"]
+
+[ext_resource type="Script" uid="uid://djjfcklrt6jak" path="res://res/shelf/shelf.gd" id="1_fd64t"]
+[ext_resource type="PackedScene" uid="uid://ctr7mvytbwa48" path="res://assets/models/shelf-empty.glb" id="1_j1cob"]
+[ext_resource type="PackedScene" uid="uid://devo5b7gxodno" path="res://assets/models/box.glb" id="2_cpho7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_58gb0"]
+size = Vector3(0.87335205, 0.79486084, 0.6812744)
+
+[node name="Shelf" type="StaticBody3D" unique_id=594689916]
+script = ExtResource("1_fd64t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=534823737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002960205, 0.394, 0)
+shape = SubResource("BoxShape3D_58gb0")
+
+[node name="shelf-empty" parent="." unique_id=2086592459 instance=ExtResource("1_j1cob")]
+
+[node name="ShelfItems" type="Node3D" parent="." unique_id=1777641035]
+visible = false
+
+[node name="box1" parent="ShelfItems" unique_id=197425487 instance=ExtResource("2_cpho7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16909474, 0.54947865, 0.15216553)
+
+[node name="box2" parent="ShelfItems" unique_id=393875567 instance=ExtResource("2_cpho7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15404439, 0.54947865, 0.15216553)
+
+[node name="box3" parent="ShelfItems" unique_id=1200494289 instance=ExtResource("2_cpho7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16909474, 0.1750447, 0.15216553)
+
+[node name="box4" parent="ShelfItems" unique_id=583395082 instance=ExtResource("2_cpho7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15404439, 0.1750447, 0.15216553)
+
+[node name="box5" parent="ShelfItems" unique_id=904382754 instance=ExtResource("2_cpho7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16909474, 0.54947865, -0.15151227)
+
+[node name="box6" parent="ShelfItems" unique_id=129553434 instance=ExtResource("2_cpho7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15404439, 0.54947865, -0.15151227)
+
+[node name="box7" parent="ShelfItems" unique_id=73348432 instance=ExtResource("2_cpho7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16909474, 0.1750447, -0.15151227)
+
+[node name="box8" parent="ShelfItems" unique_id=684537202 instance=ExtResource("2_cpho7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15404439, 0.1750447, -0.15151227)
