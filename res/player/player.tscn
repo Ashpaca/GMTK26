@@ -21,13 +21,15 @@ shape = SubResource("CapsuleShape3D_58gb0")
 [node name="Visuals" parent="." unique_id=1805472682 instance=ExtResource("1_fff8e")]
 
 [node name="Skeleton3D" parent="Visuals/character-employee" parent_id_path=PackedInt32Array(1805472682, 10062679) index="0" unique_id=1648832866]
-bones/4/rotation = Quaternion(0, 0, -0.3826835, 0.92387956)
-bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
+bones/4/rotation = Quaternion(0, 0, -0.38268346, 0.9238795)
+bones/5/rotation = Quaternion(0, 0, 0.38268346, 0.9238795)
 
 [node name="InteractionZone" type="Area3D" parent="Visuals" unique_id=1104037404]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2935956, 0.255091)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Visuals/InteractionZone" unique_id=2113158688]
 shape = SubResource("CylinderShape3D_58gb0")
+
+[connection signal="animation_finished" from="Visuals/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="Visuals"]

@@ -1,0 +1,2 @@
+class_name Supply
+extends StaticBody3D
