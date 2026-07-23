@@ -8,23 +8,21 @@ const JUMP_VELOCITY = 4.5
 @onready var interaction_zone: Area3D = $Visuals/InteractionZone
 
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	
-	if Input.is_action_just_pressed("ui_accept"):
-		for body in interaction_zone.get_overlapping_bodies():
+func handle_interaction() -> void:
+	for body in interaction_zone.get_overlapping_bodies():
 			if body is Shelf:
 				var shelf : Shelf = body
 				if not shelf.is_stocked:
 					shelf.stock_shelf()
-					break
+					return
+
+
+func _physics_process(delta: float) -> void:
 	
+	if Input.is_action_just_pressed("interact"):
+		handle_interaction()
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized().rotated(Vector3.UP, PI/4)
 	if direction:
 		velocity.x = direction.x * SPEED
@@ -35,5 +33,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		animation_player.play("idle")
-
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 	move_and_slide()
