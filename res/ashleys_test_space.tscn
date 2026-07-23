@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d3pnpygx7ncsd" path="res://res/shelf/shelf.tscn" id="2_awmjh"]
 [ext_resource type="PackedScene" uid="uid://dsf13233fdvsy" path="res://assets/models/floor.glb" id="3_imw6u"]
 [ext_resource type="PackedScene" uid="uid://7f23rmcqlt64" path="res://res/supplies/supply.tscn" id="4_1fh84"]
+[ext_resource type="PackedScene" uid="uid://cxdpmr25ghc52" path="res://res/supplies/item.tscn" id="5_mccda"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2a5j2"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -45,10 +46,10 @@ mesh = SubResource("BoxMesh_58gb0")
 [node name="Player" parent="." unique_id=358695189 instance=ExtResource("1_2a5j2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5803198, 0.9958818)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=97303959]
-transform = Transform3D(0.7071068, -0.35355338, 0.61237246, 0, 0.8660254, 0.50000006, -0.7071068, -0.35355338, 0.61237246, 5.933855, 6.1481194, 6.882223)
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=97303959]
+transform = Transform3D(0.70710677, -0.3535534, 0.6123724, 0, 0.8660254, 0.50000006, -0.70710677, -0.3535534, 0.6123724, 5.9999995, 5.4, 6)
 projection = 1
-size = 4.738
+size = 2.5
 
 [node name="Shelf" parent="." unique_id=594689916 instance=ExtResource("2_awmjh")]
 
@@ -72,3 +73,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
 
 [node name="Supply" parent="." unique_id=707864740 instance=ExtResource("4_1fh84")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4263644, 0, -2.8057694)
+stored_item = ExtResource("5_mccda")

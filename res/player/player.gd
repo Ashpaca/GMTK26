@@ -9,8 +9,9 @@ const HELD_SPEED = 3.5
 var is_stocking : bool
 var is_picking_up : bool
 var is_dropping : bool
-var held_item : bool # need to replace with an item
+var held_item : Item
 var shelf_to_stock : Shelf
+var supply_to_grab : Supply
 
 func handle_interaction() -> void:
 	for body in interaction_zone.get_overlapping_bodies():
@@ -23,6 +24,7 @@ func handle_interaction() -> void:
 					return
 			if body is Supply:
 				if not held_item:
+					supply_to_grab = body
 					is_picking_up = true
 					animation_player.play("pick-up")
 				else:
@@ -34,14 +36,14 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "interact-right" and is_stocking:
 		shelf_to_stock.stock_shelf()
 		is_stocking = false
-		held_item = false
+		held_item.queue_free()
 	if anim_name == "pick-up":
 		if is_picking_up:
 			is_picking_up = false
-			held_item = true
+			held_item = supply_to_grab.get_item(visuals)
 		elif is_dropping:
 			is_dropping = false
-			held_item = false
+			held_item.queue_free()
 
 
 func _physics_process(delta: float) -> void:
