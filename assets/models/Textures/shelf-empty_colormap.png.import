@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8dtdqwbtqs07"
-path.s3tc="res://.godot/imported/colormap.png-3c27dc95f3cddabdb9c5898d3eafe108.s3tc.ctex"
+uid="uid://bhsdetjndwkd"
+path.s3tc="res://.godot/imported/shelf-empty_colormap.png-b710ddb60dd22316801948b8ba9f5b41.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "76084aa0c65dc2c593e6532f1f61f968"
+}
 
 [deps]
 
-source_file="res://assets/models/colormap.png"
-dest_files=["res://.godot/imported/colormap.png-3c27dc95f3cddabdb9c5898d3eafe108.s3tc.ctex"]
+source_file="res://assets/models/Textures/shelf-empty_colormap.png"
+dest_files=["res://.godot/imported/shelf-empty_colormap.png-b710ddb60dd22316801948b8ba9f5b41.s3tc.ctex"]
 
 [params]
 
