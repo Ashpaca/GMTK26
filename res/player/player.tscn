@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bnix5b3v3idxv"]
+
+[ext_resource type="PackedScene" uid="uid://ddduac7cfigxa" path="res://assets/models/character-employee.glb" id="1_fff8e"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_58gb0"]
+radius = 0.2553711
+height = 0.8
+
+[node name="Player" type="CharacterBody3D" unique_id=358695189]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=338504041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("CapsuleShape3D_58gb0")
+
+[node name="character-employee2" parent="." unique_id=1805472682 instance=ExtResource("1_fff8e")]
