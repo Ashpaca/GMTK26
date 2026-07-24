@@ -539,34 +539,34 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.00
 [node name="wall-door-rotate3" parent="Doors" unique_id=1645615455 instance=ExtResource("4_pru2k")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0004196, 0, 4.004237)
 
-[node name="AreaLight3D" type="OmniLight3D" parent="." unique_id=120894732]
+[node name="Light1" type="OmniLight3D" parent="." unique_id=120894732]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3, 4.284787, 4.8268995)
 shadow_enabled = true
 
-[node name="AreaLight3D3" type="OmniLight3D" parent="." unique_id=1616228949]
+[node name="Light2" type="OmniLight3D" parent="." unique_id=1616228949]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3, 4.284787, 0.8268995)
 shadow_enabled = true
 
-[node name="AreaLight3D4" type="OmniLight3D" parent="." unique_id=155314652]
+[node name="Light3" type="OmniLight3D" parent="." unique_id=155314652]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 4.284787, 4.8268995)
 shadow_enabled = true
 
-[node name="AreaLight3D6" type="OmniLight3D" parent="." unique_id=1626883329]
+[node name="Light4" type="OmniLight3D" parent="." unique_id=1626883329]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 4.284787, 0.8268995)
 shadow_enabled = true
 
-[node name="AreaLight3D7" type="OmniLight3D" parent="." unique_id=1257267297]
+[node name="Light5" type="OmniLight3D" parent="." unique_id=1257267297]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1, 4.284787, 4.8268995)
 shadow_enabled = true
 
-[node name="AreaLight3D9" type="OmniLight3D" parent="." unique_id=562632409]
+[node name="Light6" type="OmniLight3D" parent="." unique_id=562632409]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1, 4.284787, 0.8268995)
 shadow_enabled = true
 
-[node name="AreaLight3D10" type="OmniLight3D" parent="." unique_id=1375432589]
+[node name="Light7" type="OmniLight3D" parent="." unique_id=1375432589]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3, 4.284787, 4.8268995)
 shadow_enabled = true
 
-[node name="AreaLight3D12" type="OmniLight3D" parent="." unique_id=475415109]
+[node name="Light8" type="OmniLight3D" parent="." unique_id=475415109]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3, 4.284787, 0.8268995)
 shadow_enabled = true
