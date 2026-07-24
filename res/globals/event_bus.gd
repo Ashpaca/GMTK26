@@ -2,6 +2,6 @@ extends Node
 
 @warning_ignore("unused_signal")
 
-# emitted by: game_state
-# connected to: shelf
+# emitted by: none
+# connected to: none
 signal test_signal

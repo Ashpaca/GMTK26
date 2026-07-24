@@ -45,5 +45,4 @@ func take_item() -> bool:
 
 
 func _ready() -> void:
-	EventBus.test_signal.connect(take_item)
 	individual_items.append_array(shelf_items.get_children())
