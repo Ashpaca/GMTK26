@@ -27,48 +27,72 @@ theme_override_constants/margin_bottom = 100
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1837525844]
 layout_mode = 2
 
+[node name="MarginContainerL" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=500818406]
+layout_mode = 2
+theme_override_constants/margin_right = 280
+
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1522871224]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 30
 
 [node name="Title" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=883653516]
-custom_minimum_size = Vector2(0, 120)
+custom_minimum_size = Vector2(0, 128)
+clip_contents = false
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_piys8")
-theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/normal_font_size = 64
 text = "Shop Til You
 Drop"
+fit_content = true
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=356109987]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 30
 
 [node name="StartButtonLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions" unique_id=195431751]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_0khnd")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 36
 text = "Start"
+fit_content = true
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="OptionsButtonLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions" unique_id=132185179]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_0khnd")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 36
 text = "Options"
+fit_content = true
+scroll_active = false
 horizontal_alignment = 1
 
 [node name="QuitButtonLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions" unique_id=1954106071]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_0khnd")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 36
 text = "Quit"
+fit_content = true
+scroll_active = false
 horizontal_alignment = 1
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="." unique_id=724831664]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Attribution" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=724831664]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_0khnd")
+theme_override_font_sizes/normal_font_size = 20
+text = "By Ashpaca, Petaboblin & RoabertG"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="MarginContainerR" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=412779907]
+layout_mode = 2
+theme_override_constants/margin_left = 280
