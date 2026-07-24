@@ -17,3 +17,9 @@ shape = SubResource("CapsuleShape3D_58gb0")
 [node name="character-female-f2" parent="." unique_id=559007634 instance=ExtResource("1_j4fhr")]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=29266514]
+path_desired_distance = 0.5
+target_desired_distance = 0.5
+avoidance_enabled = true
+radius = 0.25
+
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
