@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bc26jrpphkke5"]
+
+[ext_resource type="Script" uid="uid://cgbxhnfp7gtsk" path="res://res/npcs/shopper.gd" id="1_ii3ul"]
+[ext_resource type="PackedScene" uid="uid://crmnt1hpoho7t" path="res://assets/models/character-female-f.glb" id="1_j4fhr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_58gb0"]
+radius = 0.255
+height = 0.8
+
+[node name="Shopper" type="CharacterBody3D" unique_id=762169485]
+script = ExtResource("1_ii3ul")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1762956132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("CapsuleShape3D_58gb0")
+
+[node name="character-female-f2" parent="." unique_id=559007634 instance=ExtResource("1_j4fhr")]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=29266514]

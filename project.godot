@@ -23,6 +23,7 @@ EventBus="*uid://d310sttl7077l"
 [global_group]
 
 hide_when_blocking=""
+nav=""
 
 [input]
 
