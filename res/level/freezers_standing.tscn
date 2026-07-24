@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b0muwao80p8e"]
+
+[ext_resource type="PackedScene" uid="uid://fwq6skc63g52" path="res://assets/models/freezers-standing.glb" id="1_vq87s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_58gb0"]
+size = Vector3(1, 1, 0.50598145)
+
+[node name="FreezersStanding" unique_id=700972319 instance=ExtResource("1_vq87s")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1663743638]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=235703024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49844402, -0.24700928)
+shape = SubResource("BoxShape3D_58gb0")

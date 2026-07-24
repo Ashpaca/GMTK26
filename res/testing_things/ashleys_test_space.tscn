@@ -50,11 +50,6 @@ mesh = SubResource("BoxMesh_58gb0")
 [node name="Player" parent="." unique_id=358695189 instance=ExtResource("1_tho5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5803198, 0.9958818)
 
-[node name="Camera3D" type="Camera3D" parent="Player" unique_id=97303959]
-transform = Transform3D(0.70710677, -0.3535534, 0.6123724, 0, 0.8660254, 0.50000006, -0.70710677, -0.3535534, 0.6123724, 5.9999995, 5.4, 6)
-projection = 1
-size = 5.0
-
 [node name="Shelf" parent="." unique_id=594689916 instance=ExtResource("2_agl0y")]
 
 [node name="Shelf2" parent="." unique_id=1107425615 instance=ExtResource("2_agl0y")]
