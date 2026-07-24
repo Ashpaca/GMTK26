@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	if is_stocking or is_picking_up or is_dropping: return
 	
 	if Input.is_action_pressed("run"):
-		navigation_agent_3d.radius = 2
+		navigation_agent_3d.radius = 1
 		run_speed_multiplier = 1.1
 	else:
 		navigation_agent_3d.radius = 0.3

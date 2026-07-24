@@ -10,12 +10,14 @@ enum State{
 
 const SPEED : float = 1
 const DEATH_OFFSET : Vector3 = Vector3(0, 0, .35)
+@export var shelves_in_store : Array[Shelf]
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var animation_player: AnimationPlayer = $Visuals/AnimationPlayer
 @onready var visuals: Node3D = $Visuals
-var current_state : State = State.WALK
-var has_item : bool
 @onready var get_up_timer: Timer = $GetUpTimer
+var current_state : State = State.WAIT
+var has_item : bool
+
 
 
 func do_walk(delta : float) -> void:
@@ -23,7 +25,6 @@ func do_walk(delta : float) -> void:
 		velocity += get_gravity() * delta
 		move_and_slide()
 		return
-	navigation_agent_3d.target_position = Vector3(-5.3, 0, 3.3) # needs to be set 
 	var next_point : Vector3 = (navigation_agent_3d.get_next_path_position() - global_position) * SPEED
 	navigation_agent_3d.velocity = next_point
 	
@@ -36,6 +37,17 @@ func do_walk(delta : float) -> void:
 		visuals.rotation.y = rotate_toward(visuals.rotation.y, goal_rotation, delta*10)
 		#visuals.look_at(global_position - velocity)
 	move_and_slide()
+
+
+func do_wait() -> void:
+	var nav_map : RID = get_world_3d().navigation_map
+	if NavigationServer3D.map_get_iteration_id(nav_map) < 2:
+		return
+	print(shelves_in_store.pick_random())
+	var target_shelf_location : Vector3 = shelves_in_store.pick_random().global_position
+	var valid_shopping_location : Vector3 = NavigationServer3D.map_get_closest_point(nav_map, target_shelf_location - target_shelf_location.y * Vector3.UP)
+	navigation_agent_3d.target_position = valid_shopping_location
+	current_state = State.WALK
 
 
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
@@ -72,3 +84,5 @@ func _physics_process(delta: float) -> void:
 			do_walk(delta)
 		State.DEAD:
 			pass # could have something here
+		State.WAIT:
+			do_wait()
