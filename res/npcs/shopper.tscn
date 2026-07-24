@@ -20,13 +20,16 @@ shape = SubResource("CapsuleShape3D_58gb0")
 
 [node name="Visuals" parent="." unique_id=559007634 instance=ExtResource("1_j4fhr")]
 
-[node name="Skeleton3D" parent="Visuals/character-female-f" parent_id_path=PackedInt32Array(559007634, 1275657698) index="0" unique_id=138863874]
+[node name="character-female-f" parent="Visuals" index="0" unique_id=1275657698]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Visuals/character-female-f" index="0" unique_id=138863874]
 bones/4/rotation = Quaternion(0, 0, -0.3826835, 0.92387956)
 bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=29266514]
-path_desired_distance = 0.5
-target_desired_distance = 0.5
+path_desired_distance = 0.3
+target_desired_distance = 0.3
 path_max_distance = 1.01
 avoidance_enabled = true
 radius = 0.35
@@ -45,6 +48,7 @@ wait_time = 3.0
 one_shot = true
 
 [connection signal="animation_finished" from="Visuals/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="timeout" from="GetUpTimer" to="." method="_on_get_up_timer_timeout"]

@@ -9,7 +9,7 @@ enum State{
 }
 
 const SPEED : float = 1
-const DEATH_OFFSET : Vector3 = Vector3(0, 0, .35)
+const DEATH_OFFSET : Vector3 = Vector3(0, 0, -.35)
 @export var shelves_in_store : Array[Shelf]
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var animation_player: AnimationPlayer = $Visuals/AnimationPlayer
@@ -17,6 +17,7 @@ const DEATH_OFFSET : Vector3 = Vector3(0, 0, .35)
 @onready var get_up_timer: Timer = $GetUpTimer
 var current_state : State = State.WAIT
 var has_item : bool
+var closest_shelf : Shelf
 
 
 
@@ -33,7 +34,7 @@ func do_walk(delta : float) -> void:
 	else:
 		animation_player.play("walk")
 		
-		var goal_rotation : float = -visuals.basis.x.angle_to(velocity)
+		var goal_rotation : float = visuals.basis.x.angle_to(velocity)
 		visuals.rotation.y = rotate_toward(visuals.rotation.y, goal_rotation, delta*10)
 		#visuals.look_at(global_position - velocity)
 	move_and_slide()
@@ -43,7 +44,6 @@ func do_wait() -> void:
 	var nav_map : RID = get_world_3d().navigation_map
 	if NavigationServer3D.map_get_iteration_id(nav_map) < 2:
 		return
-	print(shelves_in_store.pick_random())
 	var target_shelf_location : Vector3 = shelves_in_store.pick_random().global_position
 	var valid_shopping_location : Vector3 = NavigationServer3D.map_get_closest_point(nav_map, target_shelf_location - target_shelf_location.y * Vector3.UP)
 	navigation_agent_3d.target_position = valid_shopping_location
@@ -70,7 +70,16 @@ func _on_player_detector_body_entered(body: Node3D) -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "die" and current_state == State.GET_UP:
+		visuals.position = Vector3.ZERO
 		current_state = State.WALK
+	if anim_name == "interact-right" and current_state == State.GRAB:
+		if closest_shelf.is_stocked:
+			closest_shelf.take_item()
+			current_state = State.WALK
+			has_item = true
+			navigation_agent_3d.target_position = Vector3(-5.3, 0, 3.3)
+		else:
+			current_state = State.WAIT
 
 
 func _on_get_up_timer_timeout() -> void:
@@ -78,10 +87,26 @@ func _on_get_up_timer_timeout() -> void:
 	current_state = State.GET_UP
 
 
+func _on_navigation_agent_3d_target_reached() -> void:
+	if has_item:
+		queue_free()
+		return
+	current_state = State.GRAB
+	closest_shelf = shelves_in_store[0]
+	for shelf in shelves_in_store:
+		if global_position.distance_squared_to(shelf.global_position) < global_position.distance_squared_to(closest_shelf.global_position):
+			closest_shelf = shelf
+	visuals.look_at(closest_shelf.global_position)
+	if not closest_shelf.is_stocked:
+		current_state = State.WAIT
+
+
 func _physics_process(delta: float) -> void:
 	match current_state:
 		State.WALK:
 			do_walk(delta)
+		State.GRAB:
+			animation_player.play("interact-right")
 		State.DEAD:
 			pass # could have something here
 		State.WAIT:
