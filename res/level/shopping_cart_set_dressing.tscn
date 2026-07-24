@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b1b1daui3wnnm"]
+
+[ext_resource type="PackedScene" uid="uid://nbeswdxhfoio" path="res://assets/models/shopping-cart.glb" id="1_cb4y3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_58gb0"]
+size = Vector3(0.300354, 0.33465576, 0.45263672)
+
+[node name="ShoppingCartSetDressing" unique_id=1726653563 instance=ExtResource("1_cb4y3")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=180654601]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=2120212410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010681152, 0.16732788, 0.0007324219)
+shape = SubResource("BoxShape3D_58gb0")
