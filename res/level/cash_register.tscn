@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://cu3320ijaisfc" path="res://assets/models/cash-register.glb" id="1_h0elj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_58gb0"]
-size = Vector3(0.80078125, 0.5, 0.8029785)
+size = Vector3(0.80078125, 1, 0.8029785)
 
 [node name="CashRegister" unique_id=322893375 instance=ExtResource("1_h0elj")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=87462351]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1321559627]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.005493164)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.005493164)
 shape = SubResource("BoxShape3D_58gb0")

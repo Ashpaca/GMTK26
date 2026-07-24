@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cxdpmr25ghc52" path="res://res/supplies/item.tscn" id="9_pru2k"]
 [ext_resource type="PackedScene" uid="uid://bom1osf7tjj6w" path="res://res/level/cash_register.tscn" id="10_20fv1"]
 [ext_resource type="PackedScene" uid="uid://dy005wln557ec" path="res://res/level/bottle_return.tscn" id="12_pru2k"]
+[ext_resource type="PackedScene" uid="uid://bc26jrpphkke5" path="res://res/npcs/shopper.tscn" id="14_03fo6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1et6b"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,12 +30,22 @@ tonemap_mode = 2
 [sub_resource type="BoxShape3D" id="BoxShape3D_58gb0"]
 size = Vector3(11.45105, 1, 8.572693)
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_58gb0"]
+vertices = PackedVector3Array(-5.3526216, -0.9088421, -0.37542206, -5.3526216, -0.9088421, 0.2245779, -5.1526217, -0.9088421, 0.024577975, -3.8526216, -0.9088421, 0.92457795, -3.0526216, -0.9088421, 0.92457795, -2.8526216, -0.9088421, 0.6245779, -3.8526216, -0.9088421, 0.2245779, -1.6526217, -0.9088421, 4.224578, -0.75262165, -0.9088421, 4.324578, -0.75262165, -0.9088421, 0.82457805, -1.6526217, -0.9088421, 0.82457805, -0.55262136, -0.9088421, 0.6245779, -0.052621365, -0.9088421, 0.6245779, -0.052621365, -0.9088421, -0.37542206, -4.052622, -0.9088421, 0.024577975, -1.8526216, -0.9088421, 0.6245779, 4.0473785, -0.9088421, -0.17542207, 4.3473787, -0.9088421, -0.17542207, 4.3473787, -0.9088421, -0.37542206, 2.647379, -0.9088421, 0.6245779, 2.8473787, -0.9088421, 0.92457795, 3.7473783, -0.9088421, 0.7245779, 3.7473783, -0.9088421, 0.12457788, 0.54737854, -0.9088421, 0.82457805, 0.54737854, -0.9088421, 4.324578, 1.4473786, -0.9088421, 4.324578, 1.4473786, -0.9088421, 0.82457805, 1.6473784, -0.9088421, 0.6245779, 4.7473783, -0.15884209, 0.32457793, 4.947378, -0.15884209, 0.6245779, 4.947378, -0.15884209, 0.2245779, -4.7526217, -0.15884209, 0.6245779, -4.7526217, -0.15884209, 0.92457795, -4.4526215, -0.15884209, 0.92457795, -4.4526215, -0.15884209, 0.6245779, 4.3473787, -0.9088421, 4.324578, 4.647379, -0.9088421, 4.124578, 4.647379, -0.9088421, 3.8245778, 4.3473787, -0.9088421, 3.624578, 2.7473783, -0.9088421, 5.124578, 4.3473787, -0.9088421, 2.324578, 4.647379, -0.9088421, 2.124578, 4.647379, -0.9088421, 1.824578, 4.3473787, -0.9088421, 1.624578, 3.3473787, -0.9088421, 5.724578, 4.3473787, -0.9088421, 5.724578, 3.9473782, -0.9088421, 1.0245779, 4.3473787, -0.9088421, 1.124578, -5.1526217, -0.9088421, 3.4245782, -5.1526217, -0.9088421, 3.224578, -5.4526215, -0.9088421, 2.624578, -5.4526215, -0.9088421, 3.3245778, -5.3526216, -0.9088421, 3.624578, -3.8526216, -0.9088421, 3.024578, -3.8526216, -0.9088421, 3.624578, -3.0526216, -0.9088421, 4.924578, -4.052622, -0.9088421, 3.224578, -4.052622, -0.9088421, 3.4245782, -3.8526216, -0.9088421, 4.724578, -4.4526215, -0.9088421, 5.024578, -4.1526213, -0.9088421, 5.024578, -5.1526217, -0.9088421, 1.5245779, -5.3526216, -0.9088421, 1.324578, -5.3526216, -0.9088421, 1.924578, -5.1526217, -0.9088421, 1.7245779, -3.7526217, -0.9088421, 5.424578, -3.5526216, -0.9088421, 6.324578, -2.8526216, -0.9088421, 6.524578, -2.6526215, -0.9088421, 6.024578, -2.8526216, -0.9088421, 5.124578, -2.1526217, -0.9088421, 6.024578, -2.2526217, -0.9088421, 5.124578, -3.8526216, -0.9088421, 1.924578, -4.052622, -0.9088421, 1.5245779, -4.052622, -0.9088421, 1.7245779, -2.4526217, -0.15884209, 1.2245779, -2.4526217, -0.15884209, 4.524578, -2.2526217, -0.15884209, 4.524578, -2.2526217, -0.15884209, 1.2245779, 2.0473785, -0.15884209, 1.2245779, 2.0473785, -0.15884209, 4.624578, 2.2473783, -0.15884209, 4.624578, 2.2473783, -0.15884209, 1.2245779, -4.7526217, -0.15884209, 2.324578, -4.7526217, -0.15884209, 2.624578, -4.4526215, -0.15884209, 2.624578, -4.4526215, -0.15884209, 2.324578, -4.7526217, -0.15884209, 4.024578, -4.7526217, -0.15884209, 4.324578, -4.4526215, -0.15884209, 4.324578, -4.4526215, -0.15884209, 4.024578, 1.8473787, -0.9088421, 6.524578, 2.2473783, -0.9088421, 6.524578, 2.3473787, -0.9088421, 6.324578, 1.6473784, -0.9088421, 6.024578, -0.55262136, -0.9088421, 5.224578, -0.75262165, -0.9088421, 5.024578, -1.6526217, -0.9088421, 4.924578, 2.9473782, -0.9088421, 6.324578, 1.6473784, -0.9088421, 5.224578, 1.4473786, -0.9088421, 5.024578, 0.54737854, -0.9088421, 5.024578, 0.34737825, -0.9088421, 5.224578, -2.3526216, -0.15884209, 6.9245777, 1.3473783, -0.15884209, 7.024578, 1.2473783, -0.15884209, 6.624578, -2.2526217, -0.15884209, 6.624578, 3.8473787, -0.15884209, 6.9245777, 3.7473783, -0.15884209, 6.724578, 3.4473782, -0.15884209, 6.9245777, 4.2473783, -0.15884209, 7.024578, 4.2473783, -0.15884209, 6.8245783, 2.647379, -0.15884209, 6.9245777, -5.2526217, -0.15884209, 6.9245777, -3.6526215, -0.15884209, 7.024578, -4.7526217, -0.15884209, 6.8245783)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(10, 9, 7), PackedInt32Array(7, 9, 8), PackedInt32Array(13, 12, 11), PackedInt32Array(6, 14, 5), PackedInt32Array(5, 14, 15), PackedInt32Array(14, 2, 0), PackedInt32Array(9, 15, 11), PackedInt32Array(11, 15, 13), PackedInt32Array(13, 15, 14), PackedInt32Array(13, 14, 0), PackedInt32Array(9, 10, 15), PackedInt32Array(18, 17, 16), PackedInt32Array(20, 19, 21), PackedInt32Array(21, 19, 22), PackedInt32Array(26, 25, 23), PackedInt32Array(23, 25, 24), PackedInt32Array(26, 23, 27), PackedInt32Array(27, 23, 12), PackedInt32Array(27, 12, 13), PackedInt32Array(16, 22, 19), PackedInt32Array(16, 19, 18), PackedInt32Array(18, 19, 27), PackedInt32Array(18, 27, 13), PackedInt32Array(30, 29, 28), PackedInt32Array(34, 33, 31), PackedInt32Array(31, 33, 32), PackedInt32Array(36, 35, 37), PackedInt32Array(37, 35, 38), PackedInt32Array(38, 35, 39), PackedInt32Array(41, 40, 42), PackedInt32Array(42, 40, 43), PackedInt32Array(44, 39, 45), PackedInt32Array(45, 39, 35), PackedInt32Array(46, 43, 40), PackedInt32Array(46, 47, 43), PackedInt32Array(21, 46, 20), PackedInt32Array(20, 46, 40), PackedInt32Array(20, 40, 38), PackedInt32Array(20, 38, 39), PackedInt32Array(52, 51, 48), PackedInt32Array(48, 51, 49), PackedInt32Array(49, 51, 50), PackedInt32Array(55, 54, 53), PackedInt32Array(57, 48, 56), PackedInt32Array(56, 48, 49), PackedInt32Array(60, 59, 58), PackedInt32Array(61, 64, 62), PackedInt32Array(62, 64, 63), PackedInt32Array(56, 53, 57), PackedInt32Array(57, 53, 54), PackedInt32Array(65, 60, 58), PackedInt32Array(55, 69, 65), PackedInt32Array(65, 69, 68), PackedInt32Array(65, 68, 66), PackedInt32Array(66, 68, 67), PackedInt32Array(70, 68, 71), PackedInt32Array(71, 68, 69), PackedInt32Array(72, 4, 53), PackedInt32Array(53, 4, 55), PackedInt32Array(74, 64, 73), PackedInt32Array(73, 64, 61), PackedInt32Array(65, 58, 55), PackedInt32Array(55, 58, 54), PackedInt32Array(74, 73, 72), PackedInt32Array(72, 73, 3), PackedInt32Array(72, 3, 4), PackedInt32Array(78, 77, 75), PackedInt32Array(75, 77, 76), PackedInt32Array(82, 81, 79), PackedInt32Array(79, 81, 80), PackedInt32Array(86, 85, 83), PackedInt32Array(83, 85, 84), PackedInt32Array(90, 89, 87), PackedInt32Array(87, 89, 88), PackedInt32Array(92, 91, 93), PackedInt32Array(93, 91, 94), PackedInt32Array(96, 95, 97), PackedInt32Array(97, 95, 71), PackedInt32Array(71, 95, 70), PackedInt32Array(96, 97, 8), PackedInt32Array(8, 97, 7), PackedInt32Array(98, 93, 44), PackedInt32Array(44, 93, 39), PackedInt32Array(39, 93, 94), PackedInt32Array(39, 94, 99), PackedInt32Array(101, 24, 100), PackedInt32Array(100, 24, 25), PackedInt32Array(99, 94, 100), PackedInt32Array(100, 94, 101), PackedInt32Array(101, 94, 102), PackedInt32Array(102, 94, 95), PackedInt32Array(95, 94, 70), PackedInt32Array(106, 105, 103), PackedInt32Array(103, 105, 104), PackedInt32Array(109, 108, 107), PackedInt32Array(107, 111, 110), PackedInt32Array(110, 109, 107), PackedInt32Array(112, 109, 110), PackedInt32Array(114, 113, 115)]
+geometry_parsed_geometry_type = 1
+geometry_source_geometry_mode = 1
+geometry_source_group_name = &"nav"
+cell_size = 0.1
+agent_height = 0.25
+agent_radius = 0.25
+
 [node name="World" type="Node3D" unique_id=1234151512]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=791107415]
 environment = SubResource("Environment_03fo6")
 
-[node name="Floor" parent="." unique_id=658043260 instance=ExtResource("1_auuoq")]
+[node name="Floor" parent="." unique_id=658043260 groups=["nav"] instance=ExtResource("1_auuoq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4845808, 0, 0.5042374)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=384212618]
@@ -307,7 +318,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
 [node name="Player" parent="." unique_id=358695189 instance=ExtResource("8_q0dfm")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 5.763813)
 
-[node name="Walls" type="Node3D" parent="." unique_id=1244491971]
+[node name="Walls" type="Node3D" parent="." unique_id=1244491971 groups=["nav"]]
 
 [node name="wall3" parent="Walls" unique_id=1030255793 instance=ExtResource("2_pru2k")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.0154192, 0, 7.004237)
@@ -411,7 +422,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.9
 [node name="wall-corner5" parent="Walls" unique_id=1024855431 groups=["hide_when_blocking"] instance=ExtResource("3_pru2k")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.9691863, 0, 7.0062404)
 
-[node name="Shelves" type="Node3D" parent="." unique_id=1050695453]
+[node name="Shelves" type="Node3D" parent="." unique_id=1050695453 groups=["nav"]]
 
 [node name="Shelf4" parent="Shelves" unique_id=594689916 instance=ExtResource("7_himjv")]
 transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, -0.1064527, 0, 3.3962374)
@@ -449,7 +460,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.12
 [node name="Shelf3" parent="Shelves" unique_id=1227963419 instance=ExtResource("7_himjv")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.1205404, 0, 1.3962374)
 
-[node name="SetDressing" type="Node3D" parent="." unique_id=1290644239]
+[node name="SetDressing" type="Node3D" parent="." unique_id=1290644239 groups=["nav"]]
 
 [node name="shopping-cart7" parent="SetDressing" unique_id=1726653563 instance=ExtResource("7_pru2k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4, 0, 6.2000003)
@@ -511,7 +522,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5924177, 0, 2.45344)
 [node name="cash-register4" parent="SetDressing" unique_id=919580370 instance=ExtResource("10_20fv1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5956316, 0, 0.7698711)
 
-[node name="Supplies" type="Node3D" parent="." unique_id=921647073]
+[node name="Supplies" type="Node3D" parent="." unique_id=921647073 groups=["nav"]]
 
 [node name="Supply" parent="Supplies" unique_id=707864740 instance=ExtResource("9_b8n8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.176178, 0, 6.137633)
@@ -525,7 +536,41 @@ stored_item = ExtResource("9_pru2k")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.382588, 0, 0.46043348)
 stored_item = ExtResource("9_pru2k")
 
-[node name="Doors" type="Node3D" parent="." unique_id=1432827246]
+[node name="Lights" type="Node3D" parent="." unique_id=1241507685]
+
+[node name="Light1" type="OmniLight3D" parent="Lights" unique_id=120894732]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3, 4.284787, 4.8268995)
+shadow_enabled = true
+
+[node name="Light2" type="OmniLight3D" parent="Lights" unique_id=1616228949]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3, 4.284787, 0.8268995)
+shadow_enabled = true
+
+[node name="Light3" type="OmniLight3D" parent="Lights" unique_id=155314652]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 4.284787, 4.8268995)
+shadow_enabled = true
+
+[node name="Light4" type="OmniLight3D" parent="Lights" unique_id=1626883329]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 4.284787, 0.8268995)
+shadow_enabled = true
+
+[node name="Light5" type="OmniLight3D" parent="Lights" unique_id=1257267297]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1, 4.284787, 4.8268995)
+shadow_enabled = true
+
+[node name="Light6" type="OmniLight3D" parent="Lights" unique_id=562632409]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1, 4.284787, 0.8268995)
+shadow_enabled = true
+
+[node name="Light7" type="OmniLight3D" parent="Lights" unique_id=1375432589]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3, 4.284787, 4.8268995)
+shadow_enabled = true
+
+[node name="Light8" type="OmniLight3D" parent="Lights" unique_id=475415109]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3, 4.284787, 0.8268995)
+shadow_enabled = true
+
+[node name="Doors" type="Node3D" parent="." unique_id=1432827246 groups=["nav"]]
 
 [node name="wall-door-rotate5" parent="Doors" unique_id=401020626 groups=["hide_when_blocking"] instance=ExtResource("4_pru2k")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.954607, 0, 1)
@@ -539,34 +584,42 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.00
 [node name="wall-door-rotate3" parent="Doors" unique_id=1645615455 instance=ExtResource("4_pru2k")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0004196, 0, 4.004237)
 
-[node name="Light1" type="OmniLight3D" parent="." unique_id=120894732]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3, 4.284787, 4.8268995)
-shadow_enabled = true
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1888896631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1057434, 0)
+navigation_mesh = SubResource("NavigationMesh_58gb0")
 
-[node name="Light2" type="OmniLight3D" parent="." unique_id=1616228949]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 3, 4.284787, 0.8268995)
-shadow_enabled = true
+[node name="Shopper" parent="." unique_id=762169485 node_paths=PackedStringArray("shelves_in_store") instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5)
+shelves_in_store = [NodePath("../Shelves/Shelf4"), NodePath("../Shelves/Shelf5"), NodePath("../Shelves/Shelf6"), NodePath("../Shelves/Shelf7"), NodePath("../Shelves/Shelf8"), NodePath("../Shelves/Shelf9"), NodePath("../Shelves/Shelf10"), NodePath("../Shelves/Shelf11"), NodePath("../Shelves/Shelf12"), NodePath("../Shelves/Shelf"), NodePath("../Shelves/Shelf2"), NodePath("../Shelves/Shelf3")]
 
-[node name="Light3" type="OmniLight3D" parent="." unique_id=155314652]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 4.284787, 4.8268995)
-shadow_enabled = true
+[node name="Shopper2" parent="." unique_id=1066043130 node_paths=PackedStringArray("shelves_in_store") instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
+shelves_in_store = [NodePath("../Shelves/Shelf4"), NodePath("../Shelves/Shelf5"), NodePath("../Shelves/Shelf6"), NodePath("../Shelves/Shelf7"), NodePath("../Shelves/Shelf8"), NodePath("../Shelves/Shelf9"), NodePath("../Shelves/Shelf10"), NodePath("../Shelves/Shelf11"), NodePath("../Shelves/Shelf12"), NodePath("../Shelves/Shelf"), NodePath("../Shelves/Shelf2"), NodePath("../Shelves/Shelf3")]
 
-[node name="Light4" type="OmniLight3D" parent="." unique_id=1626883329]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 1, 4.284787, 0.8268995)
-shadow_enabled = true
+[node name="Shopper3" parent="." unique_id=71801609 node_paths=PackedStringArray("shelves_in_store") instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5)
+shelves_in_store = [NodePath("../Shelves/Shelf4"), NodePath("../Shelves/Shelf5"), NodePath("../Shelves/Shelf6"), NodePath("../Shelves/Shelf7"), NodePath("../Shelves/Shelf8"), NodePath("../Shelves/Shelf9"), NodePath("../Shelves/Shelf10"), NodePath("../Shelves/Shelf11"), NodePath("../Shelves/Shelf12"), NodePath("../Shelves/Shelf"), NodePath("../Shelves/Shelf2"), NodePath("../Shelves/Shelf3")]
 
-[node name="Light5" type="OmniLight3D" parent="." unique_id=1257267297]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1, 4.284787, 4.8268995)
-shadow_enabled = true
+[node name="Shopper4" parent="." unique_id=2026113693 node_paths=PackedStringArray("shelves_in_store") instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+shelves_in_store = [NodePath("../Shelves/Shelf4"), NodePath("../Shelves/Shelf5"), NodePath("../Shelves/Shelf6"), NodePath("../Shelves/Shelf7"), NodePath("../Shelves/Shelf8"), NodePath("../Shelves/Shelf9"), NodePath("../Shelves/Shelf10"), NodePath("../Shelves/Shelf11"), NodePath("../Shelves/Shelf12"), NodePath("../Shelves/Shelf"), NodePath("../Shelves/Shelf2"), NodePath("../Shelves/Shelf3")]
 
-[node name="Light6" type="OmniLight3D" parent="." unique_id=562632409]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1, 4.284787, 0.8268995)
-shadow_enabled = true
+[node name="Shopper5" parent="." unique_id=992316183 node_paths=PackedStringArray("shelves_in_store") instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+shelves_in_store = [NodePath("../Shelves/Shelf4"), NodePath("../Shelves/Shelf5"), NodePath("../Shelves/Shelf6"), NodePath("../Shelves/Shelf7"), NodePath("../Shelves/Shelf8"), NodePath("../Shelves/Shelf9"), NodePath("../Shelves/Shelf10"), NodePath("../Shelves/Shelf11"), NodePath("../Shelves/Shelf12"), NodePath("../Shelves/Shelf"), NodePath("../Shelves/Shelf2"), NodePath("../Shelves/Shelf3")]
 
-[node name="Light7" type="OmniLight3D" parent="." unique_id=1375432589]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3, 4.284787, 4.8268995)
-shadow_enabled = true
+[node name="Shopper6" parent="." unique_id=1536712306 node_paths=PackedStringArray("shelves_in_store") instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+shelves_in_store = [NodePath("../Shelves/Shelf4"), NodePath("../Shelves/Shelf5"), NodePath("../Shelves/Shelf6"), NodePath("../Shelves/Shelf7"), NodePath("../Shelves/Shelf8"), NodePath("../Shelves/Shelf9"), NodePath("../Shelves/Shelf10"), NodePath("../Shelves/Shelf11"), NodePath("../Shelves/Shelf12"), NodePath("../Shelves/Shelf"), NodePath("../Shelves/Shelf2"), NodePath("../Shelves/Shelf3")]
 
-[node name="Light8" type="OmniLight3D" parent="." unique_id=475415109]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3, 4.284787, 0.8268995)
-shadow_enabled = true
+[node name="Shopper7" parent="." unique_id=1047204420 node_paths=PackedStringArray("shelves_in_store") instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+shelves_in_store = [NodePath("../Shelves/Shelf4"), NodePath("../Shelves/Shelf5"), NodePath("../Shelves/Shelf6"), NodePath("../Shelves/Shelf7"), NodePath("../Shelves/Shelf8"), NodePath("../Shelves/Shelf9"), NodePath("../Shelves/Shelf10"), NodePath("../Shelves/Shelf11"), NodePath("../Shelves/Shelf12"), NodePath("../Shelves/Shelf"), NodePath("../Shelves/Shelf2"), NodePath("../Shelves/Shelf3")]
+
+[node name="Shopper8" parent="." unique_id=1278161404 node_paths=PackedStringArray("shelves_in_store") instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+shelves_in_store = [NodePath("../Shelves/Shelf4"), NodePath("../Shelves/Shelf5"), NodePath("../Shelves/Shelf6"), NodePath("../Shelves/Shelf7"), NodePath("../Shelves/Shelf8"), NodePath("../Shelves/Shelf9"), NodePath("../Shelves/Shelf10"), NodePath("../Shelves/Shelf11"), NodePath("../Shelves/Shelf12"), NodePath("../Shelves/Shelf"), NodePath("../Shelves/Shelf2"), NodePath("../Shelves/Shelf3")]
+
+[node name="Shopper9" parent="." unique_id=2069391671 node_paths=PackedStringArray("shelves_in_store") instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3, 0, 3.3)
+shelves_in_store = [NodePath("../Shelves/Shelf4"), NodePath("../Shelves/Shelf5"), NodePath("../Shelves/Shelf6"), NodePath("../Shelves/Shelf7"), NodePath("../Shelves/Shelf8"), NodePath("../Shelves/Shelf9"), NodePath("../Shelves/Shelf10"), NodePath("../Shelves/Shelf11"), NodePath("../Shelves/Shelf12"), NodePath("../Shelves/Shelf"), NodePath("../Shelves/Shelf2"), NodePath("../Shelves/Shelf3")]

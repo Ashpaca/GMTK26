@@ -12,6 +12,7 @@ height = 0.6
 radius = 0.35
 
 [node name="Player" type="CharacterBody3D" unique_id=358695189]
+collision_layer = 3
 script = ExtResource("1_6ekb1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=338504041]
@@ -22,8 +23,8 @@ shape = SubResource("CapsuleShape3D_58gb0")
 
 [node name="Skeleton3D" parent="Visuals/character-employee" parent_id_path=PackedInt32Array(1805472682, 1363094276) index="0" unique_id=1485181547]
 bones/1/rotation = Quaternion(-4.34492e-40, -1.4687576e-09, 5.916457e-31, 1)
-bones/2/rotation = Quaternion(-4.34492e-40, -1.4687576e-09, 5.916457e-31, 1)
-bones/3/rotation = Quaternion(-5.916457e-31, 1.4940564e-09, 7.888609e-31, 1)
+bones/2/rotation = Quaternion(-4.34492e-40, -1.4687578e-09, 5.916457e-31, 1)
+bones/3/rotation = Quaternion(-5.916457e-31, 1.4940567e-09, 7.888609e-31, 1)
 bones/4/rotation = Quaternion(-2.8653084e-09, -1.1868514e-09, -0.38268346, 0.92387956)
 bones/5/rotation = Quaternion(-2.8653093e-09, 1.1868486e-09, 0.38268346, 0.92387956)
 bones/6/rotation = Quaternion(-3.9443045e-31, -1.550692e-09, 6.902533e-31, 1)
@@ -38,6 +39,10 @@ shape = SubResource("CylinderShape3D_58gb0")
 transform = Transform3D(0.70710677, -0.3535534, 0.6123724, 0, 0.8660254, 0.50000006, -0.70710677, -0.3535534, 0.6123724, 5.9999995, 5.4, 6)
 projection = 1
 size = 5.0
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1512912954]
+avoidance_enabled = true
+radius = 0.3
 
 [connection signal="animation_finished" from="Visuals/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 

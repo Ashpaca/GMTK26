@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bc26jrpphkke5"]
+
+[ext_resource type="Script" uid="uid://cgbxhnfp7gtsk" path="res://res/npcs/shopper.gd" id="1_ii3ul"]
+[ext_resource type="PackedScene" uid="uid://crmnt1hpoho7t" path="res://assets/models/character-female-f.glb" id="1_j4fhr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_58gb0"]
+radius = 0.255
+height = 0.8
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_58gb0"]
+height = 0.74005127
+radius = 0.29589844
+
+[node name="Shopper" type="CharacterBody3D" unique_id=762169485]
+script = ExtResource("1_ii3ul")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1762956132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("CapsuleShape3D_58gb0")
+
+[node name="Visuals" parent="." unique_id=559007634 instance=ExtResource("1_j4fhr")]
+
+[node name="character-female-f" parent="Visuals" index="0" unique_id=1275657698]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Visuals/character-female-f" index="0" unique_id=138863874]
+bones/4/rotation = Quaternion(0, 0, -0.3826835, 0.92387956)
+bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=29266514]
+path_desired_distance = 0.3
+target_desired_distance = 0.3
+path_max_distance = 1.01
+avoidance_enabled = true
+radius = 0.35
+
+[node name="PlayerDetector" type="Area3D" parent="." unique_id=1100747823]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetector" unique_id=1521541174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3699646, 0)
+shape = SubResource("CylinderShape3D_58gb0")
+
+[node name="GetUpTimer" type="Timer" parent="." unique_id=160973641]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="animation_finished" from="Visuals/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="timeout" from="GetUpTimer" to="." method="_on_get_up_timer_timeout"]
+
+[editable path="Visuals"]
