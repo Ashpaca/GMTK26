@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bg0p1hd46kjnp"]
 
-[ext_resource type="PackedScene" uid="uid://bnix5b3v3idxv" path="res://res/player/player.tscn" id="1_2a5j2"]
-[ext_resource type="PackedScene" uid="uid://d3pnpygx7ncsd" path="res://res/shelf/shelf.tscn" id="2_awmjh"]
-[ext_resource type="PackedScene" uid="uid://dsf13233fdvsy" path="res://assets/models/floor.glb" id="3_imw6u"]
-[ext_resource type="PackedScene" uid="uid://7f23rmcqlt64" path="res://res/supplies/supply.tscn" id="4_1fh84"]
-[ext_resource type="PackedScene" uid="uid://cxdpmr25ghc52" path="res://res/supplies/item.tscn" id="5_mccda"]
+[ext_resource type="PackedScene" uid="uid://bnix5b3v3idxv" path="res://res/player/player.tscn" id="1_tho5s"]
+[ext_resource type="PackedScene" uid="uid://d3pnpygx7ncsd" path="res://res/shelf/shelf.tscn" id="2_agl0y"]
+[ext_resource type="PackedScene" uid="uid://dsf13233fdvsy" path="res://assets/models/floor.glb" id="3_75xgm"]
+[ext_resource type="PackedScene" uid="uid://7f23rmcqlt64" path="res://res/supplies/supply.tscn" id="4_txhas"]
+[ext_resource type="PackedScene" uid="uid://cxdpmr25ghc52" path="res://res/supplies/item.tscn" id="5_p6bk4"]
+[ext_resource type="Script" uid="uid://dksfa0mkmuppi" path="res://res/testing_things/test_label.gd" id="6_5j4bb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2a5j2"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -43,7 +44,7 @@ shape = SubResource("BoxShape3D_58gb0")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1496097671]
 mesh = SubResource("BoxMesh_58gb0")
 
-[node name="Player" parent="." unique_id=358695189 instance=ExtResource("1_2a5j2")]
+[node name="Player" parent="." unique_id=358695189 instance=ExtResource("1_tho5s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5803198, 0.9958818)
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=97303959]
@@ -51,26 +52,31 @@ transform = Transform3D(0.70710677, -0.3535534, 0.6123724, 0, 0.8660254, 0.50000
 projection = 1
 size = 2.5
 
-[node name="Shelf" parent="." unique_id=594689916 instance=ExtResource("2_awmjh")]
+[node name="Shelf" parent="." unique_id=594689916 instance=ExtResource("2_agl0y")]
 
-[node name="Shelf2" parent="." unique_id=1107425615 instance=ExtResource("2_awmjh")]
+[node name="Shelf2" parent="." unique_id=1107425615 instance=ExtResource("2_agl0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 
-[node name="Shelf3" parent="." unique_id=879512899 instance=ExtResource("2_awmjh")]
+[node name="Shelf3" parent="." unique_id=879512899 instance=ExtResource("2_agl0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 
-[node name="Shelf4" parent="." unique_id=707634635 instance=ExtResource("2_awmjh")]
+[node name="Shelf4" parent="." unique_id=707634635 instance=ExtResource("2_agl0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
-[node name="Shelf5" parent="." unique_id=1258157071 instance=ExtResource("2_awmjh")]
+[node name="Shelf5" parent="." unique_id=1258157071 instance=ExtResource("2_agl0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
 
-[node name="Shelf6" parent="." unique_id=1266302164 instance=ExtResource("2_awmjh")]
+[node name="Shelf6" parent="." unique_id=1266302164 instance=ExtResource("2_agl0y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
 
-[node name="floor2" parent="." unique_id=1847716688 instance=ExtResource("3_imw6u")]
+[node name="floor2" parent="." unique_id=1847716688 instance=ExtResource("3_75xgm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
 
-[node name="Supply" parent="." unique_id=707864740 instance=ExtResource("4_1fh84")]
+[node name="Supply" parent="." unique_id=707864740 instance=ExtResource("4_txhas")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4263644, 0, -2.8057694)
-stored_item = ExtResource("5_mccda")
+stored_item = ExtResource("5_p6bk4")
+
+[node name="TestLabel" type="Label" parent="." unique_id=304504673]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("6_5j4bb")

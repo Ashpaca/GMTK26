@@ -15,6 +15,10 @@ run/main_scene="uid://dee3flhevpklk"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameState="*uid://wo06le0ngjqt"
+
 [input]
 
 move_up={
