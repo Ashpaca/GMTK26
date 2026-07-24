@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://bg0p1hd46kjnp"]
 
 [ext_resource type="PackedScene" uid="uid://bnix5b3v3idxv" path="res://res/player/player.tscn" id="1_tho5s"]
+[ext_resource type="PackedScene" uid="uid://dng7waixdnqk8" path="res://assets/models/wall-window.glb" id="2_75xgm"]
 [ext_resource type="PackedScene" uid="uid://d3pnpygx7ncsd" path="res://res/shelf/shelf.tscn" id="2_agl0y"]
 [ext_resource type="PackedScene" uid="uid://dsf13233fdvsy" path="res://assets/models/floor.glb" id="3_75xgm"]
+[ext_resource type="PackedScene" uid="uid://c6l5msi7x14lf" path="res://assets/models/wall.glb" id="3_txhas"]
 [ext_resource type="PackedScene" uid="uid://7f23rmcqlt64" path="res://res/supplies/supply.tscn" id="4_txhas"]
 [ext_resource type="PackedScene" uid="uid://cxdpmr25ghc52" path="res://res/supplies/item.tscn" id="5_p6bk4"]
 [ext_resource type="Script" uid="uid://dksfa0mkmuppi" path="res://res/testing_things/test_label.gd" id="6_5j4bb"]
+[ext_resource type="PackedScene" uid="uid://fwq6skc63g52" path="res://assets/models/freezers-standing.glb" id="9_txhas"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2a5j2"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -50,7 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5803198, 0.9958818)
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=97303959]
 transform = Transform3D(0.70710677, -0.3535534, 0.6123724, 0, 0.8660254, 0.50000006, -0.70710677, -0.3535534, 0.6123724, 5.9999995, 5.4, 6)
 projection = 1
-size = 2.5
+size = 5.0
 
 [node name="Shelf" parent="." unique_id=594689916 instance=ExtResource("2_agl0y")]
 
@@ -76,7 +79,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4263644, 0, -2.8057694)
 stored_item = ExtResource("5_p6bk4")
 
+[node name="wall-window2" parent="." unique_id=1935848499 instance=ExtResource("2_75xgm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="wall2" parent="." unique_id=1030255793 instance=ExtResource("3_txhas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+
+[node name="wall-window3" parent="." unique_id=632830024 instance=ExtResource("2_75xgm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
 [node name="TestLabel" type="Label" parent="." unique_id=304504673]
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("6_5j4bb")
+
+[node name="freezers-standing2" parent="." unique_id=700972319 instance=ExtResource("9_txhas")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -1)
