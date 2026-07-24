@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 
@@ -6,12 +7,14 @@ const HELD_SPEED = 3.5
 @onready var animation_player: AnimationPlayer = $Visuals/AnimationPlayer
 @onready var visuals: Node3D = $Visuals
 @onready var interaction_zone: Area3D = $Visuals/InteractionZone
+@onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 var is_stocking : bool
 var is_picking_up : bool
 var is_dropping : bool
 var held_item : Item
 var shelf_to_stock : Shelf
 var supply_to_grab : Supply
+var run_speed_multiplier : float = 0.8
 
 func handle_interaction() -> void:
 	for body in interaction_zone.get_overlapping_bodies():
@@ -31,6 +34,10 @@ func handle_interaction() -> void:
 				else:
 					is_dropping = true
 					animation_player.play_backwards("pick-up")
+
+
+func is_running() -> bool:
+	return run_speed_multiplier > 1.0
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
@@ -54,17 +61,24 @@ func _physics_process(delta: float) -> void:
 		handle_interaction()
 	if is_stocking or is_picking_up or is_dropping: return
 	
+	if Input.is_action_pressed("run"):
+		navigation_agent_3d.radius = 2
+		run_speed_multiplier = 1.1
+	else:
+		navigation_agent_3d.radius = 0.3
+		run_speed_multiplier = 0.8
+	
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized().rotated(Vector3.UP, PI/4)
 	if direction:
 		visuals.look_at(global_position - direction)
 		if held_item:
-			velocity.x = direction.x * HELD_SPEED
-			velocity.z = direction.z * HELD_SPEED
+			velocity.x = direction.x * HELD_SPEED * run_speed_multiplier
+			velocity.z = direction.z * HELD_SPEED * run_speed_multiplier
 			animation_player.play("walk_holding_character-employee")
 		else:
-			velocity.x = direction.x * SPEED
-			velocity.z = direction.z * SPEED
+			velocity.x = direction.x * SPEED * run_speed_multiplier
+			velocity.z = direction.z * SPEED * run_speed_multiplier
 			animation_player.play("walk")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)

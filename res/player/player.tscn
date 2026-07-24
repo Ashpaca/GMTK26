@@ -12,6 +12,7 @@ height = 0.6
 radius = 0.35
 
 [node name="Player" type="CharacterBody3D" unique_id=358695189]
+collision_layer = 3
 script = ExtResource("1_6ekb1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=338504041]
@@ -41,7 +42,7 @@ size = 5.0
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1512912954]
 avoidance_enabled = true
-radius = 0.25
+radius = 0.3
 
 [connection signal="animation_finished" from="Visuals/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 

@@ -7,6 +7,10 @@
 radius = 0.255
 height = 0.8
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_58gb0"]
+height = 0.74005127
+radius = 0.29589844
+
 [node name="Shopper" type="CharacterBody3D" unique_id=762169485]
 script = ExtResource("1_ii3ul")
 
@@ -16,10 +20,25 @@ shape = SubResource("CapsuleShape3D_58gb0")
 
 [node name="character-female-f2" parent="." unique_id=559007634 instance=ExtResource("1_j4fhr")]
 
+[node name="Skeleton3D" parent="character-female-f2/character-female-f" parent_id_path=PackedInt32Array(559007634, 1275657698) index="0" unique_id=138863874]
+bones/4/rotation = Quaternion(0, 0, -0.38268346, 0.9238795)
+bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
+
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=29266514]
 path_desired_distance = 0.5
 target_desired_distance = 0.5
 avoidance_enabled = true
-radius = 0.25
+radius = 0.35
+
+[node name="PlayerDetector" type="Area3D" parent="." unique_id=1100747823]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetector" unique_id=1521541174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3699646, 0)
+shape = SubResource("CylinderShape3D_58gb0")
 
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+
+[editable path="character-female-f2"]

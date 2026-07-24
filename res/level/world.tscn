@@ -582,6 +582,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -3, 
 shadow_enabled = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1888896631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23557746, 0)
 navigation_mesh = SubResource("NavigationMesh_58gb0")
 
 [node name="Shopper" parent="." unique_id=762169485 instance=ExtResource("14_03fo6")]
@@ -592,3 +593,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4)
 
 [node name="Shopper3" parent="." unique_id=71801609 instance=ExtResource("14_03fo6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 5)
+
+[node name="Shopper4" parent="." unique_id=2026113693 instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3)
+
+[node name="Shopper5" parent="." unique_id=992316183 instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+
+[node name="Shopper6" parent="." unique_id=1536712306 instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="Shopper7" parent="." unique_id=1047204420 instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+
+[node name="Shopper8" parent="." unique_id=1278161404 instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Shopper9" parent="." unique_id=2069391671 instance=ExtResource("14_03fo6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
