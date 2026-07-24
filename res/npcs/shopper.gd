@@ -1,8 +1,10 @@
 extends CharacterBody3D
 
-const SPEED = 1
+const SPEED : float = 1
+const DEATH_OFFSET : Vector3 = Vector3(0, 0, .35)
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
-@onready var animation_player: AnimationPlayer = $"character-female-f2/AnimationPlayer"
+@onready var animation_player: AnimationPlayer = $Visuals/AnimationPlayer
+@onready var visuals: Node3D = $Visuals
 
 var is_dead : bool
 
@@ -17,6 +19,12 @@ func _physics_process(delta: float) -> void:
 	navigation_agent_3d.target_position = Vector3(-5.3, 0, 3.3)
 	var next_point : Vector3 = (navigation_agent_3d.get_next_path_position() - global_position) * SPEED
 	navigation_agent_3d.velocity = next_point
+	
+	if velocity.is_zero_approx():
+		animation_player.play("idle")
+	else:
+		animation_player.play("walk")
+		visuals.look_at(global_position - velocity)
 	move_and_slide()
 
 
@@ -31,4 +39,5 @@ func _on_player_detector_body_entered(body: Node3D) -> void:
 		var player : Player = body
 		if player.is_running():
 			animation_player.play("die")
+			visuals.position = DEATH_OFFSET.rotated(Vector3.UP, visuals.rotation.y)
 			is_dead = true

@@ -18,10 +18,10 @@ script = ExtResource("1_ii3ul")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 shape = SubResource("CapsuleShape3D_58gb0")
 
-[node name="character-female-f2" parent="." unique_id=559007634 instance=ExtResource("1_j4fhr")]
+[node name="Visuals" parent="." unique_id=559007634 instance=ExtResource("1_j4fhr")]
 
-[node name="Skeleton3D" parent="character-female-f2/character-female-f" parent_id_path=PackedInt32Array(559007634, 1275657698) index="0" unique_id=138863874]
-bones/4/rotation = Quaternion(0, 0, -0.38268346, 0.9238795)
+[node name="Skeleton3D" parent="Visuals/character-female-f" parent_id_path=PackedInt32Array(559007634, 1275657698) index="0" unique_id=138863874]
+bones/4/rotation = Quaternion(0, 0, -0.3826835, 0.92387956)
 bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=29266514]
@@ -41,4 +41,4 @@ shape = SubResource("CylinderShape3D_58gb0")
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 
-[editable path="character-female-f2"]
+[editable path="Visuals"]
