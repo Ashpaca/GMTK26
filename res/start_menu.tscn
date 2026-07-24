@@ -1,7 +1,88 @@
 [gd_scene format=3 uid="uid://bssgc15i8fl52"]
 
-[ext_resource type="FontFile" uid="uid://dwoxr6da04jdx" path="res://assets/fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf" id="1_piys8"]
+[ext_resource type="Shader" uid="uid://thqwbr8ogg3i" path="res://assets/shaders/start_menu.gdshader" id="1_3iesf"]
 [ext_resource type="FontFile" uid="uid://bsyju1mhtdxgd" path="res://assets/fonts/Coiny/Coiny-Regular.ttf" id="2_0khnd"]
+[ext_resource type="Texture2D" uid="uid://1vm2lswbg5ur" path="res://assets/ui/grocery_bg_texture_downscaled_v3.png" id="2_3iesf"]
+[ext_resource type="Script" uid="uid://67qkkdi73o48" path="res://res/start_menu_bg_scroll_speed.gd" id="3_yybdg"]
+[ext_resource type="Shader" uid="uid://by2db01o2jt1g" path="res://assets/shaders/font_gradient.gdshader" id="4_aisge"]
+[ext_resource type="FontFile" uid="uid://cxsjdnouuhyq0" path="res://assets/fonts/Titan_One/TitanOne-Regular.ttf" id="5_aisge"]
+[ext_resource type="Script" uid="uid://vj3t2ex6iti1" path="res://res/globals/font_gradient_set_line_height.gd" id="7_iwya6"]
+
+[sub_resource type="Gradient" id="Gradient_piys8"]
+colors = PackedColorArray(0.38039216, 0.79607844, 0.54509807, 1, 0.38039216, 0.79607844, 0.54509807, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_piys8"]
+gradient = SubResource("Gradient_piys8")
+fill_from = Vector2(0.5347826, 0.039130434)
+fill_to = Vector2(0.51304346, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yybdg"]
+shader = ExtResource("1_3iesf")
+shader_parameter/scroll_speed = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aisge"]
+shader = ExtResource("1_3iesf")
+shader_parameter/scroll_speed = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iwya6"]
+shader = ExtResource("1_3iesf")
+shader_parameter/scroll_speed = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_trvbb"]
+shader = ExtResource("1_3iesf")
+shader_parameter/scroll_speed = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ss2v"]
+shader = ExtResource("1_3iesf")
+shader_parameter/scroll_speed = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qnuti"]
+shader = ExtResource("1_3iesf")
+shader_parameter/scroll_speed = 0.0
+
+[sub_resource type="Shader" id="Shader_yybdg"]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+uniform sampler2D gradient;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+    COLOR.a=texture(TEXTURE,UV).a;
+	vec2 my_uv=vec2(UV.y*10.0,0.0);
+	COLOR.rgb=COLOR.rgb*texture(gradient,my_uv).rgb;
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="Gradient" id="Gradient_aisge"]
+colors = PackedColorArray(1, 0.8352941, 0.39607844, 1, 1, 0.58431375, 0.22352941, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aisge"]
+gradient = SubResource("Gradient_aisge")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_awxhe"]
+shader = SubResource("Shader_yybdg")
+shader_parameter/gradient = SubResource("GradientTexture2D_aisge")
+
+[sub_resource type="Gradient" id="Gradient_iwya6"]
+offsets = PackedFloat32Array(0.20149253, 0.7835821)
+colors = PackedColorArray(0.8156863, 0.9098039, 1, 1, 0.40392157, 0.5803922, 0.8509804, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b21be"]
+gradient = SubResource("Gradient_iwya6")
+fill_to = Vector2(0.9747475, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b2jbu"]
+shader = ExtResource("4_aisge")
+shader_parameter/gradient = SubResource("GradientTexture2D_b21be")
+shader_parameter/line_height = 0.0
 
 [node name="StartMenu" type="Control" unique_id=1374934236]
 layout_mode = 3
@@ -11,7 +92,78 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=507608903]
+[node name="FlatBackground" type="TextureRect" parent="." unique_id=326471122]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_piys8")
+
+[node name="ScrollingBoxContainer" type="VBoxContainer" parent="." unique_id=1398404023]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -301.0
+offset_top = 346.0
+offset_right = -172.99097
+offset_bottom = 1005.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.7853982
+theme_override_constants/separation = 50
+
+[node name="ScrollingTextureRect1" type="TextureRect" parent="ScrollingBoxContainer" unique_id=880987198]
+material = SubResource("ShaderMaterial_yybdg")
+layout_mode = 2
+texture = ExtResource("2_3iesf")
+stretch_mode = 1
+script = ExtResource("3_yybdg")
+scroll_speed = -0.2
+
+[node name="ScrollingTextureRect2" type="TextureRect" parent="ScrollingBoxContainer" unique_id=270993124]
+material = SubResource("ShaderMaterial_aisge")
+layout_mode = 2
+texture = ExtResource("2_3iesf")
+stretch_mode = 1
+script = ExtResource("3_yybdg")
+scroll_speed = 0.2
+
+[node name="ScrollingTextureRect3" type="TextureRect" parent="ScrollingBoxContainer" unique_id=385650163]
+material = SubResource("ShaderMaterial_iwya6")
+layout_mode = 2
+texture = ExtResource("2_3iesf")
+stretch_mode = 1
+script = ExtResource("3_yybdg")
+scroll_speed = -0.2
+
+[node name="ScrollingTextureRect4" type="TextureRect" parent="ScrollingBoxContainer" unique_id=976243790]
+material = SubResource("ShaderMaterial_trvbb")
+layout_mode = 2
+texture = ExtResource("2_3iesf")
+stretch_mode = 1
+script = ExtResource("3_yybdg")
+scroll_speed = 0.2
+
+[node name="ScrollingTextureRect5" type="TextureRect" parent="ScrollingBoxContainer" unique_id=1165647708]
+material = SubResource("ShaderMaterial_8ss2v")
+layout_mode = 2
+texture = ExtResource("2_3iesf")
+stretch_mode = 1
+script = ExtResource("3_yybdg")
+scroll_speed = -0.2
+
+[node name="ScrollingTextureRect6" type="TextureRect" parent="ScrollingBoxContainer" unique_id=254640319]
+material = SubResource("ShaderMaterial_qnuti")
+layout_mode = 2
+texture = ExtResource("2_3iesf")
+stretch_mode = 1
+script = ExtResource("3_yybdg")
+scroll_speed = 0.2
+
+[node name="MetaMarginContainer" type="MarginContainer" parent="." unique_id=507608903]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,36 +176,68 @@ theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1837525844]
+[node name="HBoxContainer" type="HBoxContainer" parent="MetaMarginContainer" unique_id=1837525844]
 layout_mode = 2
 
-[node name="MarginContainerL" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=500818406]
+[node name="MarginContainerL" type="MarginContainer" parent="MetaMarginContainer/HBoxContainer" unique_id=500818406]
 layout_mode = 2
-theme_override_constants/margin_right = 280
+theme_override_constants/margin_right = 230
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1522871224]
+[node name="VBoxContainer" type="VBoxContainer" parent="MetaMarginContainer/HBoxContainer" unique_id=1522871224]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 30
 
-[node name="Title" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=883653516]
+[node name="Title" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer" unique_id=883653516]
+material = SubResource("ShaderMaterial_awxhe")
 custom_minimum_size = Vector2(0, 128)
 clip_contents = false
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("1_piys8")
+theme_override_fonts/normal_font = ExtResource("5_aisge")
 theme_override_font_sizes/normal_font_size = 64
-text = "Shop Til You
-Drop"
+text = "SHOP TIL YOU
+DROP"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("7_iwya6")
+
+[node name="TitleShadow" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/Title" unique_id=2056431860]
+show_behind_parent = true
+custom_minimum_size = Vector2(0, 128)
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 0.40392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("5_aisge")
+theme_override_font_sizes/normal_font_size = 64
+text = "SHOP TIL YOU
+DROP"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=356109987]
+[node name="HBoxContainer" type="HBoxContainer" parent="MetaMarginContainer/HBoxContainer/VBoxContainer" unique_id=1699101372]
 layout_mode = 2
+
+[node name="SubMarginContainerL" type="MarginContainer" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1422721730]
+layout_mode = 2
+theme_override_constants/margin_right = 150
+
+[node name="MenuOptions" type="VBoxContainer" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=356109987]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 30
 
-[node name="StartButtonLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions" unique_id=195431751]
+[node name="StartLabel" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions" unique_id=195431751]
+material = SubResource("ShaderMaterial_b2jbu")
 custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_0khnd")
@@ -62,8 +246,29 @@ text = "Start"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+script = ExtResource("7_iwya6")
 
-[node name="OptionsButtonLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions" unique_id=132185179]
+[node name="StartLabelShadow" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/StartLabel" unique_id=1005546578]
+show_behind_parent = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 0.40392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("2_0khnd")
+theme_override_font_sizes/normal_font_size = 36
+text = "Start"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="OptionsLabel" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions" unique_id=2079853685]
+material = SubResource("ShaderMaterial_b2jbu")
 custom_minimum_size = Vector2(0, 38)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_0khnd")
@@ -72,9 +277,31 @@ text = "Options"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+script = ExtResource("7_iwya6")
 
-[node name="QuitButtonLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions" unique_id=1954106071]
+[node name="OptionsLabelShadow" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/OptionsLabel" unique_id=1557629545]
+show_behind_parent = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 0.40392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("2_0khnd")
+theme_override_font_sizes/normal_font_size = 36
+text = "Options"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="QuitLabel" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions" unique_id=1717143302]
+material = SubResource("ShaderMaterial_b2jbu")
 custom_minimum_size = Vector2(0, 38)
+clip_contents = false
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_0khnd")
 theme_override_font_sizes/normal_font_size = 36
@@ -82,8 +309,33 @@ text = "Quit"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+script = ExtResource("7_iwya6")
 
-[node name="Attribution" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=724831664]
+[node name="QuitLabelShadow" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/QuitLabel" unique_id=163145911]
+show_behind_parent = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 0.40392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("2_0khnd")
+theme_override_font_sizes/normal_font_size = 36
+text = "Quit
+"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="SubMarginContainerR" type="MarginContainer" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1014210357]
+layout_mode = 2
+theme_override_constants/margin_left = 150
+
+[node name="Attribution" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer" unique_id=724831664]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_0khnd")
@@ -93,6 +345,6 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="MarginContainerR" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=412779907]
+[node name="MarginContainerR" type="MarginContainer" parent="MetaMarginContainer/HBoxContainer" unique_id=412779907]
 layout_mode = 2
-theme_override_constants/margin_left = 280
+theme_override_constants/margin_left = 230
