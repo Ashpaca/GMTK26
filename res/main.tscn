@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dee3flhevpklk"]
 
-[ext_resource type="PackedScene" uid="uid://dsf13233fdvsy" path="res://assets/models/floor.glb" id="1_rj6c6"]
+[ext_resource type="PackedScene" uid="uid://bg0p1hd46kjnp" path="res://res/testing_things/ashleys_test_space.tscn" id="1_wf6i0"]
+[ext_resource type="PackedScene" uid="uid://bssgc15i8fl52" path="res://res/start_menu.tscn" id="2_7y7fh"]
 
 [node name="Main" type="Node3D" unique_id=1946818163]
 
-[node name="floor2" parent="." unique_id=658043260 instance=ExtResource("1_rj6c6")]
-transform = Transform3D(1, 0, 0, 0, -0.9998332, 0.018261101, 0, -0.018261101, -0.9998332, -0.5351862, -1.1920929e-07, 1.0937068)
+[node name="AshleysTestSpace" parent="." unique_id=1039985466 instance=ExtResource("1_wf6i0")]
+
+[node name="StartMenu" parent="." unique_id=1374934236 instance=ExtResource("2_7y7fh")]
