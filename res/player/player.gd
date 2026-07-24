@@ -18,9 +18,10 @@ func handle_interaction() -> void:
 			if body is Shelf:
 				var shelf : Shelf = body
 				if not shelf.is_stocked and held_item:
+					shelf.start_stocking()
 					shelf_to_stock = shelf
 					is_stocking = true
-					animation_player.play("interact-right")
+					animation_player.play("interact-right", -1, 2.0)
 					return
 			if body is Supply:
 				if not held_item:
