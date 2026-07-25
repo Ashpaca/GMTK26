@@ -11,6 +11,10 @@ enum Tutorial{
 }
 
 const SHOPPER = preload("uid://bc26jrpphkke5")
+const bomb_location_default : Vector3 = Vector3(-0.57, 0.594, 6.359)
+const bomb_location_change : Vector3 = Vector3(-0.57, 2.366, 3.359)
+const bomb_size_default : Vector3 = Vector3(1, 1, 1)
+const bomb_size_change : Vector3 = Vector3(4, 4, 4)
 
 @onready var doors: Node3D = $Doors
 @onready var shelves: Node3D = $Shelves
@@ -35,6 +39,9 @@ var has_done_right : bool
 @onready var shelf_indicator: AnimatedSprite3D = $Shelves/Shelf4/ShelfIndicator
 @onready var player: Player = $Player
 var last_shopper : Shopper
+@onready var bomb_timer: Label3D = $SetDressing/BombTimer
+var timer_change_display : int = 9
+var bomb_tween : Tween
 
 func _on_request_start_game() -> void:
 	tutorial_point = Tutorial.MOVEMENT
@@ -70,6 +77,17 @@ func _on_spawn_shopper() -> void:
 func _physics_process(_delta: float) -> void:
 	if not GameState.is_playing(): return
 	if GameState.tutorial_complete:
+		if GameState.time_left < timer_change_display * 10:
+			if bomb_tween:
+				bomb_tween.kill()
+			bomb_tween = create_tween()
+			bomb_tween.set_parallel()
+			bomb_tween.tween_property(bomb_timer, "position", bomb_location_change, 1.0)
+			bomb_tween.tween_property(bomb_timer, "scale", bomb_size_change, 1.0)
+			bomb_tween.tween_property(bomb_timer, "text", str(timer_change_display), 0.01).set_delay(1.0)
+			bomb_tween.tween_property(bomb_timer, "position", bomb_location_default, 0.2).set_delay(1.0)
+			bomb_tween.tween_property(bomb_timer, "scale", bomb_size_default, 0.2).set_delay(1.0)
+			timer_change_display -= 1
 		return
 	match tutorial_point:
 		Tutorial.BEFORE:
