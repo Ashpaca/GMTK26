@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3pnpygx7ncsd"]
 
-[ext_resource type="Script" uid="uid://djjfcklrt6jak" path="res://res/shelf/shelf.gd" id="1_fd64t"]
+[ext_resource type="Script" uid="uid://djjfcklrt6jak" path="res://src/shelf/shelf.gd" id="1_fd64t"]
 [ext_resource type="PackedScene" uid="uid://ctr7mvytbwa48" path="res://assets/models/shelf-empty.glb" id="1_j1cob"]
 [ext_resource type="PackedScene" uid="uid://devo5b7gxodno" path="res://assets/models/box.glb" id="2_cpho7"]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bnix5b3v3idxv"]
 
-[ext_resource type="Script" uid="uid://bgowda740dy3i" path="res://res/player/player.gd" id="1_6ekb1"]
+[ext_resource type="Script" uid="uid://bgowda740dy3i" path="res://src/player/player.gd" id="1_6ekb1"]
 [ext_resource type="PackedScene" uid="uid://ddduac7cfigxa" path="res://assets/models/character-employee.glb" id="1_fff8e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_58gb0"]

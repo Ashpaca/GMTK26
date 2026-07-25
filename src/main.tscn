@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dee3flhevpklk"]
 
-[ext_resource type="PackedScene" uid="uid://blu0qdsm8utma" path="res://res/level/world.tscn" id="1_wf6i0"]
-[ext_resource type="PackedScene" uid="uid://bssgc15i8fl52" path="res://res/ui/start_menu.tscn" id="2_7y7fh"]
+[ext_resource type="PackedScene" uid="uid://blu0qdsm8utma" path="res://src/level/world.tscn" id="1_wf6i0"]
+[ext_resource type="PackedScene" uid="uid://bssgc15i8fl52" path="res://src/ui/start_menu.tscn" id="2_7y7fh"]
 
 [node name="Main" type="Node3D" unique_id=1946818163]
 

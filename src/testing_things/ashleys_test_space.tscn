@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bg0p1hd46kjnp"]
 
-[ext_resource type="PackedScene" uid="uid://bnix5b3v3idxv" path="res://res/player/player.tscn" id="1_tho5s"]
+[ext_resource type="PackedScene" uid="uid://bnix5b3v3idxv" path="res://src/player/player.tscn" id="1_tho5s"]
 [ext_resource type="PackedScene" uid="uid://dng7waixdnqk8" path="res://assets/models/wall-window.glb" id="2_75xgm"]
-[ext_resource type="PackedScene" uid="uid://d3pnpygx7ncsd" path="res://res/shelf/shelf.tscn" id="2_agl0y"]
+[ext_resource type="PackedScene" uid="uid://d3pnpygx7ncsd" path="res://src/shelf/shelf.tscn" id="2_agl0y"]
 [ext_resource type="PackedScene" uid="uid://dsf13233fdvsy" path="res://assets/models/floor.glb" id="3_75xgm"]
 [ext_resource type="PackedScene" uid="uid://c6l5msi7x14lf" path="res://assets/models/wall.glb" id="3_txhas"]
-[ext_resource type="PackedScene" uid="uid://7f23rmcqlt64" path="res://res/supplies/supply.tscn" id="4_txhas"]
-[ext_resource type="PackedScene" uid="uid://cxdpmr25ghc52" path="res://res/supplies/item.tscn" id="5_p6bk4"]
-[ext_resource type="Script" uid="uid://dksfa0mkmuppi" path="res://res/testing_things/test_label.gd" id="6_5j4bb"]
+[ext_resource type="PackedScene" uid="uid://7f23rmcqlt64" path="res://src/supplies/supply.tscn" id="4_txhas"]
+[ext_resource type="PackedScene" uid="uid://cxdpmr25ghc52" path="res://src/supplies/item.tscn" id="5_p6bk4"]
+[ext_resource type="Script" uid="uid://dksfa0mkmuppi" path="res://src/testing_things/test_label.gd" id="6_5j4bb"]
 [ext_resource type="PackedScene" uid="uid://fwq6skc63g52" path="res://assets/models/freezers-standing.glb" id="9_txhas"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2a5j2"]

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://miio85jtk2fa"]
 
 [ext_resource type="Texture2D" uid="uid://c8dtdqwbtqs07" path="res://assets/models/Textures/colormap.png" id="1_p870a"]
-[ext_resource type="Script" uid="uid://suiwsab3dibq" path="res://res/level/wall_door.gd" id="1_tb5kw"]
+[ext_resource type="Script" uid="uid://suiwsab3dibq" path="res://src/level/wall_door.gd" id="1_tb5kw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ihovh"]
 resource_name = "colormap"

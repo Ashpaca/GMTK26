@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://7f23rmcqlt64"]
 
 [ext_resource type="PackedScene" uid="uid://ig4a04o0vogq" path="res://assets/models/display-fruit.glb" id="1_bfehy"]
-[ext_resource type="Script" uid="uid://dlc5i4mmw270t" path="res://res/supplies/supply.gd" id="1_iic6k"]
+[ext_resource type="Script" uid="uid://dlc5i4mmw270t" path="res://src/supplies/supply.gd" id="1_iic6k"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_58gb0"]
 height = 0.53308105
