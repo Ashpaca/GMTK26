@@ -17,6 +17,9 @@ var tutorial_complete : bool = true
 func is_playing() -> bool:
 	return current_state == State.PLAY
 
+func _ready() -> void:
+	EventBus.request_start_game.connect(_on_request_start_game)
+	EventBus.request_quit_game.connect(_on_request_quit_game)
 
 func _process(delta: float) -> void:
 	if not is_playing():
@@ -28,3 +31,10 @@ func _process(delta: float) -> void:
 			spawn_shopper_at -= spawn_shopper_speed
 			spawn_shopper_speed -= spawn_shopper_acceleration
 		
+
+func _on_request_start_game() -> void:
+	current_state = State.PLAY
+
+func _on_request_quit_game() -> void:
+	current_state = State.END
+	get_tree().quit()
