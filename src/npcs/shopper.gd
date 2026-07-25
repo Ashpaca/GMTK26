@@ -126,7 +126,6 @@ func _on_navigation_agent_3d_target_reached() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	print(current_state)
 	if not GameState.is_playing(): return
 	match current_state:
 		State.WALK:
