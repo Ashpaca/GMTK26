@@ -29,8 +29,8 @@ const SPEED : float = 1
 const DEATH_OFFSET : Vector3 = Vector3(0, 0, -.35)
 @export var shelves_in_store : Array[Shelf]
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
-@onready var animation_player: AnimationPlayer = $Visuals/AnimationPlayer
-@onready var visuals: Node3D = $Visuals
+@onready var animation_player: AnimationPlayer = visuals.get_child(1)
+var visuals: Node3D
 @onready var get_up_timer: Timer = $GetUpTimer
 var current_state : State = State.WAIT
 var has_item : bool
@@ -134,3 +134,7 @@ func _physics_process(delta: float) -> void:
 
 func _init() -> void:
 	visuals = skins.pick_random().instantiate()
+	animation_player = visuals.get_child(1)
+	visuals.get_child(0).rotate(Vector3.UP, PI)
+	animation_player.animation_finished.connect(_on_animation_player_animation_finished)
+	add_child(visuals)
