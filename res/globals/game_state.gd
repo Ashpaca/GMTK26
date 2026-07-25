@@ -7,7 +7,7 @@ enum State{
 	END
 }
 
-var current_state : State = State.PLAY # will be menu later
+var current_state : State = State.MENU
 var time_left : float = 60.0
 
 func is_playing() -> bool:
