@@ -12,6 +12,8 @@ var the_spawns : Array[Node3D]
 var the_despawns : Array[Node3D]
 
 func _ready() -> void:
+	EventBus.spawn_shopper.connect(_on_spawn_shopper)
+	
 	for door in doors.get_children():
 		the_doors.append(door)
 	for shelf in shelves.get_children():
@@ -22,7 +24,7 @@ func _ready() -> void:
 		the_despawns.append(point)
 	
 
-func _on_game_start() -> void:
+func _on_spawn_shopper() -> void:
 	var shopper_instance : Shopper = SHOPPER.instantiate()
 	add_child(shopper_instance)
 	shopper_instance.shelves_in_store = the_shelves
@@ -33,7 +35,5 @@ func _on_game_start() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		_on_game_start()
-	if Input.is_action_just_pressed("run"):
 		for door in the_doors:
 			door.open()
