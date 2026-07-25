@@ -9,6 +9,7 @@
 [ext_resource type="FontFile" uid="uid://cxsjdnouuhyq0" path="res://assets/fonts/Titan_One/TitanOne-Regular.ttf" id="5_aisge"]
 [ext_resource type="Script" uid="uid://vj3t2ex6iti1" path="res://src/globals/font_gradient_set_line_height.gd" id="7_iwya6"]
 [ext_resource type="StyleBox" uid="uid://badm8of71h5pp" path="res://assets/ui/start_menu_hover_style_box_texture.tres" id="8_trvbb"]
+[ext_resource type="Script" uid="uid://bmnucdweu0jk5" path="res://src/components/custom_button_component.gd" id="10_6bsk4"]
 
 [sub_resource type="Gradient" id="Gradient_piys8"]
 colors = PackedColorArray(0.38039216, 0.79607844, 0.54509807, 1, 0.38039216, 0.79607844, 0.54509807, 1)
@@ -279,7 +280,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="StartButton" type="Button" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/StartLabel/StartLabelShadow" unique_id=1455715930]
+[node name="StartButton" type="Button" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/StartLabel/StartLabelShadow" unique_id=1143710976]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -294,6 +295,7 @@ theme_override_styles/pressed = ExtResource("8_trvbb")
 theme_override_styles/hover = ExtResource("8_trvbb")
 theme_override_styles/focus = ExtResource("8_trvbb")
 action_mode = 0
+script = ExtResource("10_6bsk4")
 
 [node name="OptionsLabel" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions" unique_id=2079853685]
 material = SubResource("ShaderMaterial_b2jbu")
@@ -327,7 +329,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="OptionsButton" type="Button" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/OptionsLabel/OptionsLabelShadow" unique_id=1296101752]
+[node name="OptionsButton" type="Button" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/OptionsLabel/OptionsLabelShadow" unique_id=9064009]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -340,6 +342,7 @@ theme_override_styles/pressed = ExtResource("8_trvbb")
 theme_override_styles/hover = ExtResource("8_trvbb")
 theme_override_styles/focus = ExtResource("8_trvbb")
 action_mode = 0
+script = ExtResource("10_6bsk4")
 
 [node name="QuitLabel" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions" unique_id=1717143302]
 material = SubResource("ShaderMaterial_b2jbu")
@@ -376,7 +379,7 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="QuitButton" type="Button" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/QuitLabel/QuitLabelShadow" unique_id=1408253182]
+[node name="QuitButton" type="Button" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/QuitLabel/QuitLabelShadow" unique_id=1132503234]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -389,6 +392,7 @@ theme_override_styles/pressed = ExtResource("8_trvbb")
 theme_override_styles/hover = ExtResource("8_trvbb")
 theme_override_styles/focus = ExtResource("8_trvbb")
 action_mode = 0
+script = ExtResource("10_6bsk4")
 
 [node name="SubMarginContainerR" type="MarginContainer" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1014210357]
 layout_mode = 2
