@@ -13,6 +13,7 @@ var total_time : float = 100.0
 var time_left : float = total_time
 var spawn_shopper_at : float = total_time
 var tutorial_complete : bool = false
+var score : int
 
 func is_playing() -> bool:
 	return current_state == State.PLAY

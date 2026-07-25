@@ -115,6 +115,7 @@ func _on_get_up_timer_timeout() -> void:
 
 func _on_navigation_agent_3d_target_reached() -> void:
 	if has_item:
+		GameState.score += 1
 		queue_free()
 		return
 	current_state = State.GRAB

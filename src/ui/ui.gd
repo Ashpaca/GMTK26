@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+@onready var texture_rect: TextureRect = $TextureRect
+@onready var rich_text_label: RichTextLabel = $TextureRect/RichTextLabel
+@onready var nine_patch_rect: NinePatchRect = $NinePatchRect
 @onready var textbox_component: TextboxComponent = $NinePatchRect/TextboxComponent
 @onready var label: RichTextLabel = $Label
 var dialogue_index : int = -1
@@ -16,6 +19,14 @@ func do_next_dialogue() -> void:
 	textbox_component.set_message(dialogues_in_order[dialogue_index])
 
 
+func _on_game_over(_good_ending : bool) -> void:
+	nine_patch_rect.visible = false
+	label.visible = false
+	visible = true
+	texture_rect.visible = true
+	rich_text_label.text = "You were able to give the gift of apples to [shake]" + str(GameState.score) + "[/shake] people before you all died"
+
+
 func _physics_process(_delta: float) -> void:
 	if GameState.current_state != GameState.State.WAIT:
 		return
@@ -25,3 +36,7 @@ func _physics_process(_delta: float) -> void:
 			textbox_component.display_all_text()
 		elif not textbox_component.get_next_page():
 			GameState.current_state = GameState.State.PLAY
+
+
+func _ready() -> void:
+	EventBus.game_over.connect(_on_game_over)
