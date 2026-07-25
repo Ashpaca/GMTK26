@@ -1,6 +1,22 @@
 class_name Shopper
 extends CharacterBody3D
 
+
+static var skins : Array[PackedScene] = [
+	load("res://assets/models/character-female-b.glb"), 
+	load("res://assets/models/character-female-c.glb"), 
+	load("res://assets/models/character-female-d.glb"), 
+	load("res://assets/models/character-female-e.glb"), 
+	load("res://assets/models/character-female-f.glb"), 
+	load("res://assets/models/character-male-a.glb"), 
+	load("res://assets/models/character-male-b.glb"), 
+	load("res://assets/models/character-male-c.glb"), 
+	load("res://assets/models/character-male-d.glb"), 
+	load("res://assets/models/character-male-e.glb"), 
+	load("res://assets/models/character-male-f.glb")]
+
+
+
 enum State{
 	WALK,
 	GRAB,
@@ -114,3 +130,7 @@ func _physics_process(delta: float) -> void:
 			pass # could have something here
 		State.WAIT:
 			do_wait()
+
+
+func _init() -> void:
+	visuals = skins.pick_random().instantiate()

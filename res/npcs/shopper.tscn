@@ -24,7 +24,7 @@ shape = SubResource("CapsuleShape3D_58gb0")
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Visuals/character-female-f" index="0" unique_id=138863874]
-bones/4/rotation = Quaternion(0, 0, -0.3826835, 0.92387956)
+bones/4/rotation = Quaternion(0, 0, -0.38268346, 0.9238795)
 bones/5/rotation = Quaternion(0, 0, 0.3826835, 0.92387956)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=29266514]
