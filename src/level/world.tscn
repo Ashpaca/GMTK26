@@ -602,6 +602,13 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.9
 [node name="Shelf4" parent="Shelves" unique_id=594689916 instance=ExtResource("7_himjv")]
 transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, -0.1064527, 0, 3.3962374)
 
+[node name="ShelfIndicator" type="AnimatedSprite3D" parent="Shelves/Shelf4" unique_id=1327526553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.237611, 0)
+visible = false
+sprite_frames = SubResource("SpriteFrames_uxvy4")
+autoplay = "default"
+frame_progress = 0.78390497
+
 [node name="Shelf5" parent="Shelves" unique_id=763656546 instance=ExtResource("7_himjv")]
 transform = Transform3D(-1.5893256e-08, 0, 1, 0, 1, 0, -1, 0, -1.5893256e-08, -2.3607256, 0, 1.4016201)
 
@@ -708,7 +715,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
 sprite_frames = SubResource("SpriteFrames_uxvy4")
 autoplay = "default"
-frame_progress = 0.0033099528
+frame_progress = 0.12195641
 
 [node name="Supply2" parent="Supplies" unique_id=1156440016 instance=ExtResource("9_b8n8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6163714, 0, 6.388402)

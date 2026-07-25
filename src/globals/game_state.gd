@@ -12,7 +12,7 @@ var current_state : State = State.MENU
 var total_time : float = 60.0
 var time_left : float = total_time
 var spawn_shopper_at : float = total_time
-var tutorial_complete : bool = true
+var tutorial_complete : bool = false
 
 func is_playing() -> bool:
 	return current_state == State.PLAY

@@ -52,9 +52,11 @@ func do_walk(delta : float) -> void:
 	else:
 		animation_player.play("walk")
 		
-		var goal_rotation : float = visuals.basis.x.angle_to(velocity)
-		visuals.rotation.y = rotate_toward(visuals.rotation.y, goal_rotation, delta*10)
-		#visuals.look_at(global_position - velocity)
+		var angle_current : float = visuals.rotation.y
+		visuals.look_at(velocity + global_position)
+		var angle_goal : float = visuals.rotation.y
+		visuals.rotation.y = rotate_toward(angle_current, angle_goal, delta * 10)
+		
 	move_and_slide()
 
 

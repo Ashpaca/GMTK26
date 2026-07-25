@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bamfnskh72cnl" path="res://src/ui/ui.gd" id="1_qemve"]
 [ext_resource type="Script" uid="uid://bjxu06i7yp8ks" path="res://src/components/textbox_component.gd" id="2_jlntk"]
 [ext_resource type="FontFile" uid="uid://cxsjdnouuhyq0" path="res://assets/fonts/Titan_One/TitanOne-Regular.ttf" id="3_8wxmc"]
+[ext_resource type="FontFile" uid="uid://bsyju1mhtdxgd" path="res://assets/fonts/Coiny/Coiny-Regular.ttf" id="5_sjdex"]
 
 [node name="Ui" type="CanvasLayer" unique_id=447394292]
 script = ExtResource("1_qemve")
@@ -34,3 +35,14 @@ theme_override_fonts/normal_font = ExtResource("3_8wxmc")
 theme_override_font_sizes/normal_font_size = 60
 bbcode_enabled = true
 script = ExtResource("2_jlntk")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=470785014]
+offset_left = 1070.0
+offset_top = 557.0
+offset_right = 1319.0
+offset_bottom = 715.0
+theme_override_colors/default_color = Color(0.24705882, 0.42745098, 0.8901961, 0.45490196)
+theme_override_fonts/normal_font = ExtResource("5_sjdex")
+theme_override_font_sizes/normal_font_size = 100
+text = "8
+"

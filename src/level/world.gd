@@ -32,8 +32,9 @@ var has_done_right : bool
 @onready var left: AnimatedSprite3D = $Player/TutorialPopups/Left
 @onready var right: AnimatedSprite3D = $Player/TutorialPopups/Right
 @onready var apple_indicators : Array[AnimatedSprite3D] = [$Supplies/Supply/AppleIndicator, $Supplies/Supply2/AppleIndicator, $Supplies/Supply3/AppleIndicator]
+@onready var shelf_indicator: AnimatedSprite3D = $Shelves/Shelf4/ShelfIndicator
 @onready var player: Player = $Player
-
+var last_shopper : Shopper
 
 func _on_request_start_game() -> void:
 	tutorial_point = Tutorial.MOVEMENT
@@ -62,12 +63,14 @@ func _on_spawn_shopper() -> void:
 	shopper_instance.shelves_in_store = the_shelves
 	shopper_instance.despawn_location = the_despawns.pick_random().global_position
 	shopper_instance.global_position = the_spawns.pick_random().global_position
+	last_shopper = shopper_instance
 	
 
 
 func _physics_process(_delta: float) -> void:
 	if not GameState.is_playing(): return
-	
+	if GameState.tutorial_complete:
+		return
 	match tutorial_point:
 		Tutorial.BEFORE:
 			ui.visible = false
@@ -114,7 +117,22 @@ func _physics_process(_delta: float) -> void:
 				ui.do_next_dialogue()
 		Tutorial.STOCK:
 			ui.visible = false
+			shelf_indicator.visible = true
+			if not player.held_item:
+				shelf_indicator.visible = false
+				tutorial_point = Tutorial.CUSTOMER
+				ui.visible = true
+				GameState.current_state = GameState.State.WAIT
+				ui.do_next_dialogue()
 		Tutorial.CUSTOMER:
-			pass
+			ui.visible = false
+			for door in the_doors:
+				door.open()
+			_on_spawn_shopper()
+			tutorial_point = Tutorial.DONE
 		Tutorial.DONE:
-			pass
+			if not last_shopper:
+				for door in the_doors:
+					door.close()
+				print("dad cut scene")
+				GameState.tutorial_complete = true
