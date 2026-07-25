@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://badm8of71h5pp"]
+
+[ext_resource type="Texture2D" uid="uid://vv1611v4a3hf" path="res://assets/ui/FocusMenuItemTexture.png" id="1_ln8cc"]
+
+[resource]
+texture = ExtResource("1_ln8cc")
+expand_margin_top = 40.0
+expand_margin_bottom = 40.0
