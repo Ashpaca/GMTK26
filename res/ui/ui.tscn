@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://8nm8trtnecx1"]
+
+[ext_resource type="Texture2D" uid="uid://dr6cuuh6q271p" path="res://assets/ui/textbox_texture.png" id="1_ky8rw"]
+
+[node name="Ui" type="CanvasLayer" unique_id=447394292]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=114733304]
+texture_filter = 1
+offset_top = 393.0
+offset_right = 1150.0
+offset_bottom = 648.0
+texture = ExtResource("1_ky8rw")
+patch_margin_left = 70
+patch_margin_top = 70
+patch_margin_right = 70
+patch_margin_bottom = 70

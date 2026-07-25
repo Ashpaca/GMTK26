@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bssgc15i8fl52"]
 
 [ext_resource type="Shader" uid="uid://thqwbr8ogg3i" path="res://assets/shaders/start_menu.gdshader" id="1_3iesf"]
-[ext_resource type="Script" uid="uid://cd7vu87i3llka" path="res://res/start_menu.gd" id="1_8ss2v"]
+[ext_resource type="Script" uid="uid://cd7vu87i3llka" path="res://res/ui/start_menu.gd" id="1_8ss2v"]
 [ext_resource type="FontFile" uid="uid://bsyju1mhtdxgd" path="res://assets/fonts/Coiny/Coiny-Regular.ttf" id="2_0khnd"]
 [ext_resource type="Texture2D" uid="uid://1vm2lswbg5ur" path="res://assets/ui/grocery_bg_texture_downscaled_v3.png" id="2_3iesf"]
-[ext_resource type="Script" uid="uid://67qkkdi73o48" path="res://res/start_menu_bg_scroll_speed.gd" id="3_yybdg"]
+[ext_resource type="Script" uid="uid://67qkkdi73o48" path="res://res/ui/start_menu_bg_scroll_speed.gd" id="3_yybdg"]
 [ext_resource type="Shader" uid="uid://by2db01o2jt1g" path="res://assets/shaders/font_gradient.gdshader" id="4_aisge"]
 [ext_resource type="FontFile" uid="uid://cxsjdnouuhyq0" path="res://assets/fonts/Titan_One/TitanOne-Regular.ttf" id="5_aisge"]
 [ext_resource type="Script" uid="uid://vj3t2ex6iti1" path="res://res/globals/font_gradient_set_line_height.gd" id="7_iwya6"]

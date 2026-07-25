@@ -55,6 +55,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if not GameState.is_playing(): return
 	if is_stocking or is_picking_up or is_dropping: return
 	
 	if Input.is_action_just_pressed("interact"):

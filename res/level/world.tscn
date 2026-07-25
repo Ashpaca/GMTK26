@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dsf13233fdvsy" path="res://assets/models/floor.glb" id="1_auuoq"]
 [ext_resource type="PackedScene" uid="uid://baoo1llciy47q" path="res://res/level/wall.tscn" id="2_pru2k"]
 [ext_resource type="PackedScene" uid="uid://8c07pvoqoam" path="res://assets/models/wall-corner.glb" id="3_pru2k"]
+[ext_resource type="Texture2D" uid="uid://c35c65rtth8eg" path="res://assets/ui/tutorial_movement.png" id="4_20fv1"]
 [ext_resource type="PackedScene" uid="uid://miio85jtk2fa" path="res://res/level/wall_door.tscn" id="4_pru2k"]
 [ext_resource type="PackedScene" uid="uid://b1ms8aooqcr0u" path="res://res/level/wall_window.tscn" id="5_pru2k"]
 [ext_resource type="PackedScene" uid="uid://d3pnpygx7ncsd" path="res://res/shelf/shelf.tscn" id="7_himjv"]
@@ -14,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cxdpmr25ghc52" path="res://res/supplies/item.tscn" id="9_pru2k"]
 [ext_resource type="PackedScene" uid="uid://bom1osf7tjj6w" path="res://res/level/cash_register.tscn" id="10_20fv1"]
 [ext_resource type="PackedScene" uid="uid://dy005wln557ec" path="res://res/level/bottle_return.tscn" id="12_pru2k"]
+[ext_resource type="PackedScene" uid="uid://8nm8trtnecx1" path="res://res/ui/ui.tscn" id="16_n40vd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1et6b"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,6 +31,114 @@ tonemap_mode = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_58gb0"]
 size = Vector3(18, 1, 8.572693)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n40vd"]
+atlas = ExtResource("4_20fv1")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_himjv"]
+atlas = ExtResource("4_20fv1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58gb0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n40vd")
+}],
+"loop": 0,
+"name": &"complete",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_himjv")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0dfm"]
+atlas = ExtResource("4_20fv1")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8n8y"]
+atlas = ExtResource("4_20fv1")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m46my"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0dfm")
+}],
+"loop": 0,
+"name": &"complete",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8n8y")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlbd4"]
+atlas = ExtResource("4_20fv1")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xdep"]
+atlas = ExtResource("4_20fv1")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bq2rv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlbd4")
+}],
+"loop": 0,
+"name": &"complete",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xdep")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a5c3"]
+atlas = ExtResource("4_20fv1")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjpfo"]
+atlas = ExtResource("4_20fv1")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2qm3o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3a5c3")
+}],
+"loop": 0,
+"name": &"complete",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjpfo")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_58gb0"]
 vertices = PackedVector3Array(-5.502843, -0.60282063, 1.124578, -5.3028426, -0.60282063, 1.324578, -5.3028426, -0.60282063, 0.6245779, -5.502843, -0.60282063, 0.82457805, -6.602843, -0.60282063, 1.324578, -6.602843, -0.60282063, 0.6245779, -7.9028425, -0.60282063, -0.9754221, -5.8028426, -0.60282063, 7.024578, -5.8028426, -0.60282063, 6.8245783, -6.4028425, -0.60282063, 6.8245783, -7.9028425, -0.60282063, 7.024578, -5.7028427, -0.60282063, 3.124578, -5.7028427, -0.60282063, 2.8245778, -6.4028425, -0.60282063, 2.8245778, -6.4028425, -0.60282063, 3.124578, -6.602843, -0.60282063, 6.624578, -6.602843, -0.60282063, 3.3245778, -6.602843, -0.60282063, 2.624578, -6.602843, -0.60282063, -0.6754221, -6.4028425, -0.60282063, 1.124578, -6.4028425, -0.60282063, 0.82457805, -5.8028426, -0.60282063, -0.9754221, 5.3971577, -0.60282063, 6.8245783, 4.8971577, -0.60282063, 6.8245783, 4.8971577, -0.60282063, 7.024578, 9.497158, -0.60282063, 7.024578, 4.997157, -0.60282063, 1.824578, 4.997157, -0.60282063, 2.124578, 5.5971575, -0.60282063, 2.324578, 5.5971575, -0.60282063, 1.624578, 5.5971575, -0.60282063, 3.624578, 9.497158, -0.60282063, -0.9754221, 4.997157, -0.60282063, 3.8245778, 4.997157, -0.60282063, 4.124578, 5.5971575, -0.60282063, 4.324578, 4.8971577, -0.60282063, -0.9754221, 5.5971575, -0.60282063, -0.6754221, 5.5971575, -0.60282063, 6.624578, -5.3028426, -0.60282063, -0.37542206, -5.3028426, -0.60282063, 0.2245779, -5.1028423, -0.60282063, 0.024577975, -3.8028426, -0.60282063, 0.92457795, -3.0028424, -0.60282063, 0.92457795, -2.8028426, -0.60282063, 0.6245779, -3.8028426, -0.60282063, 0.2245779, -1.7028427, -0.60282063, 4.224578, -0.8028426, -0.60282063, 4.324578, -0.8028426, -0.60282063, 0.82457805, -1.7028427, -0.60282063, 0.82457805, -0.6028428, -0.60282063, 0.6245779, -0.10284233, -0.60282063, 0.6245779, -0.10284233, -0.60282063, -0.37542206, -4.0028424, -0.60282063, 0.024577975, -1.9028425, -0.60282063, 0.6245779, 4.0971575, -0.60282063, -0.17542207, 4.3971577, -0.60282063, -0.17542207, 4.3971577, -0.60282063, -0.37542206, 2.7971573, -0.60282063, 1.124578, 4.0971575, -0.60282063, 1.124578, 3.6971579, -0.60282063, 0.7245779, 2.5971575, -0.60282063, 0.6245779, 3.6971579, -0.60282063, 0.2245779, 0.39715767, -0.60282063, 0.6245779, 0.5971575, -0.60282063, 0.82457805, 0.5971575, -0.60282063, 4.224578, 1.3971577, -0.60282063, 4.224578, 1.3971577, -0.60282063, 0.82457805, 1.5971575, -0.60282063, 0.6245779, 4.7971573, 0.14717937, 0.42457795, 4.997157, 0.14717937, 0.6245779, 4.997157, 0.14717937, 0.32457793, -4.7028427, 0.14717937, 0.6245779, -4.7028427, 0.14717937, 0.92457795, -4.4028425, 0.14717937, 0.92457795, -4.4028425, 0.14717937, 0.6245779, -5.3028426, -0.60282063, 3.3245778, -5.3028426, -0.60282063, 3.624578, -5.1028423, -0.60282063, 3.4245782, -5.1028423, -0.60282063, 3.224578, -3.8028426, -0.60282063, 4.724578, -4.502843, -0.60282063, 5.024578, -4.102843, -0.60282063, 5.024578, -5.1028423, -0.60282063, 1.5245779, -5.3028426, -0.60282063, 1.924578, -5.1028423, -0.60282063, 1.7245779, -3.8028426, -0.60282063, 3.024578, -4.0028424, -0.60282063, 3.224578, -4.0028424, -0.60282063, 3.4245782, -3.8028426, -0.60282063, 3.624578, -3.8028426, -0.60282063, 5.324578, -3.0028424, -0.60282063, 4.924578, -5.3028426, -0.60282063, 2.624578, -4.0028424, -0.60282063, 1.5245779, -4.0028424, -0.60282063, 1.7245779, -3.8028426, -0.60282063, 1.924578, -3.5028424, -0.60282063, 6.324578, -2.8028426, -0.60282063, 6.524578, -2.6028428, -0.60282063, 6.024578, -2.8028426, -0.60282063, 5.124578, -2.1028428, -0.60282063, 6.024578, -2.3028426, -0.60282063, 5.124578, 4.5971575, -0.60282063, 1.824578, 4.3971577, -0.60282063, 2.324578, 2.6971579, -0.60282063, 5.124578, 3.2971573, -0.60282063, 5.724578, 4.3971577, -0.60282063, 4.324578, 4.3971577, -0.60282063, 3.624578, 4.3971577, -0.60282063, 1.624578, 4.3971577, -0.60282063, 1.124578, 4.3971577, -0.60282063, 5.724578, -0.20284271, 0.14717937, 1.2245779, -0.20284271, 0.14717937, 4.624578, -0.0028429031, 0.14717937, 4.624578, -0.0028429031, 0.14717937, 1.2245779, 1.9971571, 0.14717937, 1.2245779, 1.9971571, 0.14717937, 4.624578, 2.1971579, 0.14717937, 4.624578, 2.1971579, 0.14717937, 1.2245779, -4.7028427, 0.14717937, 2.324578, -4.7028427, 0.14717937, 2.624578, -4.4028425, 0.14717937, 2.624578, -4.4028425, 0.14717937, 2.324578, -6.002843, 0.14717937, 6.224578, -5.502843, 0.14717937, 6.224578, -5.502843, 0.14717937, 5.324578, -5.9028425, 0.14717937, 5.124578, -6.002843, 0.14717937, 3.724578, -4.7028427, 0.14717937, 4.024578, -4.7028427, 0.14717937, 4.324578, -4.4028425, 0.14717937, 4.324578, -4.4028425, 0.14717937, 4.024578, 1.8971577, -0.60282063, 6.524578, 2.2971573, -0.60282063, 6.524578, 2.3971577, -0.60282063, 6.324578, 1.6971579, -0.60282063, 6.024578, 2.997157, -0.60282063, 6.324578, 2.997157, -0.60282063, 6.024578, -0.6028428, -0.60282063, 5.224578, 0.39715767, -0.60282063, 5.224578, 1.5971575, -0.60282063, 5.224578, -1.7028427, -0.60282063, 4.924578, -0.8028426, -0.60282063, 5.024578, 0.5971575, -0.60282063, 5.024578, 1.3971577, -0.60282063, 5.024578, -2.3028426, 0.14717937, 6.9245777, 1.3971577, 0.14717937, 7.024578, 1.2971573, 0.14717937, 6.624578, -2.2028427, 0.14717937, 6.624578, 3.7971573, 0.14717937, 6.9245777, 3.6971579, 0.14717937, 6.724578, 3.3971577, 0.14717937, 6.9245777, 4.2971573, 0.14717937, 7.024578, 4.2971573, 0.14717937, 6.8245783, 2.6971579, 0.14717937, 6.9245777)
@@ -317,7 +427,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
 
 [node name="Player" parent="." unique_id=358695189 instance=ExtResource("8_q0dfm")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3, 0, 5)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 0, 4)
+
+[node name="TutorialPopups" type="Node3D" parent="Player" unique_id=620791060]
+transform = Transform3D(0.8660254, 0, 0.49999997, 0, 1, 0, -0.49999997, 0, 0.8660254, 0, 0, 0)
+
+[node name="Up" type="AnimatedSprite3D" parent="Player/TutorialPopups" unique_id=1145232336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6306622, 0)
+sprite_frames = SubResource("SpriteFrames_58gb0")
+autoplay = "default"
+
+[node name="Down" type="AnimatedSprite3D" parent="Player/TutorialPopups" unique_id=1790880555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+sprite_frames = SubResource("SpriteFrames_m46my")
+autoplay = "default"
+
+[node name="Left" type="AnimatedSprite3D" parent="Player/TutorialPopups" unique_id=881154303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6569233, 1, 0)
+sprite_frames = SubResource("SpriteFrames_bq2rv")
+autoplay = "default"
+
+[node name="Right" type="AnimatedSprite3D" parent="Player/TutorialPopups" unique_id=727117131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6408315, 1, 0)
+sprite_frames = SubResource("SpriteFrames_2qm3o")
+autoplay = "default"
 
 [node name="Walls" type="Node3D" parent="." unique_id=1244491971 groups=["nav"]]
 
@@ -613,3 +746,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.795969, 0, 2)
 
 [node name="Node3D3" type="Node3D" parent="DespawnPoints" unique_id=1915848003]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.795969, 0, 4)
+
+[node name="Ui" parent="." unique_id=447394292 instance=ExtResource("16_n40vd")]
