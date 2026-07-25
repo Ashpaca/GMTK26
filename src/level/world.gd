@@ -26,14 +26,20 @@ var has_done_up : bool
 var has_done_down : bool
 var has_done_left : bool
 var has_done_right : bool
+@onready var ui: CanvasLayer = $Ui
 @onready var up: AnimatedSprite3D = $Player/TutorialPopups/Up
 @onready var down: AnimatedSprite3D = $Player/TutorialPopups/Down
 @onready var left: AnimatedSprite3D = $Player/TutorialPopups/Left
 @onready var right: AnimatedSprite3D = $Player/TutorialPopups/Right
+@onready var apple_indicators : Array[AnimatedSprite3D] = [$Supplies/Supply/AppleIndicator, $Supplies/Supply2/AppleIndicator, $Supplies/Supply3/AppleIndicator]
+@onready var player: Player = $Player
 
 
 func _on_request_start_game() -> void:
 	tutorial_point = Tutorial.MOVEMENT
+	ui.visible = true
+	GameState.current_state = GameState.State.WAIT
+	ui.do_next_dialogue()
 
 
 func _ready() -> void:
@@ -64,8 +70,13 @@ func _physics_process(_delta: float) -> void:
 	
 	match tutorial_point:
 		Tutorial.BEFORE:
-			pass
+			ui.visible = false
 		Tutorial.MOVEMENT:
+			ui.visible = false
+			up.visible = true
+			down.visible = true
+			left.visible = true
+			right.visible = true
 			if Input.is_action_pressed("move_up"):
 				up.play("complete")
 			if Input.is_action_pressed("move_down"):
@@ -74,12 +85,35 @@ func _physics_process(_delta: float) -> void:
 				left.play("complete")
 			if Input.is_action_pressed("move_right"):
 				right.play("complete")
+			if up.animation == "complete" and down.animation == "complete" and left.animation == "complete" and right.animation == "complete":
+				tutorial_point = Tutorial.RUN
+				up.visible = false
+				down.visible = false
+				left.visible = false
+				right.visible = false
+				ui.visible = true
+				GameState.current_state = GameState.State.WAIT
+				ui.do_next_dialogue()
 		Tutorial.RUN:
-			pass
+			ui.visible = false
+			if Input.is_action_just_released("run"):
+				tutorial_point = Tutorial.PICKUP
+				ui.visible = true
+				GameState.current_state = GameState.State.WAIT
+				ui.do_next_dialogue()
 		Tutorial.PICKUP:
-			pass
+			ui.visible = false
+			for apple in apple_indicators:
+				apple.visible = true
+			if player.held_item:
+				for apple in apple_indicators:
+					apple.visible = false
+				tutorial_point = Tutorial.STOCK
+				ui.visible = true
+				GameState.current_state = GameState.State.WAIT
+				ui.do_next_dialogue()
 		Tutorial.STOCK:
-			pass
+			ui.visible = false
 		Tutorial.CUSTOMER:
 			pass
 		Tutorial.DONE:

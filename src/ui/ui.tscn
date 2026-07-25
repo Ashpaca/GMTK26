@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://8nm8trtnecx1"]
 
 [ext_resource type="Texture2D" uid="uid://dr6cuuh6q271p" path="res://assets/ui/textbox_texture.png" id="1_ky8rw"]
+[ext_resource type="Script" uid="uid://bamfnskh72cnl" path="res://src/ui/ui.gd" id="1_qemve"]
+[ext_resource type="Script" uid="uid://bjxu06i7yp8ks" path="res://src/components/textbox_component.gd" id="2_jlntk"]
+[ext_resource type="FontFile" uid="uid://cxsjdnouuhyq0" path="res://assets/fonts/Titan_One/TitanOne-Regular.ttf" id="3_8wxmc"]
 
 [node name="Ui" type="CanvasLayer" unique_id=447394292]
+script = ExtResource("1_qemve")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=114733304]
 texture_filter = 1
@@ -14,3 +18,19 @@ patch_margin_left = 70
 patch_margin_top = 70
 patch_margin_right = 70
 patch_margin_bottom = 70
+
+[node name="TextboxComponent" type="RichTextLabel" parent="NinePatchRect" unique_id=2061458253]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 38.0
+offset_right = -40.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_8wxmc")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+script = ExtResource("2_jlntk")

@@ -3,6 +3,7 @@ extends Node
 enum State{
 	MENU,
 	PLAY,
+	WAIT,
 	PAUSE,
 	END
 }
