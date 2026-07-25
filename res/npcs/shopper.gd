@@ -1,3 +1,4 @@
+class_name Shopper
 extends CharacterBody3D
 
 enum State{
@@ -18,6 +19,7 @@ const DEATH_OFFSET : Vector3 = Vector3(0, 0, -.35)
 var current_state : State = State.WAIT
 var has_item : bool
 var closest_shelf : Shelf
+var despawn_location : Vector3
 
 
 
@@ -62,6 +64,7 @@ func _on_player_detector_body_entered(body: Node3D) -> void:
 	if body is Player:
 		var player : Player = body
 		if player.is_running():
+			visuals.look_at(player.global_position)
 			animation_player.play("die")
 			visuals.position = DEATH_OFFSET.rotated(Vector3.UP, visuals.rotation.y)
 			current_state = State.DEAD
@@ -77,7 +80,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 			closest_shelf.take_item()
 			current_state = State.WALK
 			has_item = true
-			navigation_agent_3d.target_position = Vector3(-5.3, 0, 3.3)
+			navigation_agent_3d.target_position = despawn_location
 		else:
 			current_state = State.WAIT
 
