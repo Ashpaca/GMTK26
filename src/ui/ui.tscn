@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bjxu06i7yp8ks" path="res://src/components/textbox_component.gd" id="2_jlntk"]
 [ext_resource type="FontFile" uid="uid://cxsjdnouuhyq0" path="res://assets/fonts/Titan_One/TitanOne-Regular.ttf" id="3_8wxmc"]
 [ext_resource type="FontFile" uid="uid://bsyju1mhtdxgd" path="res://assets/fonts/Coiny/Coiny-Regular.ttf" id="5_sjdex"]
+[ext_resource type="Texture2D" uid="uid://bdq30nvdjyekd" path="res://assets/ui/tutorial_phone.png" id="6_7abqo"]
 
 [sub_resource type="Gradient" id="Gradient_sjdex"]
 offsets = PackedFloat32Array(0)
@@ -12,6 +13,28 @@ colors = PackedColorArray(0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_58gb0"]
 gradient = SubResource("Gradient_sjdex")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gucsq"]
+atlas = ExtResource("6_7abqo")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx7gx"]
+atlas = ExtResource("6_7abqo")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58gb0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gucsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx7gx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
 
 [node name="Ui" type="CanvasLayer" unique_id=447394292]
 script = ExtResource("1_qemve")
@@ -77,3 +100,12 @@ bbcode_enabled = true
 text = "You were able to give the gift of apples to X people before you all died"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Phone" type="AnimatedSprite2D" parent="." unique_id=2116582765]
+visible = false
+texture_filter = 1
+position = Vector2(207, 197)
+scale = Vector2(3.46875, 3.46875)
+sprite_frames = SubResource("SpriteFrames_58gb0")
+autoplay = "default"
+frame_progress = 0.44640365

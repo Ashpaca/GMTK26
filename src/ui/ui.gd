@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var phone: AnimatedSprite2D = $Phone
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var rich_text_label: RichTextLabel = $TextureRect/RichTextLabel
 @onready var nine_patch_rect: NinePatchRect = $NinePatchRect
@@ -23,6 +24,7 @@ func do_next_dialogue() -> void:
 func _on_game_over(_good_ending : bool) -> void:
 	nine_patch_rect.visible = false
 	label.visible = false
+	phone.visible = false
 	visible = true
 	texture_rect.visible = true
 	rich_text_label.text = "You were able to give the gift of apples to [shake]" + str(GameState.score) + "[/shake] people before you all died"

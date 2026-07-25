@@ -179,6 +179,7 @@ func _physics_process(_delta: float) -> void:
 				ui.visible = true
 				GameState.current_state = GameState.State.WAIT
 				ui.do_next_dialogue()
+				ui.phone.visible = true
 		Tutorial.CUTSCENE:
 			ui.visible = false
 			for door in the_doors:
