@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d3pnpygx7ncsd" path="res://src/shelf/shelf.tscn" id="7_himjv"]
 [ext_resource type="PackedScene" uid="uid://b1b1daui3wnnm" path="res://src/level/shopping_cart_set_dressing.tscn" id="7_pru2k"]
 [ext_resource type="PackedScene" uid="uid://b0muwao80p8e" path="res://src/level/freezers_standing.tscn" id="8_03fo6"]
+[ext_resource type="Texture2D" uid="uid://dj6mdh8y1qg5v" path="res://assets/sprites/countdown_logo.png" id="8_ht58l"]
 [ext_resource type="PackedScene" uid="uid://bnix5b3v3idxv" path="res://src/player/player.tscn" id="8_q0dfm"]
 [ext_resource type="PackedScene" uid="uid://7f23rmcqlt64" path="res://src/supplies/supply.tscn" id="9_b8n8y"]
 [ext_resource type="PackedScene" uid="uid://cxdpmr25ghc52" path="res://src/supplies/item.tscn" id="9_pru2k"]
@@ -140,6 +141,14 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m46my"]
+atlas = ExtResource("8_ht58l")
+region = Rect2(0, 0, 0, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bq2rv"]
+atlas = ExtResource("8_ht58l")
+region = Rect2(0, 130, 0, 51)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ht58l"]
 atlas = ExtResource("15_sldtx")
@@ -597,6 +606,16 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.9
 [node name="wall-corner5" parent="Walls" unique_id=1024855431 groups=["hide_when_blocking"] instance=ExtResource("3_pru2k")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.9691863, 0, 7.0062404)
 
+[node name="Sprite3D" type="Sprite3D" parent="Walls" unique_id=126454011]
+transform = Transform3D(-0.6, 0, -9.059749e-08, 0, 0.6, 0, 9.059749e-08, 0, -0.6, 1.3432114, 0.63806117, -1.2845392)
+texture_filter = 0
+texture = SubResource("AtlasTexture_m46my")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Walls" unique_id=1486471753]
+transform = Transform3D(-1.3, 0, -1.9629454e-07, 0, 1.3, 0, 1.9629454e-07, 0, -1.3, -0.8907791, 0.6343961, -1.2853355)
+texture_filter = 0
+texture = SubResource("AtlasTexture_bq2rv")
+
 [node name="Shelves" type="Node3D" parent="." unique_id=1050695453 groups=["nav"]]
 
 [node name="Shelf4" parent="Shelves" unique_id=594689916 instance=ExtResource("7_himjv")]
@@ -715,7 +734,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
 sprite_frames = SubResource("SpriteFrames_uxvy4")
 autoplay = "default"
-frame_progress = 0.12195641
+frame_progress = 0.10479343
 
 [node name="Supply2" parent="Supplies" unique_id=1156440016 instance=ExtResource("9_b8n8y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6163714, 0, 6.388402)
