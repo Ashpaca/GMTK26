@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://cxdpmr25ghc52" path="res://res/supplies/item.tscn" id="9_pru2k"]
 [ext_resource type="PackedScene" uid="uid://bom1osf7tjj6w" path="res://res/level/cash_register.tscn" id="10_20fv1"]
 [ext_resource type="PackedScene" uid="uid://dy005wln557ec" path="res://res/level/bottle_return.tscn" id="12_pru2k"]
-[ext_resource type="PackedScene" uid="uid://bc26jrpphkke5" path="res://res/npcs/shopper.tscn" id="14_03fo6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1et6b"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -589,10 +588,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5, 0
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1888896631]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7558974, 0)
 navigation_mesh = SubResource("NavigationMesh_58gb0")
-
-[node name="Shopper" parent="." unique_id=762169485 node_paths=PackedStringArray("shelves_in_store") instance=ExtResource("14_03fo6")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7, 0, 5)
-shelves_in_store = [NodePath("../Shelves/Shelf4"), NodePath("../Shelves/Shelf5"), NodePath("../Shelves/Shelf6"), NodePath("../Shelves/Shelf7"), NodePath("../Shelves/Shelf8"), NodePath("../Shelves/Shelf9"), NodePath("../Shelves/Shelf10"), NodePath("../Shelves/Shelf11"), NodePath("../Shelves/Shelf12"), NodePath("../Shelves/Shelf"), NodePath("../Shelves/Shelf2"), NodePath("../Shelves/Shelf3")]
 
 [node name="SpawnPoints" type="Node3D" parent="." unique_id=565548224]
 
