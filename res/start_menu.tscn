@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://bssgc15i8fl52"]
 
 [ext_resource type="Shader" uid="uid://thqwbr8ogg3i" path="res://assets/shaders/start_menu.gdshader" id="1_3iesf"]
+[ext_resource type="Script" uid="uid://cd7vu87i3llka" path="res://res/start_menu.gd" id="1_8ss2v"]
 [ext_resource type="FontFile" uid="uid://bsyju1mhtdxgd" path="res://assets/fonts/Coiny/Coiny-Regular.ttf" id="2_0khnd"]
 [ext_resource type="Texture2D" uid="uid://1vm2lswbg5ur" path="res://assets/ui/grocery_bg_texture_downscaled_v3.png" id="2_3iesf"]
 [ext_resource type="Script" uid="uid://67qkkdi73o48" path="res://res/start_menu_bg_scroll_speed.gd" id="3_yybdg"]
 [ext_resource type="Shader" uid="uid://by2db01o2jt1g" path="res://assets/shaders/font_gradient.gdshader" id="4_aisge"]
 [ext_resource type="FontFile" uid="uid://cxsjdnouuhyq0" path="res://assets/fonts/Titan_One/TitanOne-Regular.ttf" id="5_aisge"]
 [ext_resource type="Script" uid="uid://vj3t2ex6iti1" path="res://res/globals/font_gradient_set_line_height.gd" id="7_iwya6"]
+[ext_resource type="StyleBox" uid="uid://badm8of71h5pp" path="res://assets/ui/start_menu_hover_style_box_texture.tres" id="8_trvbb"]
 
 [sub_resource type="Gradient" id="Gradient_piys8"]
 colors = PackedColorArray(0.38039216, 0.79607844, 0.54509807, 1, 0.38039216, 0.79607844, 0.54509807, 1)
@@ -84,6 +86,12 @@ shader = ExtResource("4_aisge")
 shader_parameter/gradient = SubResource("GradientTexture2D_b21be")
 shader_parameter/line_height = 0.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwya6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trvbb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ss2v"]
+
 [node name="StartMenu" type="Control" unique_id=1374934236]
 layout_mode = 3
 anchors_preset = 15
@@ -91,6 +99,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8ss2v")
 
 [node name="FlatBackground" type="TextureRect" parent="." unique_id=326471122]
 layout_mode = 1
@@ -239,7 +248,9 @@ theme_override_constants/separation = 30
 [node name="StartLabel" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions" unique_id=195431751]
 material = SubResource("ShaderMaterial_b2jbu")
 custom_minimum_size = Vector2(0, 38)
+clip_contents = false
 layout_mode = 2
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_0khnd")
 theme_override_font_sizes/normal_font_size = 36
 text = "Start"
@@ -257,6 +268,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 0.40392157)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
@@ -267,9 +279,25 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
+[node name="StartButton" type="Button" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/StartLabel/StartLabelShadow" unique_id=1455715930]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.685
+offset_bottom = -0.6850014
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwya6")
+theme_override_styles/pressed = ExtResource("8_trvbb")
+theme_override_styles/hover = ExtResource("8_trvbb")
+action_mode = 0
+
 [node name="OptionsLabel" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions" unique_id=2079853685]
 material = SubResource("ShaderMaterial_b2jbu")
 custom_minimum_size = Vector2(0, 38)
+clip_contents = false
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_0khnd")
 theme_override_font_sizes/normal_font_size = 36
@@ -298,11 +326,25 @@ fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 
+[node name="OptionsButton" type="Button" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/OptionsLabel/OptionsLabelShadow" unique_id=1296101752]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_trvbb")
+theme_override_styles/pressed = ExtResource("8_trvbb")
+theme_override_styles/hover = ExtResource("8_trvbb")
+action_mode = 0
+
 [node name="QuitLabel" type="RichTextLabel" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions" unique_id=1717143302]
 material = SubResource("ShaderMaterial_b2jbu")
 custom_minimum_size = Vector2(0, 38)
 clip_contents = false
 layout_mode = 2
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_0khnd")
 theme_override_font_sizes/normal_font_size = 36
 text = "Quit"
@@ -320,6 +362,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 0.40392157)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
@@ -330,6 +373,19 @@ text = "Quit
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
+
+[node name="QuitButton" type="Button" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/QuitLabel/QuitLabelShadow" unique_id=1408253182]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8ss2v")
+theme_override_styles/pressed = ExtResource("8_trvbb")
+theme_override_styles/hover = ExtResource("8_trvbb")
+action_mode = 0
 
 [node name="SubMarginContainerR" type="MarginContainer" parent="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1014210357]
 layout_mode = 2
@@ -348,3 +404,7 @@ horizontal_alignment = 1
 [node name="MarginContainerR" type="MarginContainer" parent="MetaMarginContainer/HBoxContainer" unique_id=412779907]
 layout_mode = 2
 theme_override_constants/margin_left = 230
+
+[connection signal="pressed" from="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/StartLabel/StartLabelShadow/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/OptionsLabel/OptionsLabelShadow/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/QuitLabel/QuitLabelShadow/QuitButton" to="." method="_on_quit_button_pressed"]
