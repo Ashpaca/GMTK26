@@ -729,6 +729,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5956316, 0, 0.5742065)
 
 [node name="BombTimer" type="Label3D" parent="SetDressing" unique_id=25146410]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -0.573, 0.594, 6.359)
+visible = false
 modulate = Color(1, 0.08627451, 0.11372549, 1)
 text = "10"
 font_size = 140

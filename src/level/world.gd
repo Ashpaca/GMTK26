@@ -182,6 +182,7 @@ func _physics_process(_delta: float) -> void:
 				ui.phone.visible = true
 		Tutorial.CUTSCENE:
 			ui.visible = false
+			bomb_timer.visible = true
 			for door in the_doors:
 					door.open()
 			if camera_tween:

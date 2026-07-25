@@ -67,15 +67,14 @@ bbcode_enabled = true
 script = ExtResource("2_jlntk")
 
 [node name="Label" type="RichTextLabel" parent="." unique_id=470785014]
-offset_left = 1070.0
-offset_top = 557.0
-offset_right = 1319.0
-offset_bottom = 715.0
+offset_left = 1030.0
+offset_top = 559.0
+offset_right = 1279.0
+offset_bottom = 717.0
 theme_override_colors/default_color = Color(0.24705882, 0.42745098, 0.8901961, 0.45490196)
 theme_override_fonts/normal_font = ExtResource("5_sjdex")
 theme_override_font_sizes/normal_font_size = 100
-text = "8
-"
+text = "  8"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=968955765]
 visible = false
@@ -108,4 +107,4 @@ position = Vector2(207, 197)
 scale = Vector2(3.46875, 3.46875)
 sprite_frames = SubResource("SpriteFrames_58gb0")
 autoplay = "default"
-frame_progress = 0.44640365
+frame_progress = 0.8885503
