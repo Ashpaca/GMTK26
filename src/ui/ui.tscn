@@ -20,7 +20,7 @@ patch_margin_top = 70
 patch_margin_right = 70
 patch_margin_bottom = 70
 
-[node name="TextboxComponent" type="RichTextLabel" parent="NinePatchRect" unique_id=2061458253]
+[node name="TextboxComponent" type="RichTextLabel" parent="NinePatchRect" unique_id=1993777970]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
