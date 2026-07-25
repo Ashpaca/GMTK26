@@ -133,6 +133,6 @@ func _physics_process(_delta: float) -> void:
 		Tutorial.DONE:
 			if not last_shopper:
 				for door in the_doors:
-					door.close()
+					pass#door.close()
 				print("dad cut scene")
 				GameState.tutorial_complete = true

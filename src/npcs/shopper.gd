@@ -56,7 +56,9 @@ func do_walk(delta : float) -> void:
 		visuals.look_at(velocity + global_position)
 		var angle_goal : float = visuals.rotation.y
 		visuals.rotation.y = rotate_toward(angle_current, angle_goal, delta * 10)
-		
+	
+	if navigation_agent_3d.is_navigation_finished():
+		current_state = State.GRAB
 	move_and_slide()
 
 
@@ -98,6 +100,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 			closest_shelf.take_item()
 			current_state = State.WALK
 			has_item = true
+			navigation_agent_3d.avoidance_priority = 1.0
 			navigation_agent_3d.target_position = despawn_location
 		else:
 			current_state = State.WAIT
@@ -123,6 +126,7 @@ func _on_navigation_agent_3d_target_reached() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	print(current_state)
 	if not GameState.is_playing(): return
 	match current_state:
 		State.WALK:
