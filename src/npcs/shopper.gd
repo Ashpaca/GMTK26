@@ -64,7 +64,7 @@ func do_walk(delta : float) -> void:
 
 func do_wait() -> void:
 	var nav_map : RID = get_world_3d().navigation_map
-	if NavigationServer3D.map_get_iteration_id(nav_map) < 2:
+	if NavigationServer3D.map_get_iteration_id(nav_map) < 1:
 		return
 	var target_shelf_location : Vector3 = shelves_in_store.pick_random().global_position
 	var valid_shopping_location : Vector3 = NavigationServer3D.map_get_closest_point(nav_map, target_shelf_location - target_shelf_location.y * Vector3.UP)

@@ -11,7 +11,8 @@ var dialogues_in_order : Array[String] = [
 	"Please be careful to not run into each other by pressing 'Z'",
 	"Any workers in the store please make your way to an apple supply and pick up a box by pressing 'X'.",
 	"And place it on the nearest shelf with 'x'.\nOr just put it back where you found it, I don't care...\nBut our loyal customers sure do!",
-	"Even though this is a prerecorded message you have heard every day that you have worked here, and I have no way of knowing what is currently happening, I'm sure the first customer of the day is just arriving. Give them some space to do their shopping!\n\nNo seriously, let's not run into them like Gerald would always do. I mean he's gone now and all, but I still had to record this message because of what happend."
+	"Even though this is a prerecorded message you have heard every day that you have worked here, and I have no way of knowing what is currently happening, I'm sure the first customer of the day is just arriving. Give them some space to do their shopping!\n\nNo seriously, let's not run into them like Gerald would always do. I mean he's gone now and all, but I still had to record this message because of what happend.",
+	"Courtney! It's me, your father. You don't have much time, there is a bomb in that COUNTDOWN. The explosion will be big enough that there is no hope of escape. You might as well provide the best customer survice you can for your last few customers. But I'm sorry to say, this may be the end of COUNTDOWN as we know it. Darn those Australians..."
 ]
 
 func do_next_dialogue() -> void:

@@ -7,7 +7,9 @@ enum Tutorial{
 	PICKUP,
 	STOCK,
 	CUSTOMER,
-	DONE
+	DONE,
+	CUTSCENE,
+	REALLY_DONE
 }
 
 const SHOPPER = preload("uid://bc26jrpphkke5")
@@ -15,6 +17,12 @@ const bomb_location_default : Vector3 = Vector3(-0.57, 0.594, 6.359)
 const bomb_location_change : Vector3 = Vector3(-0.57, 2.366, 3.359)
 const bomb_size_default : Vector3 = Vector3(1, 1, 1)
 const bomb_size_change : Vector3 = Vector3(4, 4, 4)
+const camera_position_default : Vector3 = Vector3(6, 5.4, 6)
+const camera_rotation_default : Vector3 = Vector3(-30, 45, 0)
+const camera_size_default : float = 5.0
+const camera_position_moved : Vector3 = Vector3(-0.15, 0.328, 0.5)
+const camera_rotation_moved : Vector3 = Vector3(0, 0, 0)
+const camera_size_moved : float = 0.5
 
 @onready var doors: Node3D = $Doors
 @onready var shelves: Node3D = $Shelves
@@ -38,6 +46,9 @@ var has_done_right : bool
 @onready var apple_indicators : Array[AnimatedSprite3D] = [$Supplies/Supply/AppleIndicator, $Supplies/Supply2/AppleIndicator, $Supplies/Supply3/AppleIndicator]
 @onready var shelf_indicator: AnimatedSprite3D = $Shelves/Shelf4/ShelfIndicator
 @onready var player: Player = $Player
+@onready var player_visuals : Node3D = player.get_child(1)
+@onready var camera: Camera3D = player.get_child(2)
+var camera_tween : Tween
 var last_shopper : Shopper
 @onready var bomb_timer: Label3D = $SetDressing/BombTimer
 var timer_change_display : int = 9
@@ -155,6 +166,31 @@ func _physics_process(_delta: float) -> void:
 		Tutorial.DONE:
 			if not last_shopper:
 				for door in the_doors:
-					pass#door.close()
-				print("dad cut scene")
-				GameState.tutorial_complete = true
+					door.close()
+				player_visuals.look_at(Vector3(0, 0, 100))
+				if camera_tween:
+					camera_tween.kill()
+				camera_tween = create_tween()
+				camera_tween.set_parallel()
+				camera_tween.tween_property(camera, "position", camera_position_moved, 1.0)
+				camera_tween.tween_property(camera, "rotation_degrees", camera_rotation_moved, 1.5)
+				camera_tween.tween_property(camera, "size", camera_size_moved, 1.0)
+				tutorial_point = Tutorial.CUTSCENE
+				ui.visible = true
+				GameState.current_state = GameState.State.WAIT
+				ui.do_next_dialogue()
+		Tutorial.CUTSCENE:
+			ui.visible = false
+			for door in the_doors:
+					door.open()
+			if camera_tween:
+				camera_tween.kill()
+			camera_tween = create_tween()
+			camera_tween.set_parallel()
+			camera_tween.tween_property(camera, "position", camera_position_default, 1.0)
+			camera_tween.tween_property(camera, "rotation_degrees", camera_rotation_default, 1.5)
+			camera_tween.tween_property(camera, "size", camera_size_default, 1.0)
+			tutorial_point = Tutorial.REALLY_DONE
+			GameState.tutorial_complete = true
+		Tutorial.REALLY_DONE:
+			pass
