@@ -25,7 +25,7 @@ enum State{
 	GET_UP
 }
 
-const SPEED : float = 1
+const SPEED : float = 2
 const DEATH_OFFSET : Vector3 = Vector3(0, 0, -.35)
 @export var shelves_in_store : Array[Shelf]
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D

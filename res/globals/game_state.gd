@@ -8,10 +8,9 @@ enum State{
 }
 
 var current_state : State = State.MENU
-var time_left : float = 60.0
-var spawn_shopper_at : float = 60.0
-var spawn_shopper_speed : float = 1.0
-var spawn_shopper_acceleration : float = 0.01
+var total_time : float = 60.0
+var time_left : float = total_time
+var spawn_shopper_at : float = total_time
 var tutorial_complete : bool = true
 
 func is_playing() -> bool:
@@ -28,8 +27,7 @@ func _process(delta: float) -> void:
 		time_left -= delta
 		if time_left <= spawn_shopper_at:
 			EventBus.spawn_shopper.emit()
-			spawn_shopper_at -= spawn_shopper_speed
-			spawn_shopper_speed -= spawn_shopper_acceleration
+			spawn_shopper_at -= log(total_time + 5 - time_left) / log(10) / -0.3 + 6.5
 		
 
 func _on_request_start_game() -> void:
