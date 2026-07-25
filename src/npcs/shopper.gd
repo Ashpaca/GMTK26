@@ -107,6 +107,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 
 func _on_get_up_timer_timeout() -> void:
+	if GameState.current_state == GameState.State.END:
+		return
 	animation_player.play_backwards("die")
 	current_state = State.GET_UP
 
@@ -125,6 +127,10 @@ func _on_navigation_agent_3d_target_reached() -> void:
 		current_state = State.WAIT
 
 
+func _on_game_over(_good_ending : bool) -> void:
+	animation_player.play("die")
+
+
 func _physics_process(delta: float) -> void:
 	if not GameState.is_playing(): return
 	match current_state:
@@ -136,6 +142,10 @@ func _physics_process(delta: float) -> void:
 			pass # could have something here
 		State.WAIT:
 			do_wait()
+
+
+func _ready() -> void:
+	EventBus.game_over.connect(_on_game_over)
 
 
 func _init() -> void:

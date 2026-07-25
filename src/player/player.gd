@@ -54,6 +54,10 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 			held_item.queue_free()
 
 
+func _on_game_over(_good_ending : bool) -> void:
+	animation_player.play("die")
+
+
 func _physics_process(delta: float) -> void:
 	if not GameState.is_playing(): return
 	if is_stocking or is_picking_up or is_dropping: return
@@ -91,3 +95,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	move_and_slide()
+
+
+func _ready() -> void:
+	EventBus.game_over.connect(_on_game_over)

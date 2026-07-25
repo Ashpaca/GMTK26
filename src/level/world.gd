@@ -75,9 +75,7 @@ func _on_spawn_shopper() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if not GameState.is_playing(): return
-	if GameState.tutorial_complete:
-		if GameState.time_left < timer_change_display * 10:
+	if GameState.time_left < timer_change_display * 10:
 			if bomb_tween:
 				bomb_tween.kill()
 			bomb_tween = create_tween()
@@ -88,6 +86,12 @@ func _physics_process(_delta: float) -> void:
 			bomb_tween.tween_property(bomb_timer, "position", bomb_location_default, 0.2).set_delay(1.0)
 			bomb_tween.tween_property(bomb_timer, "scale", bomb_size_default, 0.2).set_delay(1.0)
 			timer_change_display -= 1
+			if timer_change_display < 0:
+				var caller : Callable = Callable(EventBus, "emit_signal")
+				caller = caller.bind("game_over", true)
+				bomb_tween.tween_callback(caller.call).set_delay(1.0)
+	if not GameState.is_playing(): return
+	if GameState.tutorial_complete:
 		return
 	match tutorial_point:
 		Tutorial.BEFORE:

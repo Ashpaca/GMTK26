@@ -13,3 +13,6 @@ signal request_start_game
 # emitted by: none
 # connected to: none
 signal request_quit_game
+
+
+signal game_over(good_ending : bool)

@@ -30,7 +30,8 @@ func _process(delta: float) -> void:
 			EventBus.spawn_shopper.emit()
 			spawn_shopper_at -= log(total_time + 5 - time_left) / log(10) / -0.3 + 6.5
 		if time_left < 0:
-			print("game over")
+			current_state = State.END
+
 
 func _on_request_start_game() -> void:
 	current_state = State.PLAY
