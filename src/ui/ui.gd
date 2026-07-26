@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var nine_patch_rect: NinePatchRect = $NinePatchRect
 @onready var textbox_component: TextboxComponent = $NinePatchRect/TextboxComponent
 @onready var label: RichTextLabel = $Label
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 var dialogue_index : int = -1
 var dialogues_in_order : Array[String] = [
 	"Testing, Testing \nPress 'X' to proceed\nEveryones favourite grocery store, COUNTDOWN, is about to open for a completely normal day... \nUse your arrow keys to move around.",
@@ -55,7 +56,10 @@ func _physics_process(_delta: float) -> void:
 		if not textbox_component.is_fully_displayed():
 			textbox_component.display_all_text()
 		elif not textbox_component.get_next_page():
+			audio_stream_player.play()
 			GameState.current_state = GameState.State.PLAY
+		else:
+			audio_stream_player.play()
 
 
 func _ready() -> void:

@@ -44,6 +44,8 @@ size = 5.0
 avoidance_enabled = true
 radius = 0.3
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=831229277]
+
 [connection signal="animation_finished" from="Visuals/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="Visuals"]

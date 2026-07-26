@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://cxsjdnouuhyq0" path="res://assets/fonts/Titan_One/TitanOne-Regular.ttf" id="3_8wxmc"]
 [ext_resource type="FontFile" uid="uid://bsyju1mhtdxgd" path="res://assets/fonts/Coiny/Coiny-Regular.ttf" id="5_sjdex"]
 [ext_resource type="Texture2D" uid="uid://bdq30nvdjyekd" path="res://assets/ui/tutorial_phone.png" id="6_7abqo"]
+[ext_resource type="AudioStream" uid="uid://davk1ae0kyi84" path="res://assets/sfx/ui/switch26.ogg" id="7_gucsq"]
 
 [sub_resource type="Gradient" id="Gradient_sjdex"]
 offsets = PackedFloat32Array(0)
@@ -107,4 +108,7 @@ position = Vector2(207, 197)
 scale = Vector2(3.46875, 3.46875)
 sprite_frames = SubResource("SpriteFrames_58gb0")
 autoplay = "default"
-frame_progress = 0.8885503
+frame_progress = 0.37199944
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=937808522]
+stream = ExtResource("7_gucsq")

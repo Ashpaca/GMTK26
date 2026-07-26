@@ -20,7 +20,12 @@ func _physics_process(_delta: float) -> void:
 		add_theme_color_override("font_hover_color", get_theme_color("font_focus_color"))
 
 
+func _on_focus() -> void:
+	EventBus.play_switch.emit()
+
+
 func _ready() -> void:
+	focus_entered.connect(_on_focus)
 	mouse_entered.connect(_on_mouse_entered)
 	add_theme_stylebox_override("focus", get_theme_stylebox("hover"))
 	add_theme_stylebox_override("hover", get_theme_stylebox("normal"))

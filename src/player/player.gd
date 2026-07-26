@@ -8,6 +8,7 @@ const HELD_SPEED = 3.5
 @onready var visuals: Node3D = $Visuals
 @onready var interaction_zone: Area3D = $Visuals/InteractionZone
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 var is_stocking : bool
 var is_picking_up : bool
 var is_dropping : bool
@@ -15,6 +16,13 @@ var held_item : Item
 var shelf_to_stock : Shelf
 var supply_to_grab : Supply
 var run_speed_multiplier : float = 0.8
+var steps_audios : Array[AudioStream] = [
+	load("res://assets/sfx/steps/impactWood_heavy_000.ogg"),
+	load("res://assets/sfx/steps/impactWood_heavy_001.ogg"),
+	load("res://assets/sfx/steps/impactWood_heavy_002.ogg"),
+	load("res://assets/sfx/steps/impactWood_heavy_003.ogg"),
+	load("res://assets/sfx/steps/impactWood_heavy_004.ogg")
+]
 
 func handle_interaction() -> void:
 	for body in interaction_zone.get_overlapping_bodies():
@@ -77,6 +85,13 @@ func _physics_process(delta: float) -> void:
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized().rotated(Vector3.UP, PI/4)
 	if direction:
 		visuals.look_at(global_position - direction)
+		if not audio_stream_player.playing:
+			audio_stream_player.stream = steps_audios.pick_random()
+			audio_stream_player.play()
+			if run_speed_multiplier > 1:
+				audio_stream_player.pitch_scale = 1.2
+			else:
+				audio_stream_player.pitch_scale = 1
 		if held_item:
 			velocity.x = direction.x * HELD_SPEED * run_speed_multiplier
 			velocity.z = direction.z * HELD_SPEED * run_speed_multiplier

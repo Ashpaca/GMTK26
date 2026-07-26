@@ -16,3 +16,6 @@ signal request_quit_game
 
 
 signal game_over(good_ending : bool)
+
+
+signal play_switch

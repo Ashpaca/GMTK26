@@ -54,6 +54,31 @@ var last_shopper : Shopper
 var timer_change_display : int = 9
 var bomb_tween : Tween
 
+@onready var male_count: AudioStreamPlayer = $MaleCount
+@onready var female_count: AudioStreamPlayer = $FemaleCount
+var male_audios : Array[AudioStream] = [
+	load("res://assets/sfx/counting/M1.ogg"), 
+	load("res://assets/sfx/counting/M2.ogg"), 
+	load("res://assets/sfx/counting/M3.ogg"), 
+	load("res://assets/sfx/counting/M4.ogg"), 
+	load("res://assets/sfx/counting/M5.ogg"), 
+	load("res://assets/sfx/counting/M6.ogg"), 
+	load("res://assets/sfx/counting/M7.ogg"), 
+	load("res://assets/sfx/counting/M8.ogg"), 
+	load("res://assets/sfx/counting/M9.ogg"), 
+	load("res://assets/sfx/counting/M10.ogg")]
+var female_audios : Array[AudioStream] = [
+	load("res://assets/sfx/counting/F1.ogg"), 
+	load("res://assets/sfx/counting/F2.ogg"), 
+	load("res://assets/sfx/counting/F3.ogg"), 
+	load("res://assets/sfx/counting/F4.ogg"), 
+	load("res://assets/sfx/counting/F5.ogg"), 
+	load("res://assets/sfx/counting/F6.ogg"), 
+	load("res://assets/sfx/counting/F7.ogg"), 
+	load("res://assets/sfx/counting/F8.ogg"), 
+	load("res://assets/sfx/counting/F9.ogg"), 
+	load("res://assets/sfx/counting/F10.ogg")]
+
 func _on_request_start_game() -> void:
 	tutorial_point = Tutorial.MOVEMENT
 	ui.visible = true
@@ -87,20 +112,24 @@ func _on_spawn_shopper() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if GameState.time_left < timer_change_display * 10:
-			if bomb_tween:
-				bomb_tween.kill()
-			bomb_tween = create_tween()
-			bomb_tween.set_parallel()
-			bomb_tween.tween_property(bomb_timer, "position", bomb_location_change, 1.0)
-			bomb_tween.tween_property(bomb_timer, "scale", bomb_size_change, 1.0)
-			bomb_tween.tween_property(bomb_timer, "text", str(timer_change_display), 0.01).set_delay(1.0)
-			bomb_tween.tween_property(bomb_timer, "position", bomb_location_default, 0.2).set_delay(1.0)
-			bomb_tween.tween_property(bomb_timer, "scale", bomb_size_default, 0.2).set_delay(1.0)
-			timer_change_display -= 1
-			if timer_change_display < 0:
-				var caller : Callable = Callable(EventBus, "emit_signal")
-				caller = caller.bind("game_over", true)
-				bomb_tween.tween_callback(caller.call).set_delay(1.0)
+		male_count.stream = male_audios[timer_change_display]
+		male_count.play()
+		female_count.stream = female_audios[timer_change_display]
+		female_count.play()
+		if bomb_tween:
+			bomb_tween.kill()
+		bomb_tween = create_tween()
+		bomb_tween.set_parallel()
+		bomb_tween.tween_property(bomb_timer, "position", bomb_location_change, 1.0)
+		bomb_tween.tween_property(bomb_timer, "scale", bomb_size_change, 1.0)
+		bomb_tween.tween_property(bomb_timer, "text", str(timer_change_display), 0.01).set_delay(1.0)
+		bomb_tween.tween_property(bomb_timer, "position", bomb_location_default, 0.2).set_delay(1.0)
+		bomb_tween.tween_property(bomb_timer, "scale", bomb_size_default, 0.2).set_delay(1.0)
+		timer_change_display -= 1
+		if timer_change_display < 0:
+			var caller : Callable = Callable(EventBus, "emit_signal")
+			caller = caller.bind("game_over", true)
+			bomb_tween.tween_callback(caller.call).set_delay(1.0)
 	if not GameState.is_playing(): return
 	if GameState.tutorial_complete:
 		return
