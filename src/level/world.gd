@@ -225,3 +225,7 @@ func _physics_process(_delta: float) -> void:
 			GameState.tutorial_complete = true
 		Tutorial.REALLY_DONE:
 			pass
+
+
+func _on_kill_zone_body_entered(body: Node3D) -> void:
+	body.queue_free()

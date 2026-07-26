@@ -75,6 +75,8 @@ func do_wait() -> void:
 func _on_navigation_agent_3d_velocity_computed(safe_velocity: Vector3) -> void:
 	if current_state != State.WALK:
 		return
+	if not is_on_floor():
+		return
 	velocity = Vector3(safe_velocity.x, 0, safe_velocity.z).normalized() * SPEED
 
 
