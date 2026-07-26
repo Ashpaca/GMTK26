@@ -19,3 +19,6 @@ signal game_over(good_ending : bool)
 
 
 signal play_switch
+
+
+signal player_deleted

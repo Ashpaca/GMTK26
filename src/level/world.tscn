@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://cwayeqog0fi08" path="res://assets/music/Sergio's Magic Dustbin.mp3" id="20_kysof"]
 [ext_resource type="AudioStream" uid="uid://ch3yyip25mc13" path="res://assets/music/Sergios_Magic_Short.wav" id="21_85tmk"]
 [ext_resource type="AudioStream" uid="uid://bfndt84sjd5iv" path="res://assets/sfx/voice_acting/GMTK26Phone.mp3" id="22_egigb"]
+[ext_resource type="AudioStream" uid="uid://bt1vswfwwr1ak" path="res://assets/sfx/voice_acting/easteregg.mp3" id="23_3ac3d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1et6b"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -875,5 +876,8 @@ volume_db = -6.58
 
 [node name="FatherAudio" type="AudioStreamPlayer" parent="." unique_id=1845894020]
 stream = ExtResource("22_egigb")
+
+[node name="EasterEggAudio" type="AudioStreamPlayer" parent="." unique_id=1524906859]
+stream = ExtResource("23_3ac3d")
 
 [connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

@@ -112,5 +112,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+func _exit_tree() -> void:
+	EventBus.player_deleted.emit()
+
+
 func _ready() -> void:
 	EventBus.game_over.connect(_on_game_over)

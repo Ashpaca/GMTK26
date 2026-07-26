@@ -58,6 +58,7 @@ var bomb_tween : Tween
 @onready var pre_father_music: AudioStreamPlayer = $PreFatherMusic
 @onready var post_father_music: AudioStreamPlayer = $PostFatherMusic
 @onready var father_audio: AudioStreamPlayer = $FatherAudio
+@onready var easter_egg_audio: AudioStreamPlayer = $EasterEggAudio
 
 func _on_request_start_game() -> void:
 	tutorial_point = Tutorial.MOVEMENT
@@ -67,9 +68,16 @@ func _on_request_start_game() -> void:
 	pre_father_music.play()
 
 
+func _do_easter_egg() -> void:
+	easter_egg_audio.play()
+	pre_father_music.stop()
+	post_father_music.stop()
+
+
 func _ready() -> void:
 	EventBus.request_start_game.connect(_on_request_start_game)
 	EventBus.spawn_shopper.connect(_on_spawn_shopper)
+	EventBus.player_deleted.connect(_do_easter_egg)
 	
 	for door in doors.get_children():
 		the_doors.append(door)
