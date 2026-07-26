@@ -33,7 +33,7 @@ func _on_game_over(_good_ending : bool) -> void:
 	game_over_tween.tween_property(nine_patch_rect, "visible", false, 0).set_delay(1)
 	game_over_tween.tween_property(label, "visible", false, 0).set_delay(1)
 	game_over_tween.tween_property(phone, "visible", false, 0).set_delay(1)
-	game_over_tween.tween_callback(explosion_sound.play).set_delay(1)
+	game_over_tween.tween_callback(explosion_sound.play)
 	game_over_tween.tween_property(self, "visible", true, 0).set_delay(2)
 	game_over_tween.tween_property(texture_rect, "visible", true, 0).set_delay(2)
 	game_over_tween.tween_property(rich_text_label, "text", "You were able to give the gift of apples to [shake]" + str(GameState.score) + "[/shake] people before you all died", 0).set_delay(2)

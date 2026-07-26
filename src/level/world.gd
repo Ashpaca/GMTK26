@@ -54,25 +54,17 @@ var last_shopper : Shopper
 var timer_change_display : int = 9
 var bomb_tween : Tween
 
-@onready var female_count: AudioStreamPlayer = $FemaleCount
-var female_audios : Array[AudioStream] = [
-	load("res://assets/sfx/counting/F1.ogg"), 
-	load("res://assets/sfx/counting/F2.ogg"), 
-	load("res://assets/sfx/counting/F3.ogg"), 
-	load("res://assets/sfx/counting/F4.ogg"), 
-	load("res://assets/sfx/counting/F5.ogg"), 
-	load("res://assets/sfx/counting/F6.ogg"), 
-	load("res://assets/sfx/counting/F7.ogg"), 
-	load("res://assets/sfx/counting/F8.ogg"), 
-	load("res://assets/sfx/counting/F9.ogg"), 
-	load("res://assets/sfx/counting/F10.ogg")]
+@onready var tick_sound: AudioStreamPlayer = $TickSound
+@onready var pre_father_music: AudioStreamPlayer = $PreFatherMusic
 @onready var post_father_music: AudioStreamPlayer = $PostFatherMusic
+@onready var father_audio: AudioStreamPlayer = $FatherAudio
 
 func _on_request_start_game() -> void:
 	tutorial_point = Tutorial.MOVEMENT
 	ui.visible = true
 	GameState.current_state = GameState.State.WAIT
 	ui.do_next_dialogue()
+	pre_father_music.play()
 
 
 func _ready() -> void:
@@ -101,8 +93,7 @@ func _on_spawn_shopper() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if GameState.time_left < timer_change_display * 10:
-		female_count.stream = female_audios[timer_change_display]
-		female_count.play()
+		tick_sound.play()
 		if bomb_tween:
 			bomb_tween.kill()
 		bomb_tween = create_tween()
@@ -196,7 +187,10 @@ func _physics_process(_delta: float) -> void:
 				GameState.current_state = GameState.State.WAIT
 				ui.do_next_dialogue()
 				ui.phone.visible = true
+				pre_father_music.stop()
+				father_audio.play()
 		Tutorial.CUTSCENE:
+			father_audio.stop()
 			ui.visible = false
 			bomb_timer.visible = true
 			for door in the_doors:
