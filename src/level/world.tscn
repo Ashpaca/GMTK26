@@ -23,6 +23,9 @@
 [ext_resource type="AudioStream" uid="uid://ch3yyip25mc13" path="res://assets/music/Sergios_Magic_Short.wav" id="21_85tmk"]
 [ext_resource type="AudioStream" uid="uid://bfndt84sjd5iv" path="res://assets/sfx/voice_acting/GMTK26Phone.mp3" id="22_egigb"]
 [ext_resource type="AudioStream" uid="uid://bt1vswfwwr1ak" path="res://assets/sfx/voice_acting/easteregg.mp3" id="23_3ac3d"]
+[ext_resource type="PackedScene" uid="uid://d2opph6f3nikg" path="res://assets/models/tile-low.glb" id="24_d5d2i"]
+[ext_resource type="PackedScene" uid="uid://c8bhg2rvxd22m" path="res://assets/models/road-crossing.glb" id="25_yao3k"]
+[ext_resource type="PackedScene" uid="uid://blir1axfgr1dn" path="res://assets/models/road-straight.glb" id="26_8dsgi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1et6b"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -879,8 +882,1508 @@ stream = ExtResource("22_egigb")
 
 [node name="EasterEggAudio" type="AudioStreamPlayer" parent="." unique_id=1524906859]
 stream = ExtResource("23_3ac3d")
+volume_db = 10.0
 
 [node name="TutorialVoice" type="AudioStreamPlayer" parent="." unique_id=1902437287]
 volume_db = 20.0
+
+[node name="OutsideWorld" type="Node3D" parent="." unique_id=746431254]
+
+[node name="tile-low2" parent="OutsideWorld" unique_id=1064699965 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 7.41399)
+
+[node name="tile-low4" parent="OutsideWorld" unique_id=969126361 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 9.41399)
+
+[node name="tile-low5" parent="OutsideWorld" unique_id=1667726254 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 10.41399)
+
+[node name="tile-low6" parent="OutsideWorld" unique_id=1373889350 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 11.41399)
+
+[node name="tile-low7" parent="OutsideWorld" unique_id=456488129 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 6.4139905)
+
+[node name="tile-low8" parent="OutsideWorld" unique_id=1234361904 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 5.4139905)
+
+[node name="tile-low9" parent="OutsideWorld" unique_id=1936322383 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 4.4139905)
+
+[node name="tile-low10" parent="OutsideWorld" unique_id=187039580 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 3.4139905)
+
+[node name="tile-low11" parent="OutsideWorld" unique_id=673164481 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 2.4139905)
+
+[node name="tile-low12" parent="OutsideWorld" unique_id=1413611302 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 1.4139905)
+
+[node name="tile-low13" parent="OutsideWorld" unique_id=1767624967 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 0.4139905)
+
+[node name="tile-low14" parent="OutsideWorld" unique_id=319115274 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, -0.5860095)
+
+[node name="tile-low516" parent="OutsideWorld" unique_id=1398315070 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.734455, 0, 6.4139905)
+
+[node name="tile-low517" parent="OutsideWorld" unique_id=645653565 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.734455, 0, 5.4139905)
+
+[node name="tile-low518" parent="OutsideWorld" unique_id=223337895 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.734455, 0, 4.4139905)
+
+[node name="tile-low519" parent="OutsideWorld" unique_id=93761749 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.734455, 0, 3.4139905)
+
+[node name="tile-low520" parent="OutsideWorld" unique_id=2013358898 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.734455, 0, 2.4139905)
+
+[node name="tile-low521" parent="OutsideWorld" unique_id=1132014453 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.734455, 0, 1.4139905)
+
+[node name="tile-low522" parent="OutsideWorld" unique_id=271883983 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.734455, 0, 0.4139905)
+
+[node name="tile-low523" parent="OutsideWorld" unique_id=1239010268 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.734455, 0, -0.5860095)
+
+[node name="tile-low15" parent="OutsideWorld" unique_id=1453548686 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 7.41399)
+
+[node name="tile-low17" parent="OutsideWorld" unique_id=1286035464 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 9.41399)
+
+[node name="tile-low18" parent="OutsideWorld" unique_id=1821687510 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 10.41399)
+
+[node name="tile-low20" parent="OutsideWorld" unique_id=2063589093 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 6.4139905)
+
+[node name="tile-low19" parent="OutsideWorld" unique_id=532343012 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 11.41399)
+
+[node name="tile-low21" parent="OutsideWorld" unique_id=1337486506 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 5.4139905)
+
+[node name="tile-low22" parent="OutsideWorld" unique_id=1706730787 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 4.4139905)
+
+[node name="tile-low23" parent="OutsideWorld" unique_id=1423625125 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 3.4139905)
+
+[node name="tile-low24" parent="OutsideWorld" unique_id=52958095 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 2.4139905)
+
+[node name="tile-low25" parent="OutsideWorld" unique_id=222804895 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 1.4139905)
+
+[node name="tile-low26" parent="OutsideWorld" unique_id=1640023369 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 0.4139905)
+
+[node name="tile-low27" parent="OutsideWorld" unique_id=1048754729 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, -0.5860095)
+
+[node name="tile-low28" parent="OutsideWorld" unique_id=1622761071 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 7.41399)
+
+[node name="tile-low30" parent="OutsideWorld" unique_id=2127191963 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 9.41399)
+
+[node name="tile-low31" parent="OutsideWorld" unique_id=556902505 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 10.41399)
+
+[node name="tile-low33" parent="OutsideWorld" unique_id=1150319902 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 6.4139905)
+
+[node name="tile-low34" parent="OutsideWorld" unique_id=722861058 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 5.4139905)
+
+[node name="tile-low32" parent="OutsideWorld" unique_id=129936461 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 11.41399)
+
+[node name="tile-low35" parent="OutsideWorld" unique_id=908563893 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 4.4139905)
+
+[node name="tile-low36" parent="OutsideWorld" unique_id=258845869 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 3.4139905)
+
+[node name="tile-low37" parent="OutsideWorld" unique_id=66014355 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 2.4139905)
+
+[node name="tile-low38" parent="OutsideWorld" unique_id=1831592131 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 1.4139905)
+
+[node name="tile-low39" parent="OutsideWorld" unique_id=824134596 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 0.4139905)
+
+[node name="tile-low40" parent="OutsideWorld" unique_id=1970234260 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, -0.5860095)
+
+[node name="road-crossing2" parent="OutsideWorld" unique_id=874455674 instance=ExtResource("25_yao3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, -1.5860095)
+
+[node name="road-straight2" parent="OutsideWorld" unique_id=1126725009 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, -1.5860095)
+
+[node name="road-straight3" parent="OutsideWorld" unique_id=637539561 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, -1.5860095)
+
+[node name="road-straight4" parent="OutsideWorld" unique_id=1609370817 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, -1.5860095)
+
+[node name="road-straight5" parent="OutsideWorld" unique_id=328694191 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, -1.5860095)
+
+[node name="road-straight6" parent="OutsideWorld" unique_id=1754226780 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, -1.5860095)
+
+[node name="road-straight7" parent="OutsideWorld" unique_id=70677943 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, -1.5860095)
+
+[node name="road-straight8" parent="OutsideWorld" unique_id=297424040 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, -1.5860095)
+
+[node name="road-straight9" parent="OutsideWorld" unique_id=622941930 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, -1.5860095)
+
+[node name="road-straight10" parent="OutsideWorld" unique_id=470345074 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, -1.5860095)
+
+[node name="road-straight11" parent="OutsideWorld" unique_id=248092956 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, -1.5860095)
+
+[node name="road-straight12" parent="OutsideWorld" unique_id=193020896 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, -1.5860095)
+
+[node name="road-straight13" parent="OutsideWorld" unique_id=1635000647 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, -1.5860095)
+
+[node name="road-straight14" parent="OutsideWorld" unique_id=1102285520 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, -1.5860095)
+
+[node name="road-straight15" parent="OutsideWorld" unique_id=1816864547 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, -1.5860095)
+
+[node name="road-straight16" parent="OutsideWorld" unique_id=527841597 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, -1.5860095)
+
+[node name="road-straight17" parent="OutsideWorld" unique_id=649386917 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, -1.5860095)
+
+[node name="road-straight18" parent="OutsideWorld" unique_id=233235822 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, -1.5860095)
+
+[node name="road-straight19" parent="OutsideWorld" unique_id=566846783 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, -1.5860095)
+
+[node name="road-straight20" parent="OutsideWorld" unique_id=1951436008 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, -1.5860095)
+
+[node name="road-straight21" parent="OutsideWorld" unique_id=914660338 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, -1.5860095)
+
+[node name="road-straight22" parent="OutsideWorld" unique_id=1054363139 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, -1.5860095)
+
+[node name="road-crossing3" parent="OutsideWorld" unique_id=1719656630 instance=ExtResource("25_yao3k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 8.41399)
+
+[node name="road-straight26" parent="OutsideWorld" unique_id=770138689 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 8.41399)
+
+[node name="road-straight27" parent="OutsideWorld" unique_id=1318656958 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 8.41399)
+
+[node name="road-straight29" parent="OutsideWorld" unique_id=1009598715 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 8.41399)
+
+[node name="road-straight28" parent="OutsideWorld" unique_id=1947948125 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 8.41399)
+
+[node name="road-straight30" parent="OutsideWorld" unique_id=467963386 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 8.41399)
+
+[node name="road-straight31" parent="OutsideWorld" unique_id=2118219132 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, 8.41399)
+
+[node name="road-straight32" parent="OutsideWorld" unique_id=1621098187 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, 8.41399)
+
+[node name="road-straight33" parent="OutsideWorld" unique_id=1557433491 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, 8.41399)
+
+[node name="road-straight34" parent="OutsideWorld" unique_id=472505226 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, 8.41399)
+
+[node name="road-straight35" parent="OutsideWorld" unique_id=1561537410 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, 8.41399)
+
+[node name="road-straight36" parent="OutsideWorld" unique_id=152119384 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, 8.41399)
+
+[node name="road-straight37" parent="OutsideWorld" unique_id=1217154662 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, 8.41399)
+
+[node name="road-straight38" parent="OutsideWorld" unique_id=808156224 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, 8.41399)
+
+[node name="road-straight39" parent="OutsideWorld" unique_id=1973223416 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, 8.41399)
+
+[node name="road-straight40" parent="OutsideWorld" unique_id=95786489 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, 8.41399)
+
+[node name="road-straight41" parent="OutsideWorld" unique_id=684198571 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, 8.41399)
+
+[node name="road-straight42" parent="OutsideWorld" unique_id=1927217040 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, 8.41399)
+
+[node name="road-straight43" parent="OutsideWorld" unique_id=1875170140 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 8.41399)
+
+[node name="road-straight44" parent="OutsideWorld" unique_id=63040574 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 8.41399)
+
+[node name="road-straight45" parent="OutsideWorld" unique_id=164938702 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 8.41399)
+
+[node name="road-straight46" parent="OutsideWorld" unique_id=1371551443 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 8.41399)
+
+[node name="road-straight47" parent="OutsideWorld" unique_id=974655182 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 8.41399)
+
+[node name="road-straight48" parent="OutsideWorld" unique_id=2143013697 instance=ExtResource("26_8dsgi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 8.41399)
+
+[node name="tile-low41" parent="OutsideWorld" unique_id=237851893 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 7.41399)
+
+[node name="tile-low43" parent="OutsideWorld" unique_id=946010873 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 9.41399)
+
+[node name="tile-low46" parent="OutsideWorld" unique_id=1229042119 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 6.4139905)
+
+[node name="tile-low47" parent="OutsideWorld" unique_id=1149330584 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 5.4139905)
+
+[node name="tile-low48" parent="OutsideWorld" unique_id=2102567860 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 4.4139905)
+
+[node name="tile-low49" parent="OutsideWorld" unique_id=1939927155 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 3.4139905)
+
+[node name="tile-low44" parent="OutsideWorld" unique_id=1890268598 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 10.41399)
+
+[node name="tile-low50" parent="OutsideWorld" unique_id=1548952788 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 2.4139905)
+
+[node name="tile-low45" parent="OutsideWorld" unique_id=359357932 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 11.41399)
+
+[node name="tile-low51" parent="OutsideWorld" unique_id=1935953745 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 1.4139905)
+
+[node name="tile-low52" parent="OutsideWorld" unique_id=1236741620 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 0.4139905)
+
+[node name="tile-low53" parent="OutsideWorld" unique_id=1893775676 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, -0.5860095)
+
+[node name="tile-low66" parent="OutsideWorld" unique_id=267344395 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, -0.5860095)
+
+[node name="tile-low54" parent="OutsideWorld" unique_id=2063501771 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 7.41399)
+
+[node name="tile-low59" parent="OutsideWorld" unique_id=795173339 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 6.4139905)
+
+[node name="tile-low67" parent="OutsideWorld" unique_id=200025130 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, -2.5860095)
+
+[node name="tile-low68" parent="OutsideWorld" unique_id=279317243 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, -2.5860095)
+
+[node name="tile-low56" parent="OutsideWorld" unique_id=1114626040 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 9.41399)
+
+[node name="tile-low69" parent="OutsideWorld" unique_id=113674549 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, -2.5860095)
+
+[node name="tile-low57" parent="OutsideWorld" unique_id=463797629 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 10.41399)
+
+[node name="tile-low60" parent="OutsideWorld" unique_id=615659673 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 5.4139905)
+
+[node name="tile-low58" parent="OutsideWorld" unique_id=1212867001 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 11.41399)
+
+[node name="tile-low61" parent="OutsideWorld" unique_id=1529406166 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 4.4139905)
+
+[node name="tile-low70" parent="OutsideWorld" unique_id=1328265261 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, -2.5860095)
+
+[node name="tile-low71" parent="OutsideWorld" unique_id=1986328401 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, -2.5860095)
+
+[node name="tile-low72" parent="OutsideWorld" unique_id=285470338 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, -3.5860095)
+
+[node name="tile-low62" parent="OutsideWorld" unique_id=5411341 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 3.4139905)
+
+[node name="tile-low73" parent="OutsideWorld" unique_id=612701988 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, -3.5860095)
+
+[node name="tile-low63" parent="OutsideWorld" unique_id=881597658 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 2.4139905)
+
+[node name="tile-low64" parent="OutsideWorld" unique_id=1469688154 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 1.4139905)
+
+[node name="tile-low74" parent="OutsideWorld" unique_id=881734614 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, -3.5860095)
+
+[node name="tile-low75" parent="OutsideWorld" unique_id=1165172899 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, -3.5860095)
+
+[node name="tile-low65" parent="OutsideWorld" unique_id=277470716 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 0.4139905)
+
+[node name="tile-low76" parent="OutsideWorld" unique_id=2027159027 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, -3.5860095)
+
+[node name="tile-low77" parent="OutsideWorld" unique_id=64417379 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, -4.5860095)
+
+[node name="tile-low92" parent="OutsideWorld" unique_id=1241948181 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, -2.5860095)
+
+[node name="tile-low78" parent="OutsideWorld" unique_id=2060604866 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, -4.5860095)
+
+[node name="tile-low80" parent="OutsideWorld" unique_id=1857164838 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, -4.5860095)
+
+[node name="tile-low81" parent="OutsideWorld" unique_id=1173178291 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, -4.5860095)
+
+[node name="tile-low82" parent="OutsideWorld" unique_id=1439560737 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, -5.5860095)
+
+[node name="tile-low93" parent="OutsideWorld" unique_id=417186429 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, -2.5860095)
+
+[node name="tile-low83" parent="OutsideWorld" unique_id=1339098683 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, -5.5860095)
+
+[node name="tile-low84" parent="OutsideWorld" unique_id=1721560400 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, -5.5860095)
+
+[node name="tile-low79" parent="OutsideWorld" unique_id=504903816 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, -4.5860095)
+
+[node name="tile-low87" parent="OutsideWorld" unique_id=750574145 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, -6.5860095)
+
+[node name="tile-low94" parent="OutsideWorld" unique_id=1235528158 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, -2.5860095)
+
+[node name="tile-low85" parent="OutsideWorld" unique_id=1101315703 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, -5.5860095)
+
+[node name="tile-low86" parent="OutsideWorld" unique_id=469270352 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, -5.5860095)
+
+[node name="tile-low95" parent="OutsideWorld" unique_id=794181055 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, -2.5860095)
+
+[node name="tile-low89" parent="OutsideWorld" unique_id=1531596194 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, -6.5860095)
+
+[node name="tile-low88" parent="OutsideWorld" unique_id=114721306 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, -6.5860095)
+
+[node name="tile-low96" parent="OutsideWorld" unique_id=1093666256 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, -2.5860095)
+
+[node name="tile-low97" parent="OutsideWorld" unique_id=1861628459 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, -3.5860095)
+
+[node name="tile-low98" parent="OutsideWorld" unique_id=986571872 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, -3.5860095)
+
+[node name="tile-low91" parent="OutsideWorld" unique_id=571322614 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, -6.5860095)
+
+[node name="tile-low99" parent="OutsideWorld" unique_id=817478200 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, -3.5860095)
+
+[node name="tile-low90" parent="OutsideWorld" unique_id=1980446107 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, -6.5860095)
+
+[node name="tile-low100" parent="OutsideWorld" unique_id=1765093999 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, -3.5860095)
+
+[node name="tile-low101" parent="OutsideWorld" unique_id=505320807 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, -3.5860095)
+
+[node name="tile-low102" parent="OutsideWorld" unique_id=478331349 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, -4.5860095)
+
+[node name="tile-low117" parent="OutsideWorld" unique_id=1350640707 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, -2.5860095)
+
+[node name="tile-low103" parent="OutsideWorld" unique_id=1288048782 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, -4.5860095)
+
+[node name="tile-low118" parent="OutsideWorld" unique_id=261354243 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, -2.5860095)
+
+[node name="tile-low105" parent="OutsideWorld" unique_id=1419952073 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, -4.5860095)
+
+[node name="tile-low107" parent="OutsideWorld" unique_id=541501631 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, -5.5860095)
+
+[node name="tile-low108" parent="OutsideWorld" unique_id=452502246 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, -5.5860095)
+
+[node name="tile-low106" parent="OutsideWorld" unique_id=882363295 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, -4.5860095)
+
+[node name="tile-low104" parent="OutsideWorld" unique_id=184124892 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, -4.5860095)
+
+[node name="tile-low109" parent="OutsideWorld" unique_id=1383609850 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, -5.5860095)
+
+[node name="tile-low112" parent="OutsideWorld" unique_id=2002729953 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, -6.5860095)
+
+[node name="tile-low110" parent="OutsideWorld" unique_id=571797524 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, -5.5860095)
+
+[node name="tile-low119" parent="OutsideWorld" unique_id=2124677010 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, -2.5860095)
+
+[node name="tile-low120" parent="OutsideWorld" unique_id=1787997076 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, -2.5860095)
+
+[node name="tile-low121" parent="OutsideWorld" unique_id=1115633567 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, -2.5860095)
+
+[node name="tile-low122" parent="OutsideWorld" unique_id=1489395856 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, -3.5860095)
+
+[node name="tile-low113" parent="OutsideWorld" unique_id=2057362222 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, -6.5860095)
+
+[node name="tile-low111" parent="OutsideWorld" unique_id=1772145669 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, -5.5860095)
+
+[node name="tile-low114" parent="OutsideWorld" unique_id=269842863 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, -6.5860095)
+
+[node name="tile-low123" parent="OutsideWorld" unique_id=400471304 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, -3.5860095)
+
+[node name="tile-low115" parent="OutsideWorld" unique_id=876068058 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, -6.5860095)
+
+[node name="tile-low124" parent="OutsideWorld" unique_id=1385075174 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, -3.5860095)
+
+[node name="tile-low125" parent="OutsideWorld" unique_id=1463935424 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, -3.5860095)
+
+[node name="tile-low126" parent="OutsideWorld" unique_id=1052930780 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, -3.5860095)
+
+[node name="tile-low116" parent="OutsideWorld" unique_id=785347322 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, -6.5860095)
+
+[node name="tile-low142" parent="OutsideWorld" unique_id=824099115 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, -2.5860095)
+
+[node name="tile-low143" parent="OutsideWorld" unique_id=174366326 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, -2.5860095)
+
+[node name="tile-low144" parent="OutsideWorld" unique_id=1687747833 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, -2.5860095)
+
+[node name="tile-low130" parent="OutsideWorld" unique_id=709618541 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, -4.5860095)
+
+[node name="tile-low145" parent="OutsideWorld" unique_id=1398390525 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, -2.5860095)
+
+[node name="tile-low131" parent="OutsideWorld" unique_id=1047002875 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, -4.5860095)
+
+[node name="tile-low146" parent="OutsideWorld" unique_id=989230271 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, -2.5860095)
+
+[node name="tile-low147" parent="OutsideWorld" unique_id=596603710 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, -3.5860095)
+
+[node name="tile-low148" parent="OutsideWorld" unique_id=1851417634 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, -3.5860095)
+
+[node name="tile-low135" parent="OutsideWorld" unique_id=1405872943 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, -5.5860095)
+
+[node name="tile-low149" parent="OutsideWorld" unique_id=1331915303 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, -3.5860095)
+
+[node name="tile-low136" parent="OutsideWorld" unique_id=1577549071 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, -5.5860095)
+
+[node name="tile-low150" parent="OutsideWorld" unique_id=186340939 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, -3.5860095)
+
+[node name="tile-low151" parent="OutsideWorld" unique_id=827200217 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, -3.5860095)
+
+[node name="tile-low140" parent="OutsideWorld" unique_id=125468519 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, -6.5860095)
+
+[node name="tile-low127" parent="OutsideWorld" unique_id=256248349 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, -4.5860095)
+
+[node name="tile-low141" parent="OutsideWorld" unique_id=1209806410 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, -6.5860095)
+
+[node name="tile-low128" parent="OutsideWorld" unique_id=1429972024 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, -4.5860095)
+
+[node name="tile-low129" parent="OutsideWorld" unique_id=609918517 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, -4.5860095)
+
+[node name="tile-low170" parent="OutsideWorld" unique_id=1350039926 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, -2.5860095)
+
+[node name="tile-low171" parent="OutsideWorld" unique_id=367506735 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, -2.5860095)
+
+[node name="tile-low175" parent="OutsideWorld" unique_id=1702507 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, -3.5860095)
+
+[node name="tile-low176" parent="OutsideWorld" unique_id=1123341658 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, -3.5860095)
+
+[node name="tile-low192" parent="OutsideWorld" unique_id=324579436 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 3.4139905)
+
+[node name="tile-low193" parent="OutsideWorld" unique_id=409115958 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 3.4139905)
+
+[node name="tile-low194" parent="OutsideWorld" unique_id=1782296659 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 3.4139905)
+
+[node name="tile-low195" parent="OutsideWorld" unique_id=922535019 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 2.4139905)
+
+[node name="tile-low196" parent="OutsideWorld" unique_id=1206342004 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 2.4139905)
+
+[node name="tile-low197" parent="OutsideWorld" unique_id=388802416 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 2.4139905)
+
+[node name="tile-low132" parent="OutsideWorld" unique_id=563557263 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, -5.5860095)
+
+[node name="tile-low198" parent="OutsideWorld" unique_id=517928347 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 1.4139905)
+
+[node name="tile-low133" parent="OutsideWorld" unique_id=435516139 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, -5.5860095)
+
+[node name="tile-low199" parent="OutsideWorld" unique_id=566979955 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 1.4139905)
+
+[node name="tile-low134" parent="OutsideWorld" unique_id=326860869 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, -5.5860095)
+
+[node name="tile-low137" parent="OutsideWorld" unique_id=501013086 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, -6.5860095)
+
+[node name="tile-low138" parent="OutsideWorld" unique_id=908681374 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, -6.5860095)
+
+[node name="tile-low139" parent="OutsideWorld" unique_id=326992591 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, -6.5860095)
+
+[node name="tile-low200" parent="OutsideWorld" unique_id=2092536511 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 1.4139905)
+
+[node name="tile-low201" parent="OutsideWorld" unique_id=595220827 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 0.4139905)
+
+[node name="tile-low202" parent="OutsideWorld" unique_id=1790925352 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 0.4139905)
+
+[node name="tile-low152" parent="OutsideWorld" unique_id=654113550 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, -4.5860095)
+
+[node name="tile-low203" parent="OutsideWorld" unique_id=163328387 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 0.4139905)
+
+[node name="tile-low153" parent="OutsideWorld" unique_id=810236407 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, -4.5860095)
+
+[node name="tile-low204" parent="OutsideWorld" unique_id=1255355874 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, -0.5860095)
+
+[node name="tile-low154" parent="OutsideWorld" unique_id=1507160575 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, -4.5860095)
+
+[node name="tile-low205" parent="OutsideWorld" unique_id=1780904899 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, -0.5860095)
+
+[node name="tile-low155" parent="OutsideWorld" unique_id=757024237 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, -4.5860095)
+
+[node name="tile-low206" parent="OutsideWorld" unique_id=668583349 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, -0.5860095)
+
+[node name="tile-low156" parent="OutsideWorld" unique_id=1633927791 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, -4.5860095)
+
+[node name="tile-low209" parent="OutsideWorld" unique_id=1723781233 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 3.4139905)
+
+[node name="tile-low210" parent="OutsideWorld" unique_id=1403135607 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 3.4139905)
+
+[node name="tile-low211" parent="OutsideWorld" unique_id=1397427659 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 3.4139905)
+
+[node name="tile-low214" parent="OutsideWorld" unique_id=2141348005 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 2.4139905)
+
+[node name="tile-low215" parent="OutsideWorld" unique_id=1363272860 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 2.4139905)
+
+[node name="tile-low216" parent="OutsideWorld" unique_id=2135575663 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 2.4139905)
+
+[node name="tile-low219" parent="OutsideWorld" unique_id=1660849184 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 1.4139905)
+
+[node name="tile-low220" parent="OutsideWorld" unique_id=1856587490 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 1.4139905)
+
+[node name="tile-low221" parent="OutsideWorld" unique_id=1314332042 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 1.4139905)
+
+[node name="tile-low224" parent="OutsideWorld" unique_id=991680273 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 0.4139905)
+
+[node name="tile-low225" parent="OutsideWorld" unique_id=1096145440 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 0.4139905)
+
+[node name="tile-low157" parent="OutsideWorld" unique_id=1900295750 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, -5.5860095)
+
+[node name="tile-low226" parent="OutsideWorld" unique_id=1623356528 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 0.4139905)
+
+[node name="tile-low158" parent="OutsideWorld" unique_id=312387019 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, -5.5860095)
+
+[node name="tile-low230" parent="OutsideWorld" unique_id=1195217453 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, -0.5860095)
+
+[node name="tile-low159" parent="OutsideWorld" unique_id=614950803 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, -5.5860095)
+
+[node name="tile-low162" parent="OutsideWorld" unique_id=1886413855 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, -6.5860095)
+
+[node name="tile-low232" parent="OutsideWorld" unique_id=972555076 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, -0.5860095)
+
+[node name="tile-low160" parent="OutsideWorld" unique_id=1692935703 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, -5.5860095)
+
+[node name="tile-low163" parent="OutsideWorld" unique_id=501456160 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, -6.5860095)
+
+[node name="tile-low164" parent="OutsideWorld" unique_id=1592103578 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, -6.5860095)
+
+[node name="tile-low165" parent="OutsideWorld" unique_id=1851903233 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, -6.5860095)
+
+[node name="tile-low231" parent="OutsideWorld" unique_id=612950500 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, -0.5860095)
+
+[node name="tile-low161" parent="OutsideWorld" unique_id=1197597017 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, -5.5860095)
+
+[node name="tile-low235" parent="OutsideWorld" unique_id=1657492651 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 7.4139905)
+
+[node name="tile-low236" parent="OutsideWorld" unique_id=238251891 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 7.4139905)
+
+[node name="tile-low237" parent="OutsideWorld" unique_id=1822229102 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 7.4139905)
+
+[node name="tile-low238" parent="OutsideWorld" unique_id=62611554 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 6.4139905)
+
+[node name="tile-low166" parent="OutsideWorld" unique_id=1252458622 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, -6.5860095)
+
+[node name="tile-low239" parent="OutsideWorld" unique_id=55721959 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 6.4139905)
+
+[node name="tile-low240" parent="OutsideWorld" unique_id=591018100 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 6.4139905)
+
+[node name="tile-low241" parent="OutsideWorld" unique_id=425503091 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 5.4139905)
+
+[node name="tile-low242" parent="OutsideWorld" unique_id=1882630912 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 5.4139905)
+
+[node name="tile-low243" parent="OutsideWorld" unique_id=1180593133 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 5.4139905)
+
+[node name="tile-low244" parent="OutsideWorld" unique_id=1720398791 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 4.4139905)
+
+[node name="tile-low245" parent="OutsideWorld" unique_id=501614040 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 4.4139905)
+
+[node name="tile-low246" parent="OutsideWorld" unique_id=1189332853 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 4.4139905)
+
+[node name="tile-low254" parent="OutsideWorld" unique_id=1276515051 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 7.4139905)
+
+[node name="tile-low255" parent="OutsideWorld" unique_id=1309840096 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 7.4139905)
+
+[node name="tile-low256" parent="OutsideWorld" unique_id=1214514869 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 7.4139905)
+
+[node name="tile-low259" parent="OutsideWorld" unique_id=468711720 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 6.4139905)
+
+[node name="tile-low260" parent="OutsideWorld" unique_id=162369225 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 6.4139905)
+
+[node name="tile-low261" parent="OutsideWorld" unique_id=230217502 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 6.4139905)
+
+[node name="tile-low264" parent="OutsideWorld" unique_id=1741541314 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 5.4139905)
+
+[node name="tile-low265" parent="OutsideWorld" unique_id=2100100202 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 5.4139905)
+
+[node name="tile-low266" parent="OutsideWorld" unique_id=1593659713 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 5.4139905)
+
+[node name="tile-low269" parent="OutsideWorld" unique_id=1967404082 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 4.4139905)
+
+[node name="tile-low270" parent="OutsideWorld" unique_id=100537145 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 4.4139905)
+
+[node name="tile-low271" parent="OutsideWorld" unique_id=458187002 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 4.4139905)
+
+[node name="tile-low272" parent="OutsideWorld" unique_id=299851092 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 13.41399)
+
+[node name="tile-low273" parent="OutsideWorld" unique_id=1202986112 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 13.41399)
+
+[node name="tile-low274" parent="OutsideWorld" unique_id=1471111105 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 13.41399)
+
+[node name="tile-low275" parent="OutsideWorld" unique_id=1518015697 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 12.41399)
+
+[node name="tile-low276" parent="OutsideWorld" unique_id=1078067926 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 12.41399)
+
+[node name="tile-low277" parent="OutsideWorld" unique_id=1228617915 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 12.41399)
+
+[node name="tile-low278" parent="OutsideWorld" unique_id=787517421 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 11.41399)
+
+[node name="tile-low279" parent="OutsideWorld" unique_id=198784427 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 11.41399)
+
+[node name="tile-low280" parent="OutsideWorld" unique_id=1947697153 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 11.41399)
+
+[node name="tile-low281" parent="OutsideWorld" unique_id=1143286465 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 10.41399)
+
+[node name="tile-low282" parent="OutsideWorld" unique_id=611653540 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 10.41399)
+
+[node name="tile-low283" parent="OutsideWorld" unique_id=1908831936 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 10.41399)
+
+[node name="tile-low284" parent="OutsideWorld" unique_id=137377321 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 9.41399)
+
+[node name="tile-low285" parent="OutsideWorld" unique_id=1550665826 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 9.41399)
+
+[node name="tile-low286" parent="OutsideWorld" unique_id=192294311 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 9.41399)
+
+[node name="tile-low289" parent="OutsideWorld" unique_id=153639747 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 13.41399)
+
+[node name="tile-low290" parent="OutsideWorld" unique_id=94712797 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 13.41399)
+
+[node name="tile-low291" parent="OutsideWorld" unique_id=103462940 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 13.41399)
+
+[node name="tile-low294" parent="OutsideWorld" unique_id=860938256 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 12.41399)
+
+[node name="tile-low295" parent="OutsideWorld" unique_id=358464179 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 12.41399)
+
+[node name="tile-low296" parent="OutsideWorld" unique_id=472635241 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 12.41399)
+
+[node name="tile-low299" parent="OutsideWorld" unique_id=659498555 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 11.41399)
+
+[node name="tile-low300" parent="OutsideWorld" unique_id=1048380094 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 11.41399)
+
+[node name="tile-low301" parent="OutsideWorld" unique_id=1536835885 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 11.41399)
+
+[node name="tile-low304" parent="OutsideWorld" unique_id=1711786468 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 10.41399)
+
+[node name="tile-low305" parent="OutsideWorld" unique_id=1000298938 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 10.41399)
+
+[node name="tile-low306" parent="OutsideWorld" unique_id=1451548662 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 10.41399)
+
+[node name="tile-low309" parent="OutsideWorld" unique_id=1924820776 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 9.41399)
+
+[node name="tile-low310" parent="OutsideWorld" unique_id=1876800065 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 9.41399)
+
+[node name="tile-low311" parent="OutsideWorld" unique_id=764092332 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 9.41399)
+
+[node name="tile-low312" parent="OutsideWorld" unique_id=1059506288 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 13.41399)
+
+[node name="tile-low313" parent="OutsideWorld" unique_id=1372132564 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 13.41399)
+
+[node name="tile-low314" parent="OutsideWorld" unique_id=1499677616 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 13.41399)
+
+[node name="tile-low315" parent="OutsideWorld" unique_id=978503478 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 12.41399)
+
+[node name="tile-low316" parent="OutsideWorld" unique_id=1062717566 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 12.41399)
+
+[node name="tile-low317" parent="OutsideWorld" unique_id=1307881012 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 12.41399)
+
+[node name="tile-low318" parent="OutsideWorld" unique_id=114188713 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 11.41399)
+
+[node name="tile-low319" parent="OutsideWorld" unique_id=1003865705 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 11.41399)
+
+[node name="tile-low320" parent="OutsideWorld" unique_id=565842242 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 11.41399)
+
+[node name="tile-low321" parent="OutsideWorld" unique_id=680784217 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 10.41399)
+
+[node name="tile-low322" parent="OutsideWorld" unique_id=165923587 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 10.41399)
+
+[node name="tile-low323" parent="OutsideWorld" unique_id=460313820 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 10.41399)
+
+[node name="tile-low324" parent="OutsideWorld" unique_id=344902343 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.603058, 0, 9.41399)
+
+[node name="tile-low325" parent="OutsideWorld" unique_id=756754092 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.603058, 0, 9.41399)
+
+[node name="tile-low326" parent="OutsideWorld" unique_id=68351513 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.603058, 0, 9.41399)
+
+[node name="tile-low329" parent="OutsideWorld" unique_id=1376202134 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 13.41399)
+
+[node name="tile-low330" parent="OutsideWorld" unique_id=565417141 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 13.41399)
+
+[node name="tile-low331" parent="OutsideWorld" unique_id=1879162976 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 13.41399)
+
+[node name="tile-low334" parent="OutsideWorld" unique_id=1942733550 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 12.41399)
+
+[node name="tile-low335" parent="OutsideWorld" unique_id=485417831 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 12.41399)
+
+[node name="tile-low336" parent="OutsideWorld" unique_id=395091674 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 12.41399)
+
+[node name="tile-low339" parent="OutsideWorld" unique_id=2073977386 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 11.41399)
+
+[node name="tile-low340" parent="OutsideWorld" unique_id=1784494322 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 11.41399)
+
+[node name="tile-low341" parent="OutsideWorld" unique_id=2106516091 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 11.41399)
+
+[node name="tile-low344" parent="OutsideWorld" unique_id=1464022918 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 10.41399)
+
+[node name="tile-low345" parent="OutsideWorld" unique_id=1727818889 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 10.41399)
+
+[node name="tile-low346" parent="OutsideWorld" unique_id=438602047 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 10.41399)
+
+[node name="tile-low349" parent="OutsideWorld" unique_id=88895634 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.603058, 0, 9.41399)
+
+[node name="tile-low350" parent="OutsideWorld" unique_id=428977297 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.603058, 0, 9.41399)
+
+[node name="tile-low351" parent="OutsideWorld" unique_id=477254252 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.603058, 0, 9.41399)
+
+[node name="tile-low360" parent="OutsideWorld" unique_id=1717689381 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, 13.41399)
+
+[node name="tile-low361" parent="OutsideWorld" unique_id=1471152930 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, 13.41399)
+
+[node name="tile-low362" parent="OutsideWorld" unique_id=896904938 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, 13.41399)
+
+[node name="tile-low363" parent="OutsideWorld" unique_id=1613572019 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, 12.41399)
+
+[node name="tile-low364" parent="OutsideWorld" unique_id=573774568 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, 12.41399)
+
+[node name="tile-low365" parent="OutsideWorld" unique_id=1875702918 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, 12.41399)
+
+[node name="tile-low366" parent="OutsideWorld" unique_id=1621576717 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, 11.41399)
+
+[node name="tile-low367" parent="OutsideWorld" unique_id=1480435718 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, 11.41399)
+
+[node name="tile-low368" parent="OutsideWorld" unique_id=1804585863 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, 11.41399)
+
+[node name="tile-low369" parent="OutsideWorld" unique_id=1305381637 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, 10.41399)
+
+[node name="tile-low370" parent="OutsideWorld" unique_id=423958509 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, 10.41399)
+
+[node name="tile-low371" parent="OutsideWorld" unique_id=1220701573 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, 10.41399)
+
+[node name="tile-low372" parent="OutsideWorld" unique_id=814244947 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, 9.41399)
+
+[node name="tile-low373" parent="OutsideWorld" unique_id=1819552462 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, 9.41399)
+
+[node name="tile-low374" parent="OutsideWorld" unique_id=444090430 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, 9.41399)
+
+[node name="tile-low375" parent="OutsideWorld" unique_id=1429051516 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, 13.41399)
+
+[node name="tile-low376" parent="OutsideWorld" unique_id=1829561710 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, 13.41399)
+
+[node name="tile-low377" parent="OutsideWorld" unique_id=460356417 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, 13.41399)
+
+[node name="tile-low378" parent="OutsideWorld" unique_id=69795661 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, 13.41399)
+
+[node name="tile-low379" parent="OutsideWorld" unique_id=491595828 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, 13.41399)
+
+[node name="tile-low380" parent="OutsideWorld" unique_id=1622456540 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, 12.41399)
+
+[node name="tile-low381" parent="OutsideWorld" unique_id=1273919656 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, 12.41399)
+
+[node name="tile-low382" parent="OutsideWorld" unique_id=1477685088 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, 12.41399)
+
+[node name="tile-low383" parent="OutsideWorld" unique_id=1451484472 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, 12.41399)
+
+[node name="tile-low384" parent="OutsideWorld" unique_id=344633618 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, 12.41399)
+
+[node name="tile-low385" parent="OutsideWorld" unique_id=531554906 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, 11.41399)
+
+[node name="tile-low386" parent="OutsideWorld" unique_id=58731178 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, 11.41399)
+
+[node name="tile-low387" parent="OutsideWorld" unique_id=1459442525 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, 11.41399)
+
+[node name="tile-low388" parent="OutsideWorld" unique_id=1222616513 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, 11.41399)
+
+[node name="tile-low389" parent="OutsideWorld" unique_id=622483568 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, 11.41399)
+
+[node name="tile-low390" parent="OutsideWorld" unique_id=1200662587 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, 10.41399)
+
+[node name="tile-low391" parent="OutsideWorld" unique_id=510359067 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, 10.41399)
+
+[node name="tile-low392" parent="OutsideWorld" unique_id=1964713285 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, 10.41399)
+
+[node name="tile-low393" parent="OutsideWorld" unique_id=1305633830 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, 10.41399)
+
+[node name="tile-low394" parent="OutsideWorld" unique_id=1674367959 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, 10.41399)
+
+[node name="tile-low395" parent="OutsideWorld" unique_id=700915415 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, 9.41399)
+
+[node name="tile-low396" parent="OutsideWorld" unique_id=800524082 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, 9.41399)
+
+[node name="tile-low397" parent="OutsideWorld" unique_id=120869516 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, 9.41399)
+
+[node name="tile-low398" parent="OutsideWorld" unique_id=153984947 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, 9.41399)
+
+[node name="tile-low399" parent="OutsideWorld" unique_id=393274756 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, 9.41399)
+
+[node name="tile-low400" parent="OutsideWorld" unique_id=1925416128 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, 13.41399)
+
+[node name="tile-low401" parent="OutsideWorld" unique_id=758072971 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, 13.41399)
+
+[node name="tile-low402" parent="OutsideWorld" unique_id=1891017726 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, 13.41399)
+
+[node name="tile-low403" parent="OutsideWorld" unique_id=1509385347 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, 12.41399)
+
+[node name="tile-low404" parent="OutsideWorld" unique_id=776297299 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, 12.41399)
+
+[node name="tile-low405" parent="OutsideWorld" unique_id=1051639042 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, 12.41399)
+
+[node name="tile-low406" parent="OutsideWorld" unique_id=40230231 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, 11.41399)
+
+[node name="tile-low407" parent="OutsideWorld" unique_id=1447874665 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, 11.41399)
+
+[node name="tile-low408" parent="OutsideWorld" unique_id=1679977282 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, 11.41399)
+
+[node name="tile-low409" parent="OutsideWorld" unique_id=1029299668 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, 10.41399)
+
+[node name="tile-low410" parent="OutsideWorld" unique_id=837951286 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, 10.41399)
+
+[node name="tile-low411" parent="OutsideWorld" unique_id=1789457287 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, 10.41399)
+
+[node name="tile-low412" parent="OutsideWorld" unique_id=1753599378 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, 9.41399)
+
+[node name="tile-low413" parent="OutsideWorld" unique_id=587830940 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, 9.41399)
+
+[node name="tile-low414" parent="OutsideWorld" unique_id=757873070 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, 9.41399)
+
+[node name="tile-low415" parent="OutsideWorld" unique_id=1745610731 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, 13.41399)
+
+[node name="tile-low416" parent="OutsideWorld" unique_id=615839225 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, 13.41399)
+
+[node name="tile-low417" parent="OutsideWorld" unique_id=1566416199 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, 13.41399)
+
+[node name="tile-low418" parent="OutsideWorld" unique_id=1686816740 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, 13.41399)
+
+[node name="tile-low419" parent="OutsideWorld" unique_id=397519976 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, 13.41399)
+
+[node name="tile-low420" parent="OutsideWorld" unique_id=1580993723 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, 12.41399)
+
+[node name="tile-low421" parent="OutsideWorld" unique_id=1847922796 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, 12.41399)
+
+[node name="tile-low422" parent="OutsideWorld" unique_id=335914070 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, 12.41399)
+
+[node name="tile-low423" parent="OutsideWorld" unique_id=1385330526 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, 12.41399)
+
+[node name="tile-low424" parent="OutsideWorld" unique_id=572180340 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, 12.41399)
+
+[node name="tile-low425" parent="OutsideWorld" unique_id=1908962504 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, 11.41399)
+
+[node name="tile-low426" parent="OutsideWorld" unique_id=1317165452 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, 11.41399)
+
+[node name="tile-low427" parent="OutsideWorld" unique_id=1520294771 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, 11.41399)
+
+[node name="tile-low428" parent="OutsideWorld" unique_id=496004278 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, 11.41399)
+
+[node name="tile-low429" parent="OutsideWorld" unique_id=1487284346 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, 11.41399)
+
+[node name="tile-low430" parent="OutsideWorld" unique_id=239079437 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, 10.41399)
+
+[node name="tile-low431" parent="OutsideWorld" unique_id=484843519 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, 10.41399)
+
+[node name="tile-low432" parent="OutsideWorld" unique_id=2043296793 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, 10.41399)
+
+[node name="tile-low433" parent="OutsideWorld" unique_id=1166909927 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, 10.41399)
+
+[node name="tile-low434" parent="OutsideWorld" unique_id=1422161707 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, 10.41399)
+
+[node name="tile-low435" parent="OutsideWorld" unique_id=382538565 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, 9.41399)
+
+[node name="tile-low436" parent="OutsideWorld" unique_id=1919094213 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, 9.41399)
+
+[node name="tile-low437" parent="OutsideWorld" unique_id=263378378 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, 9.41399)
+
+[node name="tile-low438" parent="OutsideWorld" unique_id=1963931481 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, 9.41399)
+
+[node name="tile-low439" parent="OutsideWorld" unique_id=1109067451 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, 9.41399)
+
+[node name="tile-low504" parent="OutsideWorld" unique_id=1555611734 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60305786, 0, 7.62531)
+
+[node name="tile-low505" parent="OutsideWorld" unique_id=1205250418 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39694214, 0, 7.62531)
+
+[node name="tile-low506" parent="OutsideWorld" unique_id=901205355 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3969421, 0, 7.62531)
+
+[node name="tile-low507" parent="OutsideWorld" unique_id=1509873163 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.603058, 0, 7.62531)
+
+[node name="tile-low508" parent="OutsideWorld" unique_id=1349123076 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.603058, 0, 7.62531)
+
+[node name="tile-low509" parent="OutsideWorld" unique_id=1880672205 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6030579, 0, 7.62531)
+
+[node name="tile-low510" parent="OutsideWorld" unique_id=300980685 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6030579, 0, 7.62531)
+
+[node name="tile-low511" parent="OutsideWorld" unique_id=49115299 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6030579, 0, 7.62531)
+
+[node name="tile-low512" parent="OutsideWorld" unique_id=1942474134 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, 7.62531)
+
+[node name="tile-low513" parent="OutsideWorld" unique_id=1978383510 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, 7.62531)
+
+[node name="tile-low514" parent="OutsideWorld" unique_id=2075086648 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, 7.62531)
+
+[node name="tile-low515" parent="OutsideWorld" unique_id=775087424 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, 7.62531)
+
+[node name="tile-low444" parent="OutsideWorld" unique_id=581895018 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, 13.41399)
+
+[node name="tile-low445" parent="OutsideWorld" unique_id=1276197169 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, 13.41399)
+
+[node name="tile-low446" parent="OutsideWorld" unique_id=710178867 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, 13.41399)
+
+[node name="tile-low447" parent="OutsideWorld" unique_id=1645882572 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, 12.41399)
+
+[node name="tile-low448" parent="OutsideWorld" unique_id=1357247763 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, 12.41399)
+
+[node name="tile-low449" parent="OutsideWorld" unique_id=1499842097 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, 12.41399)
+
+[node name="tile-low450" parent="OutsideWorld" unique_id=317718510 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, 11.41399)
+
+[node name="tile-low451" parent="OutsideWorld" unique_id=1689416697 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, 11.41399)
+
+[node name="tile-low452" parent="OutsideWorld" unique_id=687613357 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, 11.41399)
+
+[node name="tile-low453" parent="OutsideWorld" unique_id=149791299 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, 10.41399)
+
+[node name="tile-low454" parent="OutsideWorld" unique_id=1966415799 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, 10.41399)
+
+[node name="tile-low455" parent="OutsideWorld" unique_id=1989626534 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, 10.41399)
+
+[node name="tile-low456" parent="OutsideWorld" unique_id=505513035 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, 9.41399)
+
+[node name="tile-low457" parent="OutsideWorld" unique_id=1559831469 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, 9.41399)
+
+[node name="tile-low458" parent="OutsideWorld" unique_id=427682527 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, 9.41399)
+
+[node name="tile-low459" parent="OutsideWorld" unique_id=772042169 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, 13.41399)
+
+[node name="tile-low460" parent="OutsideWorld" unique_id=2065063659 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, 12.41399)
+
+[node name="tile-low461" parent="OutsideWorld" unique_id=474071262 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, 11.41399)
+
+[node name="tile-low462" parent="OutsideWorld" unique_id=1229240587 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, 10.41399)
+
+[node name="tile-low463" parent="OutsideWorld" unique_id=473511181 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, 9.41399)
+
+[node name="tile-low464" parent="OutsideWorld" unique_id=235776801 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, 13.41399)
+
+[node name="tile-low465" parent="OutsideWorld" unique_id=593945970 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, 13.41399)
+
+[node name="tile-low466" parent="OutsideWorld" unique_id=1915320170 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, 13.41399)
+
+[node name="tile-low467" parent="OutsideWorld" unique_id=1590758119 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, 12.41399)
+
+[node name="tile-low468" parent="OutsideWorld" unique_id=1127408012 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, 12.41399)
+
+[node name="tile-low469" parent="OutsideWorld" unique_id=1825307536 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, 12.41399)
+
+[node name="tile-low470" parent="OutsideWorld" unique_id=1902712722 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, 11.41399)
+
+[node name="tile-low471" parent="OutsideWorld" unique_id=1812239129 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, 11.41399)
+
+[node name="tile-low472" parent="OutsideWorld" unique_id=928896034 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, 11.41399)
+
+[node name="tile-low473" parent="OutsideWorld" unique_id=1120308436 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, 10.41399)
+
+[node name="tile-low474" parent="OutsideWorld" unique_id=1281645614 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, 10.41399)
+
+[node name="tile-low475" parent="OutsideWorld" unique_id=156267608 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, 10.41399)
+
+[node name="tile-low476" parent="OutsideWorld" unique_id=609487965 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3969421, 0, 9.41399)
+
+[node name="tile-low477" parent="OutsideWorld" unique_id=2072822392 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.396942, 0, 9.41399)
+
+[node name="tile-low478" parent="OutsideWorld" unique_id=45091695 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.396942, 0, 9.41399)
+
+[node name="tile-low479" parent="OutsideWorld" unique_id=68531011 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, 13.41399)
+
+[node name="tile-low480" parent="OutsideWorld" unique_id=243588349 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, 12.41399)
+
+[node name="tile-low484" parent="OutsideWorld" unique_id=1591918556 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 13.41399)
+
+[node name="tile-low485" parent="OutsideWorld" unique_id=320426491 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 12.41399)
+
+[node name="tile-low486" parent="OutsideWorld" unique_id=906854683 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 13.41399)
+
+[node name="tile-low487" parent="OutsideWorld" unique_id=1353760346 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.396942, 0, 12.41399)
+
+[node name="tile-low481" parent="OutsideWorld" unique_id=436228498 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, 11.41399)
+
+[node name="tile-low482" parent="OutsideWorld" unique_id=1471261411 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, 10.41399)
+
+[node name="tile-low483" parent="OutsideWorld" unique_id=1557035705 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3969421, 0, 9.41399)
+
+[node name="tile-low529" parent="OutsideWorld" unique_id=1584071968 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 6.4139905)
+
+[node name="tile-low488" parent="OutsideWorld" unique_id=1571404539 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 13.41399)
+
+[node name="tile-low535" parent="OutsideWorld" unique_id=428870167 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 0.4139905)
+
+[node name="tile-low524" parent="OutsideWorld" unique_id=152586511 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 7.41399)
+
+[node name="tile-low533" parent="OutsideWorld" unique_id=947168230 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 2.4139905)
+
+[node name="tile-low491" parent="OutsideWorld" unique_id=1004824388 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 12.41399)
+
+[node name="tile-low534" parent="OutsideWorld" unique_id=1734767659 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 1.4139905)
+
+[node name="tile-low494" parent="OutsideWorld" unique_id=582098596 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 13.41399)
+
+[node name="tile-low532" parent="OutsideWorld" unique_id=1003922544 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 3.4139905)
+
+[node name="tile-low489" parent="OutsideWorld" unique_id=435265233 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 13.41399)
+
+[node name="tile-low495" parent="OutsideWorld" unique_id=997369245 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 12.41399)
+
+[node name="tile-low496" parent="OutsideWorld" unique_id=410552082 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 13.41399)
+
+[node name="tile-low526" parent="OutsideWorld" unique_id=548724156 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 9.41399)
+
+[node name="tile-low490" parent="OutsideWorld" unique_id=521714979 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 13.41399)
+
+[node name="tile-low492" parent="OutsideWorld" unique_id=1785918866 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 12.41399)
+
+[node name="tile-low530" parent="OutsideWorld" unique_id=848992426 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 5.4139905)
+
+[node name="tile-low531" parent="OutsideWorld" unique_id=2122270107 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 4.4139905)
+
+[node name="tile-low499" parent="OutsideWorld" unique_id=1078155161 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.396942, 0, 12.41399)
+
+[node name="tile-low501" parent="OutsideWorld" unique_id=2075173814 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 12.41399)
+
+[node name="tile-low493" parent="OutsideWorld" unique_id=1817280049 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 12.41399)
+
+[node name="tile-low537" parent="OutsideWorld" unique_id=220873246 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 12.41399)
+
+[node name="tile-low539" parent="OutsideWorld" unique_id=39756751 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 12.41399)
+
+[node name="tile-low497" parent="OutsideWorld" unique_id=1496594781 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 13.41399)
+
+[node name="tile-low498" parent="OutsideWorld" unique_id=2144240623 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.396942, 0, 13.41399)
+
+[node name="tile-low500" parent="OutsideWorld" unique_id=989672646 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.396942, 0, 12.41399)
+
+[node name="tile-low527" parent="OutsideWorld" unique_id=785910617 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 10.41399)
+
+[node name="tile-low536" parent="OutsideWorld" unique_id=1623528674 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 13.41399)
+
+[node name="tile-low538" parent="OutsideWorld" unique_id=1959800775 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 13.41399)
+
+[node name="tile-low528" parent="OutsideWorld" unique_id=1910436089 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.396942, 0, 11.41399)
+
+[node name="tile-low503" parent="OutsideWorld" unique_id=2032348828 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 12.41399)
+
+[node name="tile-low502" parent="OutsideWorld" unique_id=871433620 instance=ExtResource("24_d5d2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.396942, 0, 13.41399)
 
 [connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]
