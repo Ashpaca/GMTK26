@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://djjfcklrt6jak" path="res://src/shelf/shelf.gd" id="1_fd64t"]
 [ext_resource type="PackedScene" uid="uid://ctr7mvytbwa48" path="res://assets/models/shelf-empty.glb" id="1_j1cob"]
 [ext_resource type="PackedScene" uid="uid://devo5b7gxodno" path="res://assets/models/box.glb" id="2_cpho7"]
+[ext_resource type="AudioStream" uid="uid://b8jrh2fficgka" path="res://assets/sfx/interactions/bookClose.ogg" id="4_et223"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_58gb0"]
 size = Vector3(0.87335205, 0.79486084, 0.6812744)
@@ -54,3 +55,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16909474, 0.54947865, 0.15
 
 [node name="box5" parent="Visuals/ShelfItems/Items4" unique_id=904382754 instance=ExtResource("2_cpho7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16909474, 0.54947865, -0.15151227)
+
+[node name="StockSFX" type="AudioStreamPlayer3D" parent="." unique_id=957752682]
+stream = ExtResource("4_et223")

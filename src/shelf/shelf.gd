@@ -3,6 +3,8 @@ extends StaticBody3D
 
 @onready var shelf_items: Node3D = $Visuals/ShelfItems
 @onready var visuals: Node3D = $Visuals
+@onready var stock_sfx: AudioStreamPlayer3D = $StockSFX
+
 var individual_items : Array[Node3D]
 var is_stocked : bool
 var shelf_tween : Tween
@@ -20,6 +22,7 @@ func start_stocking()-> void:
 	shelf_tween = create_tween()
 	shelf_tween.tween_property(visuals, "scale", Vector3(1, 0.8, 1), .2)
 	shelf_tween.tween_property(visuals, "scale", Vector3(1, 1, 1), .1)
+	stock_sfx.play()
 
 
 func empty_shelf() -> void:

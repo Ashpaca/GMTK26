@@ -17,6 +17,7 @@ var dialogues_in_order : Array[String] = [
 	"Courtney! It's me, your father. You don't have much time, there is a bomb in that COUNTDOWN. The explosion will be big enough that there is no hope of escape. You might as well provide the best customer survice you can for your last few customers. Run! Run, to the shelves to stock them, people will get out of your way when you run. And you know what? Maybe sometimes they'll be pushed over by you, but it'll be worth it to get their products in stock. But I'm sorry to say, this may be the end of COUNTDOWN as we know it. Darn those Australians..."
 ]
 var game_over_tween : Tween
+@onready var explosion_sound: AudioStreamPlayer = $ExplosionSound
 
 
 func do_next_dialogue() -> void:
@@ -32,6 +33,7 @@ func _on_game_over(_good_ending : bool) -> void:
 	game_over_tween.tween_property(nine_patch_rect, "visible", false, 0).set_delay(1)
 	game_over_tween.tween_property(label, "visible", false, 0).set_delay(1)
 	game_over_tween.tween_property(phone, "visible", false, 0).set_delay(1)
+	game_over_tween.tween_callback(explosion_sound.play).set_delay(1)
 	game_over_tween.tween_property(self, "visible", true, 0).set_delay(2)
 	game_over_tween.tween_property(texture_rect, "visible", true, 0).set_delay(2)
 	game_over_tween.tween_property(rich_text_label, "text", "You were able to give the gift of apples to [shake]" + str(GameState.score) + "[/shake] people before you all died", 0).set_delay(2)

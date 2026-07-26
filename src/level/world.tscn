@@ -18,8 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://dy005wln557ec" path="res://src/level/bottle_return.tscn" id="12_pru2k"]
 [ext_resource type="Texture2D" uid="uid://do7vq3bgkmqe6" path="res://assets/ui/tutorial_indicator.png" id="15_sldtx"]
 [ext_resource type="PackedScene" uid="uid://8nm8trtnecx1" path="res://src/ui/ui.tscn" id="16_n40vd"]
-[ext_resource type="AudioStream" uid="uid://bphber1yol7uh" path="res://assets/sfx/counting/M10.ogg" id="19_kysof"]
 [ext_resource type="AudioStream" uid="uid://cfri3ara0i1xc" path="res://assets/sfx/counting/F10.ogg" id="20_85tmk"]
+[ext_resource type="AudioStream" uid="uid://cwayeqog0fi08" path="res://assets/music/Sergio's Magic Dustbin.mp3" id="20_kysof"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1et6b"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -852,10 +852,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4202347, 0, 4)
 [node name="Ui" parent="." unique_id=447394292 instance=ExtResource("16_n40vd")]
 visible = false
 
-[node name="MaleCount" type="AudioStreamPlayer" parent="." unique_id=1931986340]
-stream = ExtResource("19_kysof")
-volume_db = -8.21
-
 [node name="FemaleCount" type="AudioStreamPlayer" parent="." unique_id=1688377469]
 stream = ExtResource("20_85tmk")
 volume_db = -1.805
@@ -866,5 +862,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone" unique_id=1883446606]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 3)
 shape = SubResource("BoxShape3D_m46my")
+
+[node name="PostFatherMusic" type="AudioStreamPlayer" parent="." unique_id=1153591372]
+stream = ExtResource("20_kysof")
 
 [connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

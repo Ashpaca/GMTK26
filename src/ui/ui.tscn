@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bsyju1mhtdxgd" path="res://assets/fonts/Coiny/Coiny-Regular.ttf" id="5_sjdex"]
 [ext_resource type="Texture2D" uid="uid://bdq30nvdjyekd" path="res://assets/ui/tutorial_phone.png" id="6_7abqo"]
 [ext_resource type="AudioStream" uid="uid://davk1ae0kyi84" path="res://assets/sfx/ui/switch26.ogg" id="7_gucsq"]
+[ext_resource type="AudioStream" uid="uid://o46bd7pbhcpi" path="res://assets/sfx/counting/dragon-studio-nuclear-explosion-386181.mp3" id="8_cx7gx"]
 
 [sub_resource type="Gradient" id="Gradient_sjdex"]
 offsets = PackedFloat32Array(0)
@@ -108,7 +109,10 @@ position = Vector2(207, 197)
 scale = Vector2(3.46875, 3.46875)
 sprite_frames = SubResource("SpriteFrames_58gb0")
 autoplay = "default"
-frame_progress = 0.37199944
+frame_progress = 0.80231154
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=937808522]
 stream = ExtResource("7_gucsq")
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="." unique_id=1083402942]
+stream = ExtResource("8_cx7gx")

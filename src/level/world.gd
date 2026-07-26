@@ -54,19 +54,7 @@ var last_shopper : Shopper
 var timer_change_display : int = 9
 var bomb_tween : Tween
 
-@onready var male_count: AudioStreamPlayer = $MaleCount
 @onready var female_count: AudioStreamPlayer = $FemaleCount
-var male_audios : Array[AudioStream] = [
-	load("res://assets/sfx/counting/M1.ogg"), 
-	load("res://assets/sfx/counting/M2.ogg"), 
-	load("res://assets/sfx/counting/M3.ogg"), 
-	load("res://assets/sfx/counting/M4.ogg"), 
-	load("res://assets/sfx/counting/M5.ogg"), 
-	load("res://assets/sfx/counting/M6.ogg"), 
-	load("res://assets/sfx/counting/M7.ogg"), 
-	load("res://assets/sfx/counting/M8.ogg"), 
-	load("res://assets/sfx/counting/M9.ogg"), 
-	load("res://assets/sfx/counting/M10.ogg")]
 var female_audios : Array[AudioStream] = [
 	load("res://assets/sfx/counting/F1.ogg"), 
 	load("res://assets/sfx/counting/F2.ogg"), 
@@ -78,6 +66,7 @@ var female_audios : Array[AudioStream] = [
 	load("res://assets/sfx/counting/F8.ogg"), 
 	load("res://assets/sfx/counting/F9.ogg"), 
 	load("res://assets/sfx/counting/F10.ogg")]
+@onready var post_father_music: AudioStreamPlayer = $PostFatherMusic
 
 func _on_request_start_game() -> void:
 	tutorial_point = Tutorial.MOVEMENT
@@ -112,8 +101,6 @@ func _on_spawn_shopper() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if GameState.time_left < timer_change_display * 10:
-		male_count.stream = male_audios[timer_change_display]
-		male_count.play()
 		female_count.stream = female_audios[timer_change_display]
 		female_count.play()
 		if bomb_tween:
@@ -223,6 +210,7 @@ func _physics_process(_delta: float) -> void:
 			camera_tween.tween_property(camera, "size", camera_size_default, 1.0)
 			tutorial_point = Tutorial.REALLY_DONE
 			GameState.tutorial_complete = true
+			post_father_music.play(45.0)
 		Tutorial.REALLY_DONE:
 			pass
 
