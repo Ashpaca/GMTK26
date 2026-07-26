@@ -880,4 +880,7 @@ stream = ExtResource("22_egigb")
 [node name="EasterEggAudio" type="AudioStreamPlayer" parent="." unique_id=1524906859]
 stream = ExtResource("23_3ac3d")
 
+[node name="TutorialVoice" type="AudioStreamPlayer" parent="." unique_id=1902437287]
+volume_db = 20.0
+
 [connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bmnucdweu0jk5" path="res://src/components/custom_button_component.gd" id="10_6bsk4"]
 [ext_resource type="AudioStream" uid="uid://cqmlrdsgjcm2n" path="res://assets/sfx/ui/select_004.ogg" id="11_tnxbf"]
 [ext_resource type="AudioStream" uid="uid://davk1ae0kyi84" path="res://assets/sfx/ui/switch26.ogg" id="11_uvxy1"]
+[ext_resource type="AudioStream" uid="uid://c6mux38144ylp" path="res://assets/music/Fuzzball Parade.mp3" id="13_ynn2g"]
 
 [sub_resource type="Gradient" id="Gradient_piys8"]
 colors = PackedColorArray(0.38039216, 0.79607844, 0.54509807, 1, 0.38039216, 0.79607844, 0.54509807, 1)
@@ -419,6 +420,10 @@ stream = ExtResource("11_tnxbf")
 
 [node name="select_player" type="AudioStreamPlayer" parent="." unique_id=2095894463]
 stream = ExtResource("11_uvxy1")
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=2002547189]
+stream = ExtResource("13_ynn2g")
+autoplay = true
 
 [connection signal="pressed" from="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/StartLabel/StartLabelShadow/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/OptionsLabel/OptionsLabelShadow/OptionsButton" to="." method="_on_options_button_pressed"]

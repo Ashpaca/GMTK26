@@ -3,6 +3,7 @@ extends Control
 @onready var start_button: Button = $MetaMarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MenuOptions/StartLabel/StartLabelShadow/StartButton
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var select_player: AudioStreamPlayer = $select_player
+@onready var music: AudioStreamPlayer = $music
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,6 +18,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_start_button_pressed() -> void:
+	music.stop()
 	select_player.play()
 	EventBus.request_start_game.emit()
 

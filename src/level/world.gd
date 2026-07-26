@@ -7,6 +7,7 @@ enum Tutorial{
 	PICKUP,
 	STOCK,
 	CUSTOMER,
+	CUSTOMER2,
 	DONE,
 	CUTSCENE,
 	REALLY_DONE
@@ -60,10 +61,24 @@ var bomb_tween : Tween
 @onready var father_audio: AudioStreamPlayer = $FatherAudio
 @onready var easter_egg_audio: AudioStreamPlayer = $EasterEggAudio
 
+@onready var tutorial_voice: AudioStreamPlayer = $TutorialVoice
+var tutorial_voice_index : int = 0
+@onready var tutorials : Array[AudioStream] = [
+	load("res://assets/sfx/voice_acting/Countdown_line_1mp3.wav"),
+	load("res://assets/sfx/voice_acting/Countdown_line_2mp3.wav"),
+	load("res://assets/sfx/voice_acting/Countdown_line_3mp3.wav"),
+	load("res://assets/sfx/voice_acting/Countdown_line_4mp3.wav"),
+	load("res://assets/sfx/voice_acting/Countdown_line_5mp3.wav"),
+	load("res://assets/sfx/voice_acting/Countdown_line_6mp3.wav")
+]
+
 func _on_request_start_game() -> void:
 	tutorial_point = Tutorial.MOVEMENT
 	ui.visible = true
 	GameState.current_state = GameState.State.WAIT
+	tutorial_voice.stream = tutorials[tutorial_voice_index]
+	tutorial_voice_index += 1
+	tutorial_voice.play()
 	ui.do_next_dialogue()
 	pre_father_music.play()
 
@@ -144,6 +159,9 @@ func _physics_process(_delta: float) -> void:
 				right.visible = false
 				ui.visible = true
 				GameState.current_state = GameState.State.WAIT
+				tutorial_voice.stream = tutorials[tutorial_voice_index]
+				tutorial_voice_index += 1
+				tutorial_voice.play()
 				ui.do_next_dialogue()
 		Tutorial.RUN:
 			ui.visible = false
@@ -151,6 +169,9 @@ func _physics_process(_delta: float) -> void:
 				tutorial_point = Tutorial.PICKUP
 				ui.visible = true
 				GameState.current_state = GameState.State.WAIT
+				tutorial_voice.stream = tutorials[tutorial_voice_index]
+				tutorial_voice_index += 1
+				tutorial_voice.play()
 				ui.do_next_dialogue()
 		Tutorial.PICKUP:
 			ui.visible = false
@@ -162,6 +183,9 @@ func _physics_process(_delta: float) -> void:
 				tutorial_point = Tutorial.STOCK
 				ui.visible = true
 				GameState.current_state = GameState.State.WAIT
+				tutorial_voice.stream = tutorials[tutorial_voice_index]
+				tutorial_voice_index += 1
+				tutorial_voice.play()
 				ui.do_next_dialogue()
 		Tutorial.STOCK:
 			ui.visible = false
@@ -171,14 +195,26 @@ func _physics_process(_delta: float) -> void:
 				tutorial_point = Tutorial.CUSTOMER
 				ui.visible = true
 				GameState.current_state = GameState.State.WAIT
+				tutorial_voice.stream = tutorials[tutorial_voice_index]
+				tutorial_voice_index += 1
+				tutorial_voice.play()
 				ui.do_next_dialogue()
 		Tutorial.CUSTOMER:
 			ui.visible = false
 			for door in the_doors:
 				door.open()
 			_on_spawn_shopper()
+			tutorial_point = Tutorial.CUSTOMER2
+		Tutorial.CUSTOMER2:
+			tutorial_voice.stream = tutorials[tutorial_voice_index]
+			tutorial_voice_index += 1
+			tutorial_voice.play()
+			ui.do_next_dialogue()
+			ui.visible = true
+			GameState.current_state = GameState.State.WAIT
 			tutorial_point = Tutorial.DONE
 		Tutorial.DONE:
+			ui.visible = false
 			if not last_shopper:
 				for door in the_doors:
 					door.close()
