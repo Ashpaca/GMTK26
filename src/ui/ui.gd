@@ -14,8 +14,8 @@ var dialogues_in_order : Array[String] = [
 	"Any workers in the store please make your way to an apple supply and pick up a box by pressing 'X'.",
 	"And place it on the nearest shelf with 'x'.\nOr just put it back where you found it, I don't care...\nBut our loyal customers sure do!",
 	"Even though this is a prerecorded message you have heard every day that you have worked here, and I have no way of knowing what is currently happening, I'm sure the first customer of the day is just arriving.",
-	"Give them some space to do their shopping!\nNo seriously, let's not run into them like Gerald would always do. I mean he's gone now and all, but I still had to record this message because of what happend.",
-	"Courtney! Courtney it's me, your father. You don't have much time, look there is a bomb in that COUNTDOWN. Don't ask me how I know, I just know ok. The bomb is so big that the explosion will be big enough and that there is no hope to escape. Courntey I am so sorry, but you might as well provide the best customer service for your last few customers. You run ok? You run to the shelves to stock them, people will get out of your way when you run. And you know what? Maybe sometimes they'll just be pushed over by you, but that's ok! It's all worth it if the products are in stock. Look Courtney, I'm sorry to say this, but since this is the end of COUNTDOWN or at least that one, you might as well do the best customer service you can. Alright, make your father proud.\n\nDamn those Australians..."
+	"Give them some space to do their shopping!\nNo seriously, let's not run into them like Gerald would always do. I mean he's gone now and all, but I still had to record this message because of what happened.",
+	"Courtney! Courtney it's me, your father. You don't have much time, look there is a bomb in that COUNTDOWN. Don't ask me how I know, I just know ok. The bomb is so big that the explosion will be big enough and that there is no hope to escape. Courtney I am so sorry, but you might as well provide the best customer service for your last few customers. You run ok? \nYou run to the shelves to stock them, people will get out of your way when you run. And you know what? Maybe sometimes they'll just be pushed over by you, but that's ok! It's all worth it if the products are in stock. \nLook Courtney, I'm sorry to say this, but since this is the end of COUNTDOWN or at least that one, you might as well do the best customer service you can. Alright, make your father proud.\n\nDamn those Australians..."
 ]
 var game_over_tween : Tween
 @onready var explosion_sound: AudioStreamPlayer = $ExplosionSound
@@ -38,14 +38,8 @@ func _on_game_over(_good_ending : bool) -> void:
 	game_over_tween.tween_property(self, "visible", true, 0).set_delay(2)
 	game_over_tween.tween_property(texture_rect, "visible", true, 0).set_delay(2)
 	game_over_tween.tween_property(rich_text_label, "text", "You were able to give the gift of apples to [shake]" + str(GameState.score) + "[/shake] people before you all died", 0).set_delay(2)
-	game_over_tween.tween_property(rich_text_label, "text", "In loving memory of COUNTDOWN, the New Zealand grocery store.", 1).set_delay(5)
+	game_over_tween.tween_property(rich_text_label, "text", "In loving memory of COUNTDOWN, the \nNew Zealand grocery store.", 1).set_delay(5)
 	
-	nine_patch_rect.visible = false
-	label.visible = false
-	phone.visible = false
-	visible = true
-	texture_rect.visible = true
-	rich_text_label.text = "You were able to give the gift of apples to [shake]" + str(GameState.score) + "[/shake] people before you all died"
 
 
 func _physics_process(_delta: float) -> void:

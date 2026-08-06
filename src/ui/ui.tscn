@@ -109,7 +109,7 @@ position = Vector2(207, 197)
 scale = Vector2(3.46875, 3.46875)
 sprite_frames = SubResource("SpriteFrames_58gb0")
 autoplay = "default"
-frame_progress = 0.80231154
+frame_progress = 0.41019508
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=937808522]
 stream = ExtResource("7_gucsq")

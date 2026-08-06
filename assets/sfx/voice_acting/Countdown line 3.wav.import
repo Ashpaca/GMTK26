@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dytsc6qc4ccqf"
+path="res://.godot/imported/Countdown line 3.wav-5da938202e8576a59473056c76c03283.sample"
+
+[deps]
+
+source_file="res://assets/sfx/voice_acting/Countdown line 3.wav"
+dest_files=["res://.godot/imported/Countdown line 3.wav-5da938202e8576a59473056c76c03283.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

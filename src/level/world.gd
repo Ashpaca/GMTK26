@@ -64,12 +64,12 @@ var bomb_tween : Tween
 @onready var tutorial_voice: AudioStreamPlayer = $TutorialVoice
 var tutorial_voice_index : int = 0
 @onready var tutorials : Array[AudioStream] = [
-	load("res://assets/sfx/voice_acting/Countdown_line_1mp3.wav"),
-	load("res://assets/sfx/voice_acting/Countdown_line_2mp3.wav"),
-	load("res://assets/sfx/voice_acting/Countdown_line_3mp3.wav"),
-	load("res://assets/sfx/voice_acting/Countdown_line_4mp3.wav"),
-	load("res://assets/sfx/voice_acting/Countdown_line_5mp3.wav"),
-	load("res://assets/sfx/voice_acting/Countdown_line_6mp3.wav")
+	load("res://assets/sfx/voice_acting/Countdown line 1.wav"),
+	load("res://assets/sfx/voice_acting/Countdown line 2.wav"),
+	load("res://assets/sfx/voice_acting/Countdown line 3.wav"),
+	load("res://assets/sfx/voice_acting/Countdown line 4.wav"),
+	load("res://assets/sfx/voice_acting/Countdown line 5.wav"),
+	load("res://assets/sfx/voice_acting/Countdown line 6.wav")
 ]
 
 func _on_request_start_game() -> void:
